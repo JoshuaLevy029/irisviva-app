@@ -1,0 +1,17 @@
+export type User = {
+    id: number
+    name: string
+    email: string
+    age: number
+    occupation: string
+    contact: string
+    photo: string
+    role: 'user' | 'admin' | 'professional'
+    language: 'pt_BR' | 'en'
+    password: string
+    status: boolean
+    refresh_token: string
+    created_at: Date
+    updated_at: Date
+    deleted_at: Date
+}

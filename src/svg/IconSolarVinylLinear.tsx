@@ -1,0 +1,10 @@
+import Svg, { Path, G, Circle, ClipPath, Defs, Rect, Mask, Shape, Ellipse, Polygon, Polyline, Pattern, Text, Symbol, TextPath, TSpan, RadialGradient, Stop, Line, LinearGradient, Image, Use } from 'react-native-svg';
+
+interface IconProps {
+	size?: number;
+	color?: string;
+}
+
+export default ({ size = 32, color = '#1f1f1f' }: IconProps) => (
+	<Svg width={size} height={size} viewBox="0 0 24 24"><G fill="none" stroke={color} strokeWidth="1.5"><Circle cx="12" cy="12" r="3"/><Path strokeLinecap="round" d="M21.95 13c-.501 5.054-4.765 9-9.95 9c-5.523 0-10-4.477-10-10c0-5.185 3.947-9.448 9-9.95"/><Path strokeLinecap="round" strokeLinejoin="round" d="M15 12V2.456a10.02 10.02 0 0 1 6.542 6.542"/></G></Svg>
+);
