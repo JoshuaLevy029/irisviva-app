@@ -25,7 +25,7 @@ export default (props: ButtonProps) => {
         style = {},
         variant = 'text',
         color = 'primary',
-        size = 'medium',
+        size = 'large',
         fullWidth = false,
         onPress,
         disabled = false,
@@ -101,7 +101,7 @@ export default (props: ButtonProps) => {
 
     const buildStyleView = React.useMemo(() => {
         let styles: ViewStyle = {
-            borderRadius: 31,
+            borderRadius: 13,
             paddingHorizontal: size === 'small' ? 12 : (size === 'medium' ? 24 : 26),
             paddingVertical: size === 'small' ? 6 : (size === 'medium' ? 12 : 14),
             gap: 4,
