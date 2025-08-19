@@ -4,6 +4,7 @@ import Container from "@/components/Container";
 import Input, { ErrorInput } from "@/components/Input";
 import Typography from "@/components/Typography";
 import axiosUtil from "@/utils/axios.util";
+import WaveSign2 from "@/views/WaveSign2";
 import { useRoute, useTheme } from "@react-navigation/native";
 import { useRouter } from "expo-router";
 import React from "react";
@@ -76,9 +77,11 @@ export default function Page () {
         })
     }
 
-    return <Container>
-        <View style={{ paddingTop: 34 }}>
-            <Back />
+    return <Container style={{ justifyContent: 'flex-start', alignItems: 'center' }}>
+        <WaveSign2 />
+
+        <View style={{ width: '100%', paddingHorizontal: 0, position: 'absolute', top: 34 }}>
+            <Back color='white' />
         </View>
 
         <View style={{ padding: 16 }}>
