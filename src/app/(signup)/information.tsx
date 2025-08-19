@@ -85,11 +85,11 @@ export default function Page () {
         </View>
 
         <View style={{ padding: 16 }}>
-            <Typography fontSize='h3' fontWeight='semibold' color='primary' sx={{ marginBottom: 16, fontSize: 24, textAlign: 'left' }}>
+            <Typography fontSize='h3' fontWeight='semibold' color='primary' sx={{ marginBottom: 5, fontSize: 24, textAlign: 'center' }}>
                 Vamos criar uma conta
             </Typography>
 
-            <Typography fontWeight='semibold' color='primary' sx={{ fontSize: 16, fontWeight: '500', textAlign: 'left', marginBottom: 40 }}>
+            <Typography fontSize='h5' fontWeight='semibold' color='black' sx={{ marginBottom: 24, paddingHorizontal: 20, textAlign: 'center' }}>
                 Nos conte mais um pouco sobre você
             </Typography>
 

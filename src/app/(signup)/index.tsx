@@ -35,7 +35,7 @@ export default function Page () {
             <Back color='white' />
         </View>
 
-        <View style={{ padding: 32, width: '100%' }}>
+        <View style={{ paddingHorizontal: 32, width: '100%' }}>
             <Typography fontSize='h5' fontWeight='semibold' color='black' sx={{ marginTop: 10, marginBottom: 24, paddingHorizontal: 32, textAlign: 'center' }}>
                 Nos conte o tipo de conta que você quer criar
             </Typography>

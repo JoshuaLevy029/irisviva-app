@@ -66,7 +66,7 @@ export default function Page () {
     return <Container style={{ justifyContent: 'flex-start', alignItems: 'center' }}>
         <WaveSign />
 
-        <Typography fontSize='h5' fontWeight='semibold' color='black' sx={{ marginTop: 30, marginBottom: 12, textAlign: 'center' }}>
+        <Typography fontSize='h5' fontWeight='semibold' color='black' sx={{ marginTop: 10, marginBottom: 12, textAlign: 'center' }}>
             Insira seu e-mail para continuar
         </Typography>
 

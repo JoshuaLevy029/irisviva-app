@@ -69,8 +69,8 @@ export default function Page () {
             <Back color='white' />
         </View>
         
-        <View style={{ padding: 32 }}>
-            <Typography fontSize='h5' fontWeight='semibold' color='black' sx={{ marginTop: 30, marginBottom: 12, textAlign: 'center' }}>
+        <View style={{ paddingHorizontal: 32 }}>
+            <Typography fontSize='h5' fontWeight='semibold' color='black' sx={{ marginTop: 10, marginBottom: 12, textAlign: 'center' }}>
                 Insira sua senha
             </Typography>
 

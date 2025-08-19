@@ -84,8 +84,8 @@ export default function Page () {
         </View>
 
         <View style={{ padding: 16 }}>
-            <Typography fontSize='h3' fontWeight='semibold' color='primary' sx={{ marginBottom: 16, fontSize: 24, textAlign: 'left' }}>
-                Crie uma senha
+            <Typography fontSize='h5' fontWeight='semibold' color='primary' sx={{ marginBottom: 16, textAlign: 'center' }}>
+                Crie uma senha para sua conta
             </Typography>
 
             <Input
