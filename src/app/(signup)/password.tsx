@@ -86,7 +86,7 @@ export default function Page () {
             </Typography>
 
             <Input
-                label='Password'
+                label='Senha'
                 onChangeText={onChange}
                 value={password}
                 keyboardType='default'

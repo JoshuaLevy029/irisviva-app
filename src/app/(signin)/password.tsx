@@ -8,6 +8,7 @@ import Typography from "@/components/Typography";
 import themeConfig from "@/config/theme.config";
 import { useSession } from "@/context/auth";
 import axiosUtil from "@/utils/axios.util";
+import WaveSign from "@/views/WaveSign";
 import { useRoute, useTheme } from "@react-navigation/native";
 import { useRouter } from "expo-router";
 import React from "react";
@@ -61,12 +62,15 @@ export default function Page () {
         })
     }
 
-    return <Container style={{ justifyContent: 'center', alignItems: 'center' }}>
+    return <Container style={{ justifyContent: 'flex-start', alignItems: 'center' }}>
+        <WaveSign />
+
         <View style={{ width: '100%', paddingHorizontal: 0, position: 'absolute', top: 34 }}>
-            <Back />
+            <Back color='white' />
         </View>
-        <View style={{ padding: 16 }}>
-            <Typography fontSize='h3' fontWeight='bold' color='black' sx={{ marginBottom: 24, textAlign: 'left' }}>
+        
+        <View style={{ padding: 32 }}>
+            <Typography fontSize='h5' fontWeight='semibold' color='black' sx={{ marginTop: 30, marginBottom: 12, textAlign: 'center' }}>
                 Insira sua senha
             </Typography>
 
@@ -87,7 +91,7 @@ export default function Page () {
             {error !== '' && <ErrorInput>{error}</ErrorInput>}
         </View>
 
-        <View style={{ width: '100%', paddingHorizontal: 16, position: 'absolute', bottom: 34 }}>
+        <View style={{ width: '100%', paddingHorizontal: 32, position: 'absolute', bottom: 34 }}>
             <Button
                 title='Continuar'
                 variant='contained'

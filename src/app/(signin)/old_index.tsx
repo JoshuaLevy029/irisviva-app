@@ -9,7 +9,6 @@ import React from "react"
 import { Image, View } from "react-native"
 import * as yup from 'yup'
 import Logo from '@/assets/images/logo.png'
-import WaveSign from "@/views/WaveSign"
 
 const validation = yup.object({
   email: yup.string().email('E-mail inválido').required('E-mail é obrigatório'),
@@ -63,19 +62,21 @@ export default function Page () {
         })
     }
 
-    return <Container style={{ justifyContent: 'flex-start', alignItems: 'center' }}>
-        <WaveSign />
+    return <Container style={{ justifyContent: 'center', alignItems: 'center' }}>
+        <View style={{ padding: 16 }}>
+            <View style={{ alignItems: 'center', marginBottom: 24 }}>
+                <Image source={Logo} style={{ width: 120, height: 120 }} />
+            </View>
 
-        <Typography fontSize='h5' fontWeight='semibold' color='black' sx={{ marginTop: 30, marginBottom: 12, textAlign: 'center' }}>
-            Insira seu e-mail para continuar
-        </Typography>
+            <Typography fontSize='h3' fontWeight='bold' color='black' sx={{ marginBottom: 24, textAlign: 'left' }}>
+                Insira seu e-mail para continuar
+            </Typography>
 
-        <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center', paddingHorizontal: 32 }}>
             <Input label='E-mail' value={email} onChangeText={onChange} hasError={!!error} keyboardType="email-address" containerStyle={{ marginBottom: 8 }} />
             {error !== '' && <ErrorInput>{error}</ErrorInput>}
         </View>
 
-        <View style={{ width: '100%', paddingHorizontal: 32, position: 'absolute', bottom: 34 }}>
+        <View style={{ width: '100%', paddingHorizontal: 16, position: 'absolute', bottom: 34 }}>
             <Button
                 title='Continuar'
                 variant='contained'

@@ -56,6 +56,28 @@ export default function ProfileScreen () {
           Conta
         </Typography>
 
+        <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginBottom: 10 }}>
+          <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8 }} onPress={() => {}}>
+            <Icon name='IconSolarFileTextLinear' size={16} color={themeConfig.colors.gray['A600']} />
+            <Typography fontWeight='semibold' fontSize={14} sx={{ margin: 0, padding: 0 }}>
+              Política de Privacidade
+            </Typography>
+          </TouchableOpacity>
+
+          <IconButton icon='IconSolarAltArrowRightLinear' onPress={() => {}} color={themeConfig.colors.gray['A600']} size={16} />
+        </View>
+
+        <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginBottom: 10 }}>
+          <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8 }} onPress={() => {}}>
+            <Icon name='IconSolarSettingsLinear' size={16} color={themeConfig.colors.gray['A600']} />
+            <Typography fontWeight='semibold' fontSize={14} sx={{ margin: 0, padding: 0 }}>
+              Configurações
+            </Typography>
+          </TouchableOpacity>
+
+          <IconButton icon='IconSolarAltArrowRightLinear' onPress={() => {}} color={themeConfig.colors.gray['A600']} size={16} />
+        </View>
+
         <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
           <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8 }} onPress={() => signOut()}>
             <Icon name='IconSolarPowerLinear' size={16} color={themeConfig.colors.gray['A600']} />
@@ -64,7 +86,7 @@ export default function ProfileScreen () {
             </Typography>
           </TouchableOpacity>
 
-          <IconButton icon='IconSolarAltArrowRightLinear' onPress={() => {}} color={themeConfig.colors.gray['A600']} size={16} />
+          <IconButton icon='IconSolarAltArrowRightLinear' onPress={() => signOut()} color={themeConfig.colors.gray['A600']} size={16} />
         </View>
       </View>
     </Container>
