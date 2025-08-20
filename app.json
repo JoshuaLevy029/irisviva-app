@@ -9,7 +9,8 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.joshlevy029.iris-viva"
     },
     "splash": {
       "image": "./src/assets/images/adaptive-icon.png",
@@ -24,7 +25,13 @@
         "foregroundImage": "./src/assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION"
+      ],
+      "package": "com.joshlevy029.iris_viva",
+      "versionCode": 2
     },
     "web": {
       "bundler": "metro",
@@ -62,6 +69,13 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "4ca9360f-8bde-4331-bfc6-c63b0d30b54b"
+      }
+    },
+    "owner": "joshlevy029"
   }
 }
