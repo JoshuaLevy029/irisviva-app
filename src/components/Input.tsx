@@ -71,6 +71,7 @@ const Input = ({
         <Typography
           fontSize='small'
           color={resolveBorderColor()}
+          fontWeight={isFocused ? 'bold' : 'semibold'}
         >
           {label}
         </Typography>

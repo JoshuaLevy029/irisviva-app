@@ -71,7 +71,7 @@ export default function TabLayout() {
       }}
     >
       <Tabs.Screen 
-          name='relatorios' 
+          name='history' 
           options={{
               tabBarShowLabel: false,
               tabBarIcon: ({ focused }) => <TabScreen label='' iconName='IconSolarChatLineLinear' theme={theme as any} focused={focused} />

@@ -5,10 +5,13 @@ import Icon from '@/components/Icon';
 import Typography from '@/components/Typography';
 import AnimatedScrollView from '@/components/animatedScrollView';
 import themeConfig from '@/config/theme.config';
+import { useRouter } from 'expo-router';
 import { View } from 'react-native';
 
 
 export default function HomeScreen () {
+  const router = useRouter()
+
   return (
     <Container style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
       <View style={{ padding: 16 }}>
@@ -51,7 +54,9 @@ export default function HomeScreen () {
               variant='contained'
               disabled={false}
               fullWidth
-              onPress={() => {}}
+              onPress={() => {
+                router.push('/(analysis)/analysis')
+              }}
               sx={{ marginTop: 20 }}
           />
         </View>
