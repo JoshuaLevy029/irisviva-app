@@ -163,14 +163,14 @@ export default function PhotosScreen () {
             url: '/analysis',
             data: formData,
             token: session as string,
-            process: true,
+            process: false,
             headers: {
                 'Content-Type': 'multipart/form-data',
             } as any,
         })
 
         setProcessing(false)
-        
+
         if (Http.failed(response.status)) {
             if (Http.is('Unauthorized', response.status)) {
                 router.replace('/(signin)')
@@ -187,10 +187,22 @@ export default function PhotosScreen () {
             return
         }
 
+        if (response.data.status === 'WARNING_WRONG_PHOTO') {
+            openDisclaimer({
+                open: true,
+                title: 'Erro na Análise',
+                content: 'A IA não conseguiu processar suas imagens desta vez. Por favor, tente novamente com fotos de melhor qualidade.',
+                closeText: 'Fechar',
+                onClose: () => closeDisclaimer(),
+                actions: []
+            })
+            return
+        }
+
         router.push({
             pathname: '/(analysis)/report',
             params: {
-                result: response.data.result,
+                result: JSON.stringify(response.data.result),
             }
         })
     }
