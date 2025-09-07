@@ -10,7 +10,7 @@ export interface ButtonProps extends TouchableOpacityProps {
     titleProps?: TextProps
     sx?: ViewStyle
     variant?: 'contained' | 'outlined' | 'text'
-    size?: 'small' | 'medium' | 'large'
+    size?: 'xsmall' | 'small' | 'medium' | 'large'
     color?: 'primary' | 'secondary' | 'error' | 'success' | 'warning' | 'info' | string
     textColor?: string
     fullWidth?: boolean
@@ -102,8 +102,8 @@ export default (props: ButtonProps) => {
     const buildStyleView = React.useMemo(() => {
         let styles: ViewStyle = {
             borderRadius: 13,
-            paddingHorizontal: size === 'small' ? 12 : (size === 'medium' ? 24 : 26),
-            paddingVertical: size === 'small' ? 6 : (size === 'medium' ? 12 : 14),
+            paddingHorizontal: size === 'xsmall' ? 8 : (size === 'small' ? 12 : (size === 'medium' ? 24 : 26)),
+            paddingVertical: size === 'xsmall' ? 4 : (size === 'small' ? 6 : (size === 'medium' ? 12 : 14)),
             gap: 4,
             justifyContent: 'center',
             alignItems: 'center',
@@ -168,10 +168,10 @@ export default (props: ButtonProps) => {
     const buildStyleText = React.useMemo(() => {
         let styles: TextStyle = {
             color: textColor,
-            fontSize: size === 'small' ? 12 : (size === 'medium' ? 14 : 16),
+            fontSize: size === 'xsmall' ? 10 : (size === 'small' ? 12 : (size === 'medium' ? 14 : 16)),
             fontWeight: 600,
             textAlign: 'center',
-            lineHeight: size === 'small' ? 14 : (size === 'medium' ? 16 : 18),
+            lineHeight: size === 'xsmall' ? 12 : (size === 'small' ? 14 : (size === 'medium' ? 16 : 18)),
             fontFamily: 'Quicksand_700Bold',
         }
 
@@ -202,7 +202,7 @@ export default (props: ButtonProps) => {
 export interface ButtonTextProps extends TextProps {
     children?: React.ReactNode | string
     sx?: TextStyle
-    size?: 'small' | 'medium' | 'large'
+    size?: 'xsmall' | 'small' | 'medium' | 'large'
 }
 
 export const ButtonText = (props: ButtonTextProps) => {
@@ -213,10 +213,10 @@ export const ButtonText = (props: ButtonTextProps) => {
             style={[
                 {
                     color: themeConfig.colors.text,
-                    fontSize: size === 'small' ? 12 : (size === 'medium' ? 14 : 16),
+                    fontSize: size === 'xsmall' ? 10 : (size === 'small' ? 12 : (size === 'medium' ? 14 : 16)),
                     fontWeight: "600",
                     textAlign: 'center',
-                    lineHeight: size === 'small' ? 14 : (size === 'medium' ? 16 : 18),
+                    lineHeight: size === 'xsmall' ? 12 : (size === 'small' ? 14 : (size === 'medium' ? 16 : 18)),
                     fontFamily: 'Quicksand_700Bold',
                 },
                 typeof style === 'object' && style !== null ? style : {},

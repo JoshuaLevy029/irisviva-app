@@ -10,7 +10,7 @@ import {
     ViewStyle
 } from 'react-native'
 import Icon from './Icon'
-import Input from './Input'
+import Input, { InputProps } from './Input'
 import { Column } from './standard/Common'
 
 export type SelectProps = TextInputProps & {
@@ -25,6 +25,7 @@ export type SelectProps = TextInputProps & {
   hasError?: boolean
   borderColor?: string
   helperText?: string | React.ReactNode
+  inputProps?: InputProps
 }
 
 const Select = ({
@@ -39,9 +40,11 @@ const Select = ({
   hasError = false,
   borderColor = '',
   helperText = '',
+  inputProps = {},
 }: SelectProps) => {
   const [modalVisible, setModalVisible] = useState(false)
   const [isFocused, setIsFocused] = useState(false)
+  const { containerStyle: inputContainerStyle = {}, ...restInputProps } = inputProps
 
   const resolveBorderColor = (): string => {
     if (borderColor) return borderColor
@@ -81,8 +84,9 @@ const Select = ({
           ) : (
             <Icon name='IconSolarAltArrowDownLinear' size={20} color={theme.colors.gray.A700} />
           )}
-          containerStyle={{ pointerEvents: 'none' }} // Prevent direct touch on Input
+          containerStyle={{ pointerEvents: 'none', ...inputContainerStyle }} // Prevent direct touch on Input
           borderColor={resolveBorderColor()}
+          {...restInputProps}
         />
       </TouchableOpacity>
 

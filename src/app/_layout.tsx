@@ -163,6 +163,14 @@ function RootLayoutNav() {
                     options={{ headerShown: false }}
                   />
                   <Stack.Screen
+                    name='(admin)'
+                    options={{ headerShown: false }}
+                  />
+                  <Stack.Screen
+                    name='(analysis)'
+                    options={{ headerShown: false }}
+                  />
+                  <Stack.Screen
                     name='(signin)'
                     options={{ headerShown: false }}
                   />

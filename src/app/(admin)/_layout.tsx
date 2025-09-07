@@ -1,0 +1,117 @@
+import Icon from '@/components/Icon'
+import themeConfig from '@/config/theme.config'
+import { useSession } from '@/context/auth'
+import { User } from '@/entities/user.entity'
+import { Icons } from '@/enums/icons.enum'
+import { Theme, useTheme } from '@react-navigation/native'
+import { Redirect, Tabs, useRouter } from 'expo-router'
+import React from 'react'
+import { Text, View } from 'react-native'
+
+
+const TabScreen = ({ label, iconName, theme, focused, center = false }: { label: string, iconName: keyof typeof Icons, theme: Theme, focused: boolean, center?: boolean }) => {
+  if (center) {
+    return <View 
+      style={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        minWidth: 70, 
+        height: 70, 
+        backgroundColor: themeConfig.colors.primary,
+        borderRadius: 100,
+        borderColor: themeConfig.colors.background,
+        borderWidth: 4,
+      }}
+    >
+      <Icon name={iconName} size={30} color={themeConfig.colors.gray['A50']} />
+    </View>
+  }
+
+  return <View style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', minWidth: 60, height: 60 }}>
+    <Icon name={iconName} size={25} color={focused ? theme.colors['main'].main : themeConfig.colors['gray']['A400']} />
+    {label && <Text style={{ fontSize: 10, fontFamily: 'Quicksand_700Bold', color: focused ? theme.colors['main'].main : themeConfig.colors['gray']['A400'] }}>{label}</Text>}
+  </View>
+}
+
+export default function TabLayout () {
+    const router = useRouter();
+    const theme = useTheme();
+    const { isLoading, session, isAuthenticated, user, ...sessionData } = useSession();
+
+    if (isLoading) {
+        return null;
+    }
+
+    if (!isAuthenticated) {
+        return <Redirect href='/(signin)' />;
+    }
+    
+
+    if (user && JSON.parse(user).role !== 'admin') {
+        return <Redirect href='/(tabs)' />;
+    }
+
+    return (
+        <Tabs
+            screenOptions={{ 
+                tabBarActiveTintColor: theme.colors.primary,
+                // Disable the static render of the header on web
+                // to prevent a hydration error in React Navigation v6.
+                headerShown: false,
+                tabBarShowLabel: false,
+                tabBarStyle: {
+                    borderTopWidth: 0,
+                    borderTopColor: 'transparent',
+                    borderRadius: 25,
+                    shadowColor: 'transparent',
+                    shadowOffset: { width: 0, height: 0 },
+                    shadowOpacity: 0,
+                    shadowRadius: 0,
+                    elevation: 0,
+                    height: 50,
+                    bottom: 27,
+                    marginHorizontal: 16,
+                    paddingTop: 5,
+                },
+            }}
+        >
+        
+        <Tabs.Screen 
+            name='index' 
+            options={{
+                tabBarShowLabel: false,
+                tabBarIcon: ({ focused }) => <TabScreen label='Dashboard' iconName='IconSolarChart2Linear' theme={theme as any} focused={focused} />
+                
+            }}
+        />
+
+        <Tabs.Screen 
+            name='plans' 
+            options={{
+                tabBarShowLabel: false,
+                tabBarIcon: ({ focused }) => <TabScreen label='Planos' iconName='IconSolarDocumentsLinear' theme={theme as any} focused={focused} />
+                
+            }}
+        />
+
+        <Tabs.Screen 
+            name='users' 
+            options={{
+                tabBarShowLabel: false,
+                tabBarIcon: ({ focused }) => <TabScreen label='Usuários' iconName='IconSolarUsersGroupTwoRoundedLinear' theme={theme as any} focused={focused} />
+                
+            }}
+        />
+
+        <Tabs.Screen 
+            name='profile' 
+            options={{
+                tabBarShowLabel: false,
+                tabBarIcon: ({ focused }) => <TabScreen label='Perfil' iconName='IconSolarUserCircleLinear' theme={theme as any} focused={focused} />
+            }}
+        />
+        </Tabs>
+    )
+}

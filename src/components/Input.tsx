@@ -2,7 +2,7 @@ import theme from '@/config/theme.config'
 import React, { ReactNode, useState } from 'react'
 import { KeyboardTypeOptions, TextInput, TextInputProps, TextProps, View, ViewStyle } from 'react-native'
 import { MaskedTextInput, MaskedTextInputProps } from 'react-native-mask-text'
-import Typography from './Typography'
+import Typography, { TypographyProps } from './Typography'
 import { Column, Row } from './standard/Common'
 
 export type InputProps = TextInputProps & Omit<MaskedTextInputProps, 'style' | 'onChangeText'> & {
@@ -21,6 +21,7 @@ export type InputProps = TextInputProps & Omit<MaskedTextInputProps, 'style' | '
   CustomComponent?: React.ComponentType<any> | null
   customComponentProps?: any
   borderColor?: string
+  labelProps?: TypographyProps
 }
 
 const Input = ({
@@ -38,6 +39,7 @@ const Input = ({
   CustomComponent = null,
   borderColor,
   customComponentProps = {},
+  labelProps = {},
   ...rest
 }: InputProps) => {
   const [isFocused, setIsFocused] = useState(false)
@@ -72,6 +74,7 @@ const Input = ({
           fontSize='small'
           color={resolveBorderColor()}
           fontWeight={isFocused ? 'bold' : 'semibold'}
+          {...labelProps}
         >
           {label}
         </Typography>

@@ -20,23 +20,27 @@ export type SignInData = {
 }
 
 export interface AuthContextInterface {
-  signIn: (data: SignInData) => Promise<{ success: boolean, message?: string }>
+  signIn: (data: SignInData) => Promise<{ success: boolean, message?: string, accessToken?: string, refreshToken?: string }>
   signOut: () => void
   signUp: (data: SignUpData) => Promise<boolean>
   session?: string | null
   refreshToken?: string | null
   isLoading: boolean
-  getSession: () => Promise<User | null>
+  getSession: (accessToken?: string) => Promise<User | null>
+  user?: string | null
+  isLoadingUser: boolean
 }
 
 const AuthContext = createContext<AuthContextInterface>({
-  signIn: async () => ({ success: false, message: 'Erro ao entrar' }),
+  signIn: async () => ({ success: false, message: 'Erro ao entrar', accessToken: '', refreshToken: '' }),
   signUp: async () => false,
   signOut: () => {},
   session: null,
   refreshToken: null,
   isLoading: false,
-  getSession: async () => null,
+  getSession: async (accessToken?: string) => null,
+  user: null,
+  isLoadingUser: false,
 })
 
 export function useSession() {
@@ -58,6 +62,7 @@ export function useSession() {
 export default function SessionProvider({ children }: PropsWithChildren) {
   const [[isLoading, session], setSession] = useStorage('session')
   const [[isLoadingRefreshToken, refreshToken], setRefreshToken] = useStorage('refreshToken')
+  const [[isLoadingUser, user], setUser] = useStorage('user')
 
   const signUp = async (data: SignUpData): Promise<boolean> => {
     const response = await axiosUtil.post({ url: '/auth/signup', data, process: false })
@@ -74,7 +79,7 @@ export default function SessionProvider({ children }: PropsWithChildren) {
     return true
   }
 
-  const signIn = async (data: SignInData): Promise<{ success: boolean, message?: string }> => {
+  const signIn = async (data: SignInData): Promise<{ success: boolean, message?: string, accessToken?: string, refreshToken?: string }> => {
     const response = await axiosUtil.post({ url: '/auth/signin', data })
 
     if (Http.failed(response.status)) {
@@ -87,7 +92,17 @@ export default function SessionProvider({ children }: PropsWithChildren) {
     setSession(response.data.accessToken)
     setRefreshToken(response.data.refreshToken)
 
-    return { success: true }
+    const _response = await axiosUtil.get({ url: '/auth/me', process: false, token: response.data.accessToken })
+
+    if (Http.failed(_response.status)) {
+      setSession(null)
+      setRefreshToken(null)
+      return { success: false, message: _response.data.message ?? 'Erro ao entrar' }
+    }
+
+    setUser(JSON.stringify(_response.data))
+
+    return { success: true, accessToken: response.data.accessToken, refreshToken: response.data.refreshToken }
   }
 
   const signOut = () => {
@@ -95,15 +110,17 @@ export default function SessionProvider({ children }: PropsWithChildren) {
     setRefreshToken(null)
   }
 
-  const getSession = async (): Promise<User | null> => {
-    if (session && !isLoading) {
-      const response = await axiosUtil.get({ url: '/auth/me', process: false, token: session })
-
+  const getSession = async (accessToken?: string): Promise<User | null> => {
+    if ((session || accessToken) && !isLoading) {
+      const response = await axiosUtil.get({ url: '/auth/me', process: false, token: session || accessToken })
+      
       if (Http.failed(response.status)) {
         setSession(null)
         setRefreshToken(null)
         return null
       }
+
+      setUser(JSON.stringify(response.data))
 
       return response.data
     }
@@ -120,8 +137,10 @@ export default function SessionProvider({ children }: PropsWithChildren) {
       refreshToken,
       isLoading: isLoading || isLoadingRefreshToken,
       getSession,
+      user,
+      isLoadingUser,
     }),
-    [signIn, signOut, signUp, session, refreshToken, isLoading, isLoadingRefreshToken, getSession],
+    [signIn, signOut, signUp, session, refreshToken, isLoading, isLoadingRefreshToken, getSession, user, isLoadingUser],
   )
 
   return <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>

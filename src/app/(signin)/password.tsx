@@ -24,7 +24,7 @@ export default function Page () {
     const router = useRouter()
     const route = useRoute()
 
-    const { signIn } = useSession()
+    const { signIn, getSession } = useSession()
 
     const params = route.params ? (route.params as any) : {}
 
@@ -42,10 +42,20 @@ export default function Page () {
         setIsLoading(true)
 
         signIn({ email: params.email, password })
-        .then(res => {
+        .then(async (res) => {
             setIsLoading(false)
-
+            
             if (res.success) {
+                const user = await getSession(res.accessToken)
+
+                if (user && user.role === 'admin') {
+                    router.navigate({
+                        pathname: '/(admin)',
+                        params: {}
+                    })
+                    return
+                }
+                
                 router.navigate({
                     pathname: '/(tabs)',
                     params: {}

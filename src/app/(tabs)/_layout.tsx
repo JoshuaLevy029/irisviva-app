@@ -36,14 +36,18 @@ const TabScreen = ({ label, iconName, theme, focused, center = false }: { label:
 
 export default function TabLayout() {
   const theme = useTheme()
-  const { isLoading, session, isAuthenticated, ...sessionData } = useSession()
+  const { isLoading, session, isAuthenticated, user, ...sessionData } = useSession()
 
   if (isLoading) {
     return null
   }
 
-  if (!isAuthenticated) {
+  if (!isAuthenticated || !user) {
     return <Redirect href='/(signin)' />
+  }
+
+  if (user && !['user', 'professional'].includes(JSON.parse(user).role)) {
+    return <Redirect href='/(admin)' />
   }
 
   return (
