@@ -195,7 +195,60 @@ export default function HomeScreen () {
   }, [store, errors, session, user])
 
   const onDelete = React.useCallback((plan: Plan) => () => {
-    setLoading('delete')
+    openDisclaimer({
+      open: true,
+      title: 'Confirmar de ação',
+      content: `Tem certeza que deseja deletar o plano (${plan.name})?`,
+      closeText: 'Fechar',
+      onClose: () => closeDisclaimer(),
+      actions: [
+        {
+          text: 'Confirmar',
+          color: 'error',
+          onAction: () => {
+            setLoading('delete')
+            axiosUtil.delete({ url: `/plans/${plan.id}`, token: session || '', process: true })
+            .then(res => {
+              onDismiss()
+              setLoading('')
+              openDisclaimer({
+                open: true,
+                title: '',
+                content: (
+                  <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10 }}>
+                    <Icon name='IconSolarCheckCircleLinear' size={50} color={themeConfig.colors.success.main} />
+                    <Typography fontWeight='semibold' fontSize='h4' color='primary'>{res.data.message}</Typography>
+                  </View>
+                ),
+                closeText: 'Fechar',
+                onClose: () => closeDisclaimer(),
+                actions: [],
+                sx: {
+                  zIndex: 9999,
+                }
+              })
+              get()
+            })
+            .catch(err => {
+              setLoading('')
+              openDisclaimer({
+                open: true,
+                title: '',
+                content: (
+                  <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10 }}>
+                    <Icon name='IconSolarDangerTriangleLinear' size={50} color={themeConfig.colors.error.main} />
+                    <Typography fontWeight='semibold' fontSize='h4' color='primary'>{err.data.message || 'Ocorreu um erro ao deletar o plano. Por favor, tente novamente.'}</Typography>
+                  </View>
+                ),
+                closeText: 'Fechar',
+                onClose: () => closeDisclaimer(),
+                actions: [],
+              })
+            })
+          }
+        }
+      ],
+    })
   }, [session])
 
   const onStatus = React.useCallback((plan: Plan) => () => {
