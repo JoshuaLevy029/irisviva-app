@@ -196,11 +196,50 @@ export default function HomeScreen () {
 
   const onDelete = React.useCallback((plan: Plan) => () => {
     setLoading('delete')
-  }, [])
+  }, [session])
 
   const onStatus = React.useCallback((plan: Plan) => () => {
     setLoading('status')
-  }, [])
+
+    axiosUtil.patch({ url: `/plans/${plan.id}`, token: session || '', process: true })
+    .then(res => {
+      onDismiss()
+      setLoading('')
+      openDisclaimer({
+        open: true,
+        title: '',
+        content: (
+          <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10 }}>
+            <Icon name='IconSolarCheckCircleLinear' size={50} color={themeConfig.colors.success.main} />
+            <Typography fontWeight='semibold' fontSize='h4' color='primary'>{res.data.message}</Typography>
+          </View>
+        ),
+        closeText: 'Fechar',
+        onClose: () => closeDisclaimer(),
+        actions: [],
+        sx: {
+          zIndex: 9999,
+        }
+      })
+      get()
+    })
+    .catch(err => {
+      setLoading('')
+      openDisclaimer({
+        open: true,
+        title: '',
+        content: (
+          <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10 }}>
+            <Icon name='IconSolarDangerTriangleLinear' size={50} color={themeConfig.colors.error.main} />
+            <Typography fontWeight='semibold' fontSize='h4' color='primary'>{err.data.message || 'Ocorreu um erro ao atualizar o status. Por favor, tente novamente.'}</Typography>
+          </View>
+        ),
+        closeText: 'Fechar',
+        onClose: () => closeDisclaimer(),
+        actions: [],
+      })
+    })
+  }, [session, user])
 
   return (
     <Container style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', paddingTop: 60, paddingHorizontal: 16 }}>

@@ -40,7 +40,9 @@ export default ({ plan, onEdit, onStatus, onDelete }: PlanItemProps) => {
                 <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                     <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
                         <Typography fontWeight='semibold' color='black'>
-                            {plan.name}
+                            {plan.name} <Typography fontWeight='semibold' color={plan.status ? 'success' : 'error'} sx={{ fontSize: 12, marginLeft: 5 }}>
+                                ({plan.status ? 'Ativo' : 'Inativo'})
+                            </Typography>
                         </Typography>
                         <Typography fontWeight='medium' color='gray'>
                             {formatUtil.money(plan.price_month)}/mês
