@@ -78,7 +78,6 @@ export default function HomeScreen () {
     if (!session || !user) return
 
     plans.on('loading')
-
     axiosUtil.get({ url: '/plans', data: { search }, token: session, process: true })
     .then(res => plans.set({ items: res.data}, 'ready'))
     .catch(err => plans.set({ items: []}, 'error'))
