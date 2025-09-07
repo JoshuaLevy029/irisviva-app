@@ -311,7 +311,7 @@ export default function HomeScreen () {
 
       <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center', marginBottom: 10 }}>
         <Input 
-          placeholder='Buscar por nome do plano ou id'
+          placeholder='Buscar pelo nome do plano'
           value={search} 
           onChangeText={v => setSearch(v)} 
           containerStyle={{ height: 40 }} 
