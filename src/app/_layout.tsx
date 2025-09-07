@@ -8,7 +8,7 @@ import { useFonts } from 'expo-font'
 import { Stack, useRouter } from 'expo-router'
 import * as SplashScreen from 'expo-splash-screen'
 import { useEffect } from 'react'
-import { PaperProvider } from 'react-native-paper'
+import { PaperProvider, Portal } from 'react-native-paper'
 import 'react-native-reanimated'
 
 import themeConfig from '@/config/theme.config'
@@ -154,31 +154,33 @@ function RootLayoutNav() {
                   "onBackgroundContainer": "rgb(211, 228, 255)"
                 } as any
               }}>
-                <Stack
-                  screenOptions={{ headerShown: false }}
-                  initialRouteName='(tabs)'
-                >
-                  <Stack.Screen
-                    name='(tabs)'
-                    options={{ headerShown: false }}
-                  />
-                  <Stack.Screen
-                    name='(admin)'
-                    options={{ headerShown: false }}
-                  />
-                  <Stack.Screen
-                    name='(analysis)'
-                    options={{ headerShown: false }}
-                  />
-                  <Stack.Screen
-                    name='(signin)'
-                    options={{ headerShown: false }}
-                  />
-                  <Stack.Screen
-                    name='(signup)'
-                    options={{ headerShown: false }}
-                  />
-                </Stack>
+                <Portal.Host>
+                  <Stack
+                    screenOptions={{ headerShown: false }}
+                    initialRouteName='(tabs)'
+                  >
+                    <Stack.Screen
+                      name='(tabs)'
+                      options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                      name='(admin)'
+                      options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                      name='(analysis)'
+                      options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                      name='(signin)'
+                      options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
+                      name='(signup)'
+                      options={{ headerShown: false }}
+                    />
+                  </Stack>
+                </Portal.Host>
               </PaperProvider>
             </ThemeProvider>
           </TranslatorProvider>

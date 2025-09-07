@@ -71,6 +71,7 @@ export default function TabLayout() {
           bottom: 27,
           marginHorizontal: 16,
           paddingTop: 5,
+          zIndex: 1,
         },
       }}
     >
