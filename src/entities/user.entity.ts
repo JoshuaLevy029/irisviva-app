@@ -8,6 +8,7 @@ export type User = {
     photo: string
     role: 'user' | 'admin' | 'professional'
     language: 'pt_BR' | 'en'
+    verified: boolean
     password: string
     status: boolean
     refresh_token: string

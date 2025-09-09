@@ -56,7 +56,7 @@ const initialStateErrors: StoreErrors = {
   recommendation_priority: '',
 }
 
-export default function HomeScreen () {
+export default function PlanScreen () {
   const router = useRouter();
   const dimensions = useWindowDimensions()
   const { session, user } = useSession()

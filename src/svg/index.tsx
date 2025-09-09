@@ -1233,6 +1233,1242 @@ import IconSolarWomenLinear from './IconSolarWomenLinear'
 import IconSolarXxxLinear from './IconSolarXxxLinear'
 import IconSolarZipFileLinear from './IconSolarZipFileLinear'
 import IconSolarCloundCrossLinear from './IconSolarCloundCrossLinear'
+import IconSolarDotsBold from './IconSolarDotsBold'
+import IconSolarChatRoundCheckBold from './IconSolarChatRoundCheckBold'
+import IconSolar4kBold from './IconSolar4kBold'
+import IconSolarAccessibilityBold from './IconSolarAccessibilityBold'
+import IconSolarAccumulatorBold from './IconSolarAccumulatorBold'
+import IconSolarAddCircleBold from './IconSolarAddCircleBold'
+import IconSolarAddFolderBold from './IconSolarAddFolderBold'
+import IconSolarAddSquareBold from './IconSolarAddSquareBold'
+import IconSolarAdhesivePlaster2Bold from './IconSolarAdhesivePlaster2Bold'
+import IconSolarAdhesivePlasterBold from './IconSolarAdhesivePlasterBold'
+import IconSolarAirbudsBold from './IconSolarAirbudsBold'
+import IconSolarAirbudsCaseBold from './IconSolarAirbudsCaseBold'
+import IconSolarAirbudsCaseChargeBold from './IconSolarAirbudsCaseChargeBold'
+import IconSolarAirbudsCaseMinimalisticBold from './IconSolarAirbudsCaseMinimalisticBold'
+import IconSolarAirbudsCaseOpenBold from './IconSolarAirbudsCaseOpenBold'
+import IconSolarAirbudsChargeBold from './IconSolarAirbudsChargeBold'
+import IconSolarAirbudsCheckBold from './IconSolarAirbudsCheckBold'
+import IconSolarAirbudsLeftBold from './IconSolarAirbudsLeftBold'
+import IconSolarAirbudsRemoveBold from './IconSolarAirbudsRemoveBold'
+import IconSolarAirbudsRightBold from './IconSolarAirbudsRightBold'
+import IconSolarAlarmAddBold from './IconSolarAlarmAddBold'
+import IconSolarAlarmBold from './IconSolarAlarmBold'
+import IconSolarAlarmPauseBold from './IconSolarAlarmPauseBold'
+import IconSolarAlarmPlayBold from './IconSolarAlarmPlayBold'
+import IconSolarAlarmRemoveBold from './IconSolarAlarmRemoveBold'
+import IconSolarAlarmSleepBold from './IconSolarAlarmSleepBold'
+import IconSolarAlarmTurnOffBold from './IconSolarAlarmTurnOffBold'
+import IconSolarAlbumBold from './IconSolarAlbumBold'
+import IconSolarAlignBottomBold from './IconSolarAlignBottomBold'
+import IconSolarAlignHorizontaSpacingBold from './IconSolarAlignHorizontaSpacingBold'
+import IconSolarAlignHorizontalCenterBold from './IconSolarAlignHorizontalCenterBold'
+import IconSolarAlignLeftBold from './IconSolarAlignLeftBold'
+import IconSolarAlignRightBold from './IconSolarAlignRightBold'
+import IconSolarAlignTopBold from './IconSolarAlignTopBold'
+import IconSolarAlignVerticalCenterBold from './IconSolarAlignVerticalCenterBold'
+import IconSolarAlignVerticalSpacingBold from './IconSolarAlignVerticalSpacingBold'
+import IconSolarAltArrowDownBold from './IconSolarAltArrowDownBold'
+import IconSolarAltArrowLeftBold from './IconSolarAltArrowLeftBold'
+import IconSolarAltArrowRightBold from './IconSolarAltArrowRightBold'
+import IconSolarAltArrowUpBold from './IconSolarAltArrowUpBold'
+import IconSolarArchiveBold from './IconSolarArchiveBold'
+import IconSolarArchiveCheckBold from './IconSolarArchiveCheckBold'
+import IconSolarArchiveDownBold from './IconSolarArchiveDownBold'
+import IconSolarArchiveDownMinimlisticBold from './IconSolarArchiveDownMinimlisticBold'
+import IconSolarArchiveMinimalisticBold from './IconSolarArchiveMinimalisticBold'
+import IconSolarArchiveUpBold from './IconSolarArchiveUpBold'
+import IconSolarArchiveUpMinimlisticBold from './IconSolarArchiveUpMinimlisticBold'
+import IconSolarArmchair2Bold from './IconSolarArmchair2Bold'
+import IconSolarArmchairBold from './IconSolarArmchairBold'
+import IconSolarArrowDownBold from './IconSolarArrowDownBold'
+import IconSolarArrowLeftBold from './IconSolarArrowLeftBold'
+import IconSolarArrowLeftDownBold from './IconSolarArrowLeftDownBold'
+import IconSolarArrowLeftUpBold from './IconSolarArrowLeftUpBold'
+import IconSolarArrowRightBold from './IconSolarArrowRightBold'
+import IconSolarArrowRightDownBold from './IconSolarArrowRightDownBold'
+import IconSolarArrowRightUpBold from './IconSolarArrowRightUpBold'
+import IconSolarArrowToDownLeftBold from './IconSolarArrowToDownLeftBold'
+import IconSolarArrowToDownRightBold from './IconSolarArrowToDownRightBold'
+import IconSolarArrowToTopLeftBold from './IconSolarArrowToTopLeftBold'
+import IconSolarArrowToTopRightBold from './IconSolarArrowToTopRightBold'
+import IconSolarArrowUpBold from './IconSolarArrowUpBold'
+import IconSolarAsteroidBold from './IconSolarAsteroidBold'
+import IconSolarAtomBold from './IconSolarAtomBold'
+import IconSolarAugmentedRealityBold from './IconSolarAugmentedRealityBold'
+import IconSolarBackpackBold from './IconSolarBackpackBold'
+import IconSolarBackspaceBold from './IconSolarBackspaceBold'
+import IconSolarBacteriaBold from './IconSolarBacteriaBold'
+import IconSolarBag2Bold from './IconSolarBag2Bold'
+import IconSolarBag3Bold from './IconSolarBag3Bold'
+import IconSolarBag4Bold from './IconSolarBag4Bold'
+import IconSolarBag5Bold from './IconSolarBag5Bold'
+import IconSolarBagBold from './IconSolarBagBold'
+import IconSolarBagCheckBold from './IconSolarBagCheckBold'
+import IconSolarBagCrossBold from './IconSolarBagCrossBold'
+import IconSolarBagHeartBold from './IconSolarBagHeartBold'
+import IconSolarBagMusic2Bold from './IconSolarBagMusic2Bold'
+import IconSolarBagMusicBold from './IconSolarBagMusicBold'
+import IconSolarBagSmileBold from './IconSolarBagSmileBold'
+import IconSolarBalloonBold from './IconSolarBalloonBold'
+import IconSolarBallsBold from './IconSolarBallsBold'
+import IconSolarBanknote2Bold from './IconSolarBanknote2Bold'
+import IconSolarBanknoteBold from './IconSolarBanknoteBold'
+import IconSolarBarChairBold from './IconSolarBarChairBold'
+import IconSolarBasketballBold from './IconSolarBasketballBold'
+import IconSolarBathBold from './IconSolarBathBold'
+import IconSolarBatteryChargeBold from './IconSolarBatteryChargeBold'
+import IconSolarBatteryChargeMinimalisticBold from './IconSolarBatteryChargeMinimalisticBold'
+import IconSolarBatteryFullBold from './IconSolarBatteryFullBold'
+import IconSolarBatteryFullMinimalisticBold from './IconSolarBatteryFullMinimalisticBold'
+import IconSolarBatteryHalfBold from './IconSolarBatteryHalfBold'
+import IconSolarBatteryHalfMinimalisticBold from './IconSolarBatteryHalfMinimalisticBold'
+import IconSolarBatteryLowBold from './IconSolarBatteryLowBold'
+import IconSolarBatteryLowMinimalisticBold from './IconSolarBatteryLowMinimalisticBold'
+import IconSolarBedBold from './IconSolarBedBold'
+import IconSolarBedsideTable2Bold from './IconSolarBedsideTable2Bold'
+import IconSolarBedsideTable3Bold from './IconSolarBedsideTable3Bold'
+import IconSolarBedsideTable4Bold from './IconSolarBedsideTable4Bold'
+import IconSolarBedsideTableBold from './IconSolarBedsideTableBold'
+import IconSolarBellBingBold from './IconSolarBellBingBold'
+import IconSolarBellBold from './IconSolarBellBold'
+import IconSolarBellOffBold from './IconSolarBellOffBold'
+import IconSolarBenzeneRingBold from './IconSolarBenzeneRingBold'
+import IconSolarBicyclingBold from './IconSolarBicyclingBold'
+import IconSolarBicyclingRoundBold from './IconSolarBicyclingRoundBold'
+import IconSolarBillBold from './IconSolarBillBold'
+import IconSolarBillCheckBold from './IconSolarBillCheckBold'
+import IconSolarBillCrossBold from './IconSolarBillCrossBold'
+import IconSolarBillListBold from './IconSolarBillListBold'
+import IconSolarBlackHole2Bold from './IconSolarBlackHole2Bold'
+import IconSolarBlackHole3Bold from './IconSolarBlackHole3Bold'
+import IconSolarBlackHoleBold from './IconSolarBlackHoleBold'
+import IconSolarBluetoothBold from './IconSolarBluetoothBold'
+import IconSolarBluetoothCircleBold from './IconSolarBluetoothCircleBold'
+import IconSolarBluetoothSquareBold from './IconSolarBluetoothSquareBold'
+import IconSolarBluetoothWaveBold from './IconSolarBluetoothWaveBold'
+import IconSolarBodyBold from './IconSolarBodyBold'
+import IconSolarBodyShapeBold from './IconSolarBodyShapeBold'
+import IconSolarBodyShapeMinimalisticBold from './IconSolarBodyShapeMinimalisticBold'
+import IconSolarBoltBold from './IconSolarBoltBold'
+import IconSolarBoltCircleBold from './IconSolarBoltCircleBold'
+import IconSolarBombBold from './IconSolarBombBold'
+import IconSolarBombEmojiBold from './IconSolarBombEmojiBold'
+import IconSolarBombMinimalisticBold from './IconSolarBombMinimalisticBold'
+import IconSolarBoneBold from './IconSolarBoneBold'
+import IconSolarBoneBrokenBold from './IconSolarBoneBrokenBold'
+import IconSolarBoneCrackBold from './IconSolarBoneCrackBold'
+import IconSolarBonesBold from './IconSolarBonesBold'
+import IconSolarBonfireBold from './IconSolarBonfireBold'
+import IconSolarBook2Bold from './IconSolarBook2Bold'
+import IconSolarBookBold from './IconSolarBookBold'
+import IconSolarBookBookmarkBold from './IconSolarBookBookmarkBold'
+import IconSolarBookBookmarkMinimalisticBold from './IconSolarBookBookmarkMinimalisticBold'
+import IconSolarBookMinimalisticBold from './IconSolarBookMinimalisticBold'
+import IconSolarBookmarkBold from './IconSolarBookmarkBold'
+import IconSolarBookmarkCircleBold from './IconSolarBookmarkCircleBold'
+import IconSolarBookmarkOpenedBold from './IconSolarBookmarkOpenedBold'
+import IconSolarBookmarkSquareBold from './IconSolarBookmarkSquareBold'
+import IconSolarBookmarkSquareMinimalisticBold from './IconSolarBookmarkSquareMinimalisticBold'
+import IconSolarBoomboxBold from './IconSolarBoomboxBold'
+import IconSolarBottleBold from './IconSolarBottleBold'
+import IconSolarBowlingBold from './IconSolarBowlingBold'
+import IconSolarBoxBold from './IconSolarBoxBold'
+import IconSolarBoxMinimalisticBold from './IconSolarBoxMinimalisticBold'
+import IconSolarBranchingPathsDownBold from './IconSolarBranchingPathsDownBold'
+import IconSolarBranchingPathsUpBold from './IconSolarBranchingPathsUpBold'
+import IconSolarBroomBold from './IconSolarBroomBold'
+import IconSolarBugBold from './IconSolarBugBold'
+import IconSolarBugMinimalisticBold from './IconSolarBugMinimalisticBold'
+import IconSolarBuildings2Bold from './IconSolarBuildings2Bold'
+import IconSolarBuildings3Bold from './IconSolarBuildings3Bold'
+import IconSolarBuildingsBold from './IconSolarBuildingsBold'
+import IconSolarBusBold from './IconSolarBusBold'
+import IconSolarCalculatorBold from './IconSolarCalculatorBold'
+import IconSolarCalculatorMinimalisticBold from './IconSolarCalculatorMinimalisticBold'
+import IconSolarCalendarAddBold from './IconSolarCalendarAddBold'
+import IconSolarCalendarBold from './IconSolarCalendarBold'
+import IconSolarCalendarDateBold from './IconSolarCalendarDateBold'
+import IconSolarCalendarMarkBold from './IconSolarCalendarMarkBold'
+import IconSolarCalendarMinimalisticBold from './IconSolarCalendarMinimalisticBold'
+import IconSolarCalendarSearchBold from './IconSolarCalendarSearchBold'
+import IconSolarCallCancelBold from './IconSolarCallCancelBold'
+import IconSolarCallCancelRoundedBold from './IconSolarCallCancelRoundedBold'
+import IconSolarCallChatBold from './IconSolarCallChatBold'
+import IconSolarCallChatRoundedBold from './IconSolarCallChatRoundedBold'
+import IconSolarCallDroppedBold from './IconSolarCallDroppedBold'
+import IconSolarCallDroppedRoundedBold from './IconSolarCallDroppedRoundedBold'
+import IconSolarCallMedicineBold from './IconSolarCallMedicineBold'
+import IconSolarCallMedicineRoundedBold from './IconSolarCallMedicineRoundedBold'
+import IconSolarCameraAddBold from './IconSolarCameraAddBold'
+import IconSolarCameraBold from './IconSolarCameraBold'
+import IconSolarCameraMinimalisticBold from './IconSolarCameraMinimalisticBold'
+import IconSolarCameraRotateBold from './IconSolarCameraRotateBold'
+import IconSolarCameraSquareBold from './IconSolarCameraSquareBold'
+import IconSolarCard2Bold from './IconSolarCard2Bold'
+import IconSolarCardBold from './IconSolarCardBold'
+import IconSolarCardReciveBold from './IconSolarCardReciveBold'
+import IconSolarCardSearchBold from './IconSolarCardSearchBold'
+import IconSolarCardSendBold from './IconSolarCardSendBold'
+import IconSolarCardTransferBold from './IconSolarCardTransferBold'
+import IconSolarCardholderBold from './IconSolarCardholderBold'
+import IconSolarCart2Bold from './IconSolarCart2Bold'
+import IconSolarCart3Bold from './IconSolarCart3Bold'
+import IconSolarCart4Bold from './IconSolarCart4Bold'
+import IconSolarCart5Bold from './IconSolarCart5Bold'
+import IconSolarCartBold from './IconSolarCartBold'
+import IconSolarCartCheckBold from './IconSolarCartCheckBold'
+import IconSolarCartCrossBold from './IconSolarCartCrossBold'
+import IconSolarCartLarge2Bold from './IconSolarCartLarge2Bold'
+import IconSolarCartLarge3Bold from './IconSolarCartLarge3Bold'
+import IconSolarCartLarge4Bold from './IconSolarCartLarge4Bold'
+import IconSolarCartLargeBold from './IconSolarCartLargeBold'
+import IconSolarCartLargeMinimalisticBold from './IconSolarCartLargeMinimalisticBold'
+import IconSolarCartPlusBold from './IconSolarCartPlusBold'
+import IconSolarCaseBold from './IconSolarCaseBold'
+import IconSolarCaseMinimalisticBold from './IconSolarCaseMinimalisticBold'
+import IconSolarCaseRoundBold from './IconSolarCaseRoundBold'
+import IconSolarCaseRoundMinimalisticBold from './IconSolarCaseRoundMinimalisticBold'
+import IconSolarCashOutBold from './IconSolarCashOutBold'
+import IconSolarCassette2Bold from './IconSolarCassette2Bold'
+import IconSolarCassetteBold from './IconSolarCassetteBold'
+import IconSolarCatBold from './IconSolarCatBold'
+import IconSolarChair2Bold from './IconSolarChair2Bold'
+import IconSolarChairBold from './IconSolarChairBold'
+import IconSolarChandelierBold from './IconSolarChandelierBold'
+import IconSolarChart2Bold from './IconSolarChart2Bold'
+import IconSolarChartBold from './IconSolarChartBold'
+import IconSolarChartSquareBold from './IconSolarChartSquareBold'
+import IconSolarChatDotsBold from './IconSolarChatDotsBold'
+import IconSolarChatLineBold from './IconSolarChatLineBold'
+import IconSolarChatRoundBold from './IconSolarChatRoundBold'
+import IconSolarChatRoundCallBold from './IconSolarChatRoundCallBold'
+import IconSolarChatRoundDotsBold from './IconSolarChatRoundDotsBold'
+import IconSolarChatRoundLikeBold from './IconSolarChatRoundLikeBold'
+import IconSolarChatRoundLineBold from './IconSolarChatRoundLineBold'
+import IconSolarChatRoundMoneyBold from './IconSolarChatRoundMoneyBold'
+import IconSolarChatRoundUnreadBold from './IconSolarChatRoundUnreadBold'
+import IconSolarChatRoundVideoBold from './IconSolarChatRoundVideoBold'
+import IconSolarChatSquare2Bold from './IconSolarChatSquare2Bold'
+import IconSolarChatSquareArrowBold from './IconSolarChatSquareArrowBold'
+import IconSolarChatSquareBold from './IconSolarChatSquareBold'
+import IconSolarChatSquareCallBold from './IconSolarChatSquareCallBold'
+import IconSolarChatSquareCheckBold from './IconSolarChatSquareCheckBold'
+import IconSolarChatSquareCodeBold from './IconSolarChatSquareCodeBold'
+import IconSolarChatSquareLikeBold from './IconSolarChatSquareLikeBold'
+import IconSolarChatUnreadBold from './IconSolarChatUnreadBold'
+import IconSolarCheckCircleBold from './IconSolarCheckCircleBold'
+import IconSolarCheckReadBold from './IconSolarCheckReadBold'
+import IconSolarCheckSquareBold from './IconSolarCheckSquareBold'
+import IconSolarChecklistBold from './IconSolarChecklistBold'
+import IconSolarChecklistMinimalisticBold from './IconSolarChecklistMinimalisticBold'
+import IconSolarChefHatBold from './IconSolarChefHatBold'
+import IconSolarChefHatHeartBold from './IconSolarChefHatHeartBold'
+import IconSolarChefHatMinimalisticBold from './IconSolarChefHatMinimalisticBold'
+import IconSolarCircleBottomDownBold from './IconSolarCircleBottomDownBold'
+import IconSolarCircleBottomUpBold from './IconSolarCircleBottomUpBold'
+import IconSolarCircleTopDownBold from './IconSolarCircleTopDownBold'
+import IconSolarCircleTopUpBold from './IconSolarCircleTopUpBold'
+import IconSolarCityBold from './IconSolarCityBold'
+import IconSolarClapperboardBold from './IconSolarClapperboardBold'
+import IconSolarClapperboardEditBold from './IconSolarClapperboardEditBold'
+import IconSolarClapperboardOpenBold from './IconSolarClapperboardOpenBold'
+import IconSolarClapperboardOpenPlayBold from './IconSolarClapperboardOpenPlayBold'
+import IconSolarClapperboardPlayBold from './IconSolarClapperboardPlayBold'
+import IconSolarClapperboardTextBold from './IconSolarClapperboardTextBold'
+import IconSolarClipboardAddBold from './IconSolarClipboardAddBold'
+import IconSolarClipboardBold from './IconSolarClipboardBold'
+import IconSolarClipboardCheckBold from './IconSolarClipboardCheckBold'
+import IconSolarClipboardHeartBold from './IconSolarClipboardHeartBold'
+import IconSolarClipboardListBold from './IconSolarClipboardListBold'
+import IconSolarClipboardRemoveBold from './IconSolarClipboardRemoveBold'
+import IconSolarClipboardTextBold from './IconSolarClipboardTextBold'
+import IconSolarClockCircleBold from './IconSolarClockCircleBold'
+import IconSolarClockSquareBold from './IconSolarClockSquareBold'
+import IconSolarCloseCircleBold from './IconSolarCloseCircleBold'
+import IconSolarCloseSquareBold from './IconSolarCloseSquareBold'
+import IconSolarCloset2Bold from './IconSolarCloset2Bold'
+import IconSolarClosetBold from './IconSolarClosetBold'
+import IconSolarCloudBold from './IconSolarCloudBold'
+import IconSolarCloudBoltBold from './IconSolarCloudBoltBold'
+import IconSolarCloudBoltMinimalisticBold from './IconSolarCloudBoltMinimalisticBold'
+import IconSolarCloudCheckBold from './IconSolarCloudCheckBold'
+import IconSolarCloudCrossBold from './IconSolarCloudCrossBold'
+import IconSolarCloudDownloadBold from './IconSolarCloudDownloadBold'
+import IconSolarCloudFileBold from './IconSolarCloudFileBold'
+import IconSolarCloudMinusBold from './IconSolarCloudMinusBold'
+import IconSolarCloudPlusBold from './IconSolarCloudPlusBold'
+import IconSolarCloudRainBold from './IconSolarCloudRainBold'
+import IconSolarCloudSnowfallBold from './IconSolarCloudSnowfallBold'
+import IconSolarCloudSnowfallMinimalisticBold from './IconSolarCloudSnowfallMinimalisticBold'
+import IconSolarCloudStorageBold from './IconSolarCloudStorageBold'
+import IconSolarCloudStormBold from './IconSolarCloudStormBold'
+import IconSolarCloudSun2Bold from './IconSolarCloudSun2Bold'
+import IconSolarCloudSunBold from './IconSolarCloudSunBold'
+import IconSolarCloudUploadBold from './IconSolarCloudUploadBold'
+import IconSolarCloudWaterdropBold from './IconSolarCloudWaterdropBold'
+import IconSolarCloudWaterdropsBold from './IconSolarCloudWaterdropsBold'
+import IconSolarCloudsBold from './IconSolarCloudsBold'
+import IconSolarCloudyMoonBold from './IconSolarCloudyMoonBold'
+import IconSolarCode2Bold from './IconSolarCode2Bold'
+import IconSolarCodeBold from './IconSolarCodeBold'
+import IconSolarCodeCircleBold from './IconSolarCodeCircleBold'
+import IconSolarCodeFileBold from './IconSolarCodeFileBold'
+import IconSolarCodeScanBold from './IconSolarCodeScanBold'
+import IconSolarCodeSquareBold from './IconSolarCodeSquareBold'
+import IconSolarColourTuneingBold from './IconSolarColourTuneingBold'
+import IconSolarCommandBold from './IconSolarCommandBold'
+import IconSolarCompassBigBold from './IconSolarCompassBigBold'
+import IconSolarCompassBold from './IconSolarCompassBold'
+import IconSolarCompassSquareBold from './IconSolarCompassSquareBold'
+import IconSolarCondicioner2Bold from './IconSolarCondicioner2Bold'
+import IconSolarCondicionerBold from './IconSolarCondicionerBold'
+import IconSolarConfettiBold from './IconSolarConfettiBold'
+import IconSolarConfettiMinimalisticBold from './IconSolarConfettiMinimalisticBold'
+import IconSolarConfoundedCircleBold from './IconSolarConfoundedCircleBold'
+import IconSolarConfoundedSquareBold from './IconSolarConfoundedSquareBold'
+import IconSolarCopyBold from './IconSolarCopyBold'
+import IconSolarCopyrightBold from './IconSolarCopyrightBold'
+import IconSolarCorkscrewBold from './IconSolarCorkscrewBold'
+import IconSolarCosmeticBold from './IconSolarCosmeticBold'
+import IconSolarCourseDownBold from './IconSolarCourseDownBold'
+import IconSolarCourseUpBold from './IconSolarCourseUpBold'
+import IconSolarCpuBold from './IconSolarCpuBold'
+import IconSolarCpuBoltBold from './IconSolarCpuBoltBold'
+import IconSolarCreativeCommonsBold from './IconSolarCreativeCommonsBold'
+import IconSolarCropBold from './IconSolarCropBold'
+import IconSolarCropMinimalisticBold from './IconSolarCropMinimalisticBold'
+import IconSolarCrownBold from './IconSolarCrownBold'
+import IconSolarCrownLineBold from './IconSolarCrownLineBold'
+import IconSolarCrownMinimalisticBold from './IconSolarCrownMinimalisticBold'
+import IconSolarCrownStarBold from './IconSolarCrownStarBold'
+import IconSolarCupBold from './IconSolarCupBold'
+import IconSolarCupFirstBold from './IconSolarCupFirstBold'
+import IconSolarCupHotBold from './IconSolarCupHotBold'
+import IconSolarCupMusicBold from './IconSolarCupMusicBold'
+import IconSolarCupPaperBold from './IconSolarCupPaperBold'
+import IconSolarCupStarBold from './IconSolarCupStarBold'
+import IconSolarCursorBold from './IconSolarCursorBold'
+import IconSolarCursorSquareBold from './IconSolarCursorSquareBold'
+import IconSolarDangerBold from './IconSolarDangerBold'
+import IconSolarDangerCircleBold from './IconSolarDangerCircleBold'
+import IconSolarDangerSquareBold from './IconSolarDangerSquareBold'
+import IconSolarDangerTriangleBold from './IconSolarDangerTriangleBold'
+import IconSolarDatabaseBold from './IconSolarDatabaseBold'
+import IconSolarDeliveryBold from './IconSolarDeliveryBold'
+import IconSolarDevicesBold from './IconSolarDevicesBold'
+import IconSolarDiagramDownBold from './IconSolarDiagramDownBold'
+import IconSolarDiagramUpBold from './IconSolarDiagramUpBold'
+import IconSolarDialog2Bold from './IconSolarDialog2Bold'
+import IconSolarDialogBold from './IconSolarDialogBold'
+import IconSolarDiplomaBold from './IconSolarDiplomaBold'
+import IconSolarDiplomaVerifiedBold from './IconSolarDiplomaVerifiedBold'
+import IconSolarDisketteBold from './IconSolarDisketteBold'
+import IconSolarDislikeBold from './IconSolarDislikeBold'
+import IconSolarDisplayBold from './IconSolarDisplayBold'
+import IconSolarDnaBold from './IconSolarDnaBold'
+import IconSolarDocumentAddBold from './IconSolarDocumentAddBold'
+import IconSolarDocumentBold from './IconSolarDocumentBold'
+import IconSolarDocumentMedicineBold from './IconSolarDocumentMedicineBold'
+import IconSolarDocumentTextBold from './IconSolarDocumentTextBold'
+import IconSolarDocumentsBold from './IconSolarDocumentsBold'
+import IconSolarDocumentsMinimalisticBold from './IconSolarDocumentsMinimalisticBold'
+import IconSolarDollarBold from './IconSolarDollarBold'
+import IconSolarDollarMinimalisticBold from './IconSolarDollarMinimalisticBold'
+import IconSolarDonutBittenBold from './IconSolarDonutBittenBold'
+import IconSolarDonutBold from './IconSolarDonutBold'
+import IconSolarDoubleAltArrowDownBold from './IconSolarDoubleAltArrowDownBold'
+import IconSolarDoubleAltArrowLeftBold from './IconSolarDoubleAltArrowLeftBold'
+import IconSolarDoubleAltArrowRightBold from './IconSolarDoubleAltArrowRightBold'
+import IconSolarDoubleAltArrowUpBold from './IconSolarDoubleAltArrowUpBold'
+import IconSolarDownloadBold from './IconSolarDownloadBold'
+import IconSolarDownloadMinimalisticBold from './IconSolarDownloadMinimalisticBold'
+import IconSolarDownloadSquareBold from './IconSolarDownloadSquareBold'
+import IconSolarDownloadTwiceSquareBold from './IconSolarDownloadTwiceSquareBold'
+import IconSolarDropper2Bold from './IconSolarDropper2Bold'
+import IconSolarDropper3Bold from './IconSolarDropper3Bold'
+import IconSolarDropperBold from './IconSolarDropperBold'
+import IconSolarDropperMinimalistic2Bold from './IconSolarDropperMinimalistic2Bold'
+import IconSolarDropperMinimalisticBold from './IconSolarDropperMinimalisticBold'
+import IconSolarDumbbellBold from './IconSolarDumbbellBold'
+import IconSolarDumbbellLargeBold from './IconSolarDumbbellLargeBold'
+import IconSolarDumbbellLargeMinimalisticBold from './IconSolarDumbbellLargeMinimalisticBold'
+import IconSolarDumbbellSmallBold from './IconSolarDumbbellSmallBold'
+import IconSolarDumbbells2Bold from './IconSolarDumbbells2Bold'
+import IconSolarDumbbellsBold from './IconSolarDumbbellsBold'
+import IconSolarEarthBold from './IconSolarEarthBold'
+import IconSolarElectricRefuelingBold from './IconSolarElectricRefuelingBold'
+import IconSolarEmojiFunnyCircleBold from './IconSolarEmojiFunnyCircleBold'
+import IconSolarEmojiFunnySquareBold from './IconSolarEmojiFunnySquareBold'
+import IconSolarEndCallBold from './IconSolarEndCallBold'
+import IconSolarEndCallRoundedBold from './IconSolarEndCallRoundedBold'
+import IconSolarEraserBold from './IconSolarEraserBold'
+import IconSolarEraserCircleBold from './IconSolarEraserCircleBold'
+import IconSolarEraserSquareBold from './IconSolarEraserSquareBold'
+import IconSolarEuroBold from './IconSolarEuroBold'
+import IconSolarExitBold from './IconSolarExitBold'
+import IconSolarExplicitBold from './IconSolarExplicitBold'
+import IconSolarExportBold from './IconSolarExportBold'
+import IconSolarExpressionlessCircleBold from './IconSolarExpressionlessCircleBold'
+import IconSolarExpressionlessSquareBold from './IconSolarExpressionlessSquareBold'
+import IconSolarEyeBold from './IconSolarEyeBold'
+import IconSolarEyeClosedBold from './IconSolarEyeClosedBold'
+import IconSolarEyeScanBold from './IconSolarEyeScanBold'
+import IconSolarFaceScanCircleBold from './IconSolarFaceScanCircleBold'
+import IconSolarFaceScanSquareBold from './IconSolarFaceScanSquareBold'
+import IconSolarFacemaskCircleBold from './IconSolarFacemaskCircleBold'
+import IconSolarFacemaskSquareBold from './IconSolarFacemaskSquareBold'
+import IconSolarFeedBold from './IconSolarFeedBold'
+import IconSolarFerrisWheelBold from './IconSolarFerrisWheelBold'
+import IconSolarFigmaBold from './IconSolarFigmaBold'
+import IconSolarFigmaFileBold from './IconSolarFigmaFileBold'
+import IconSolarFileBold from './IconSolarFileBold'
+import IconSolarFileCheckBold from './IconSolarFileCheckBold'
+import IconSolarFileCorruptedBold from './IconSolarFileCorruptedBold'
+import IconSolarFileDownloadBold from './IconSolarFileDownloadBold'
+import IconSolarFileFavouriteBold from './IconSolarFileFavouriteBold'
+import IconSolarFileLeftBold from './IconSolarFileLeftBold'
+import IconSolarFileRemoveBold from './IconSolarFileRemoveBold'
+import IconSolarFileRightBold from './IconSolarFileRightBold'
+import IconSolarFileSendBold from './IconSolarFileSendBold'
+import IconSolarFileSmileBold from './IconSolarFileSmileBold'
+import IconSolarFileTextBold from './IconSolarFileTextBold'
+import IconSolarFilterBold from './IconSolarFilterBold'
+import IconSolarFiltersBold from './IconSolarFiltersBold'
+import IconSolarFireBold from './IconSolarFireBold'
+import IconSolarFireMinimalisticBold from './IconSolarFireMinimalisticBold'
+import IconSolarFireSquareBold from './IconSolarFireSquareBold'
+import IconSolarFlag2Bold from './IconSolarFlag2Bold'
+import IconSolarFlagBold from './IconSolarFlagBold'
+import IconSolarFlameBold from './IconSolarFlameBold'
+import IconSolarFlashDriveBold from './IconSolarFlashDriveBold'
+import IconSolarFlashlightBold from './IconSolarFlashlightBold'
+import IconSolarFlashlightOnBold from './IconSolarFlashlightOnBold'
+import IconSolarFlipHorizontalBold from './IconSolarFlipHorizontalBold'
+import IconSolarFlipVerticalBold from './IconSolarFlipVerticalBold'
+import IconSolarFloorLampBold from './IconSolarFloorLampBold'
+import IconSolarFloorLampMinimalisticBold from './IconSolarFloorLampMinimalisticBold'
+import IconSolarFogBold from './IconSolarFogBold'
+import IconSolarFolder2Bold from './IconSolarFolder2Bold'
+import IconSolarFolderBold from './IconSolarFolderBold'
+import IconSolarFolderCheckBold from './IconSolarFolderCheckBold'
+import IconSolarFolderCloudBold from './IconSolarFolderCloudBold'
+import IconSolarFolderErrorBold from './IconSolarFolderErrorBold'
+import IconSolarFolderFavouriteBookmarkBold from './IconSolarFolderFavouriteBookmarkBold'
+import IconSolarFolderFavouriteStarBold from './IconSolarFolderFavouriteStarBold'
+import IconSolarFolderOpenBold from './IconSolarFolderOpenBold'
+import IconSolarFolderPathConnectBold from './IconSolarFolderPathConnectBold'
+import IconSolarFolderSecurityBold from './IconSolarFolderSecurityBold'
+import IconSolarFolderWithFilesBold from './IconSolarFolderWithFilesBold'
+import IconSolarFootballBold from './IconSolarFootballBold'
+import IconSolarForbiddenBold from './IconSolarForbiddenBold'
+import IconSolarForbiddenCircleBold from './IconSolarForbiddenCircleBold'
+import IconSolarForward2Bold from './IconSolarForward2Bold'
+import IconSolarForwardBold from './IconSolarForwardBold'
+import IconSolarFridgeBold from './IconSolarFridgeBold'
+import IconSolarFuelBold from './IconSolarFuelBold'
+import IconSolarFullScreenBold from './IconSolarFullScreenBold'
+import IconSolarFullScreenCircleBold from './IconSolarFullScreenCircleBold'
+import IconSolarFullScreenSquareBold from './IconSolarFullScreenSquareBold'
+import IconSolarGalleryAddBold from './IconSolarGalleryAddBold'
+import IconSolarGalleryBold from './IconSolarGalleryBold'
+import IconSolarGalleryCheckBold from './IconSolarGalleryCheckBold'
+import IconSolarGalleryCircleBold from './IconSolarGalleryCircleBold'
+import IconSolarGalleryDownloadBold from './IconSolarGalleryDownloadBold'
+import IconSolarGalleryEditBold from './IconSolarGalleryEditBold'
+import IconSolarGalleryFavouriteBold from './IconSolarGalleryFavouriteBold'
+import IconSolarGalleryMinimalisticBold from './IconSolarGalleryMinimalisticBold'
+import IconSolarGalleryRemoveBold from './IconSolarGalleryRemoveBold'
+import IconSolarGalleryRoundBold from './IconSolarGalleryRoundBold'
+import IconSolarGallerySendBold from './IconSolarGallerySendBold'
+import IconSolarGalleryWideBold from './IconSolarGalleryWideBold'
+import IconSolarGameboyBold from './IconSolarGameboyBold'
+import IconSolarGamepadBold from './IconSolarGamepadBold'
+import IconSolarGamepadChargeBold from './IconSolarGamepadChargeBold'
+import IconSolarGamepadMinimalisticBold from './IconSolarGamepadMinimalisticBold'
+import IconSolarGamepadNoChargeBold from './IconSolarGamepadNoChargeBold'
+import IconSolarGamepadOldBold from './IconSolarGamepadOldBold'
+import IconSolarGarageBold from './IconSolarGarageBold'
+import IconSolarGasStationBold from './IconSolarGasStationBold'
+import IconSolarGhostBold from './IconSolarGhostBold'
+import IconSolarGhostSmileBold from './IconSolarGhostSmileBold'
+import IconSolarGiftBold from './IconSolarGiftBold'
+import IconSolarGlassesBold from './IconSolarGlassesBold'
+import IconSolarGlobalBold from './IconSolarGlobalBold'
+import IconSolarGlobusBold from './IconSolarGlobusBold'
+import IconSolarGolfBold from './IconSolarGolfBold'
+import IconSolarGpsBold from './IconSolarGpsBold'
+import IconSolarGraphBold from './IconSolarGraphBold'
+import IconSolarGraphDownBold from './IconSolarGraphDownBold'
+import IconSolarGraphDownNewBold from './IconSolarGraphDownNewBold'
+import IconSolarGraphNewBold from './IconSolarGraphNewBold'
+import IconSolarGraphNewUpBold from './IconSolarGraphNewUpBold'
+import IconSolarGraphUpBold from './IconSolarGraphUpBold'
+import IconSolarHamburgerMenuBold from './IconSolarHamburgerMenuBold'
+import IconSolarHandHeartBold from './IconSolarHandHeartBold'
+import IconSolarHandMoneyBold from './IconSolarHandMoneyBold'
+import IconSolarHandPillsBold from './IconSolarHandPillsBold'
+import IconSolarHandShakeBold from './IconSolarHandShakeBold'
+import IconSolarHandStarsBold from './IconSolarHandStarsBold'
+import IconSolarHanger2Bold from './IconSolarHanger2Bold'
+import IconSolarHangerBold from './IconSolarHangerBold'
+import IconSolarHashtagBold from './IconSolarHashtagBold'
+import IconSolarHashtagChatBold from './IconSolarHashtagChatBold'
+import IconSolarHashtagCircleBold from './IconSolarHashtagCircleBold'
+import IconSolarHashtagSquareBold from './IconSolarHashtagSquareBold'
+import IconSolarHeadphonesRoundBold from './IconSolarHeadphonesRoundBold'
+import IconSolarHeadphonesRoundSoundBold from './IconSolarHeadphonesRoundSoundBold'
+import IconSolarHeadphonesSquareBold from './IconSolarHeadphonesSquareBold'
+import IconSolarHeadphonesSquareSoundBold from './IconSolarHeadphonesSquareSoundBold'
+import IconSolarHealthBold from './IconSolarHealthBold'
+import IconSolarHeartAngleBold from './IconSolarHeartAngleBold'
+import IconSolarHeartBold from './IconSolarHeartBold'
+import IconSolarHeartBrokenBold from './IconSolarHeartBrokenBold'
+import IconSolarHeartLockBold from './IconSolarHeartLockBold'
+import IconSolarHeartPulse2Bold from './IconSolarHeartPulse2Bold'
+import IconSolarHeartPulseBold from './IconSolarHeartPulseBold'
+import IconSolarHeartShineBold from './IconSolarHeartShineBold'
+import IconSolarHeartUnlockBold from './IconSolarHeartUnlockBold'
+import IconSolarHeartsBold from './IconSolarHeartsBold'
+import IconSolarHelpBold from './IconSolarHelpBold'
+import IconSolarHighDefinitionBold from './IconSolarHighDefinitionBold'
+import IconSolarHighQualityBold from './IconSolarHighQualityBold'
+import IconSolarHikingBold from './IconSolarHikingBold'
+import IconSolarHikingMinimalisticBold from './IconSolarHikingMinimalisticBold'
+import IconSolarHikingRoundBold from './IconSolarHikingRoundBold'
+import IconSolarHistory2Bold from './IconSolarHistory2Bold'
+import IconSolarHistory3Bold from './IconSolarHistory3Bold'
+import IconSolarHistoryBold from './IconSolarHistoryBold'
+import IconSolarHome2Bold from './IconSolarHome2Bold'
+import IconSolarHomeAddAngleBold from './IconSolarHomeAddAngleBold'
+import IconSolarHomeAddBold from './IconSolarHomeAddBold'
+import IconSolarHomeAngle2Bold from './IconSolarHomeAngle2Bold'
+import IconSolarHomeAngleBold from './IconSolarHomeAngleBold'
+import IconSolarHomeBold from './IconSolarHomeBold'
+import IconSolarHomeSmileAngleBold from './IconSolarHomeSmileAngleBold'
+import IconSolarHomeSmileBold from './IconSolarHomeSmileBold'
+import IconSolarHomeWifiAngleBold from './IconSolarHomeWifiAngleBold'
+import IconSolarHomeWifiBold from './IconSolarHomeWifiBold'
+import IconSolarHospitalBold from './IconSolarHospitalBold'
+import IconSolarHourglassBold from './IconSolarHourglassBold'
+import IconSolarHourglassLineBold from './IconSolarHourglassLineBold'
+import IconSolarImportBold from './IconSolarImportBold'
+import IconSolarInboxArchiveBold from './IconSolarInboxArchiveBold'
+import IconSolarInboxBold from './IconSolarInboxBold'
+import IconSolarInboxInBold from './IconSolarInboxInBold'
+import IconSolarInboxLineBold from './IconSolarInboxLineBold'
+import IconSolarInboxOutBold from './IconSolarInboxOutBold'
+import IconSolarInboxUnreadBold from './IconSolarInboxUnreadBold'
+import IconSolarIncognitoBold from './IconSolarIncognitoBold'
+import IconSolarIncomingCallBold from './IconSolarIncomingCallBold'
+import IconSolarIncomingCallRoundedBold from './IconSolarIncomingCallRoundedBold'
+import IconSolarInfinityBold from './IconSolarInfinityBold'
+import IconSolarInfoCircleBold from './IconSolarInfoCircleBold'
+import IconSolarInfoSquareBold from './IconSolarInfoSquareBold'
+import IconSolarIphoneBold from './IconSolarIphoneBold'
+import IconSolarJarOfPills2Bold from './IconSolarJarOfPills2Bold'
+import IconSolarJarOfPillsBold from './IconSolarJarOfPillsBold'
+import IconSolarKeyBold from './IconSolarKeyBold'
+import IconSolarKeyMinimalistic2Bold from './IconSolarKeyMinimalistic2Bold'
+import IconSolarKeyMinimalisticBold from './IconSolarKeyMinimalisticBold'
+import IconSolarKeyMinimalisticSquare2Bold from './IconSolarKeyMinimalisticSquare2Bold'
+import IconSolarKeyMinimalisticSquare3Bold from './IconSolarKeyMinimalisticSquare3Bold'
+import IconSolarKeyMinimalisticSquareBold from './IconSolarKeyMinimalisticSquareBold'
+import IconSolarKeySquare2Bold from './IconSolarKeySquare2Bold'
+import IconSolarKeySquareBold from './IconSolarKeySquareBold'
+import IconSolarKeyboardBold from './IconSolarKeyboardBold'
+import IconSolarKickScooterBold from './IconSolarKickScooterBold'
+import IconSolarLadleBold from './IconSolarLadleBold'
+import IconSolarLampBold from './IconSolarLampBold'
+import IconSolarLaptop2Bold from './IconSolarLaptop2Bold'
+import IconSolarLaptop3Bold from './IconSolarLaptop3Bold'
+import IconSolarLaptopBold from './IconSolarLaptopBold'
+import IconSolarLaptopMinimalisticBold from './IconSolarLaptopMinimalisticBold'
+import IconSolarLayersBold from './IconSolarLayersBold'
+import IconSolarLayersMinimalisticBold from './IconSolarLayersMinimalisticBold'
+import IconSolarLeafBold from './IconSolarLeafBold'
+import IconSolarLetterBold from './IconSolarLetterBold'
+import IconSolarLetterOpenedBold from './IconSolarLetterOpenedBold'
+import IconSolarLetterUnreadBold from './IconSolarLetterUnreadBold'
+import IconSolarLibraryBold from './IconSolarLibraryBold'
+import IconSolarLightbulbBold from './IconSolarLightbulbBold'
+import IconSolarLightbulbBoltBold from './IconSolarLightbulbBoltBold'
+import IconSolarLightbulbMinimalisticBold from './IconSolarLightbulbMinimalisticBold'
+import IconSolarLightningBold from './IconSolarLightningBold'
+import IconSolarLikeBold from './IconSolarLikeBold'
+import IconSolarLinkBold from './IconSolarLinkBold'
+import IconSolarLinkBrokenBold from './IconSolarLinkBrokenBold'
+import IconSolarLinkBrokenMinimalisticBold from './IconSolarLinkBrokenMinimalisticBold'
+import IconSolarLinkCircleBold from './IconSolarLinkCircleBold'
+import IconSolarLinkMinimalistic2Bold from './IconSolarLinkMinimalistic2Bold'
+import IconSolarLinkMinimalisticBold from './IconSolarLinkMinimalisticBold'
+import IconSolarLinkRoundAngleBold from './IconSolarLinkRoundAngleBold'
+import IconSolarLinkRoundBold from './IconSolarLinkRoundBold'
+import IconSolarLinkSquareBold from './IconSolarLinkSquareBold'
+import IconSolarListArrowDownBold from './IconSolarListArrowDownBold'
+import IconSolarListArrowDownMinimalisticBold from './IconSolarListArrowDownMinimalisticBold'
+import IconSolarListArrowUpBold from './IconSolarListArrowUpBold'
+import IconSolarListArrowUpMinimalisticBold from './IconSolarListArrowUpMinimalisticBold'
+import IconSolarListBold from './IconSolarListBold'
+import IconSolarListCheckBold from './IconSolarListCheckBold'
+import IconSolarListCheckMinimalisticBold from './IconSolarListCheckMinimalisticBold'
+import IconSolarListCrossBold from './IconSolarListCrossBold'
+import IconSolarListCrossMinimalisticBold from './IconSolarListCrossMinimalisticBold'
+import IconSolarListDownBold from './IconSolarListDownBold'
+import IconSolarListDownMinimalisticBold from './IconSolarListDownMinimalisticBold'
+import IconSolarListHeartBold from './IconSolarListHeartBold'
+import IconSolarListHeartMinimalisticBold from './IconSolarListHeartMinimalisticBold'
+import IconSolarListUpBold from './IconSolarListUpBold'
+import IconSolarListUpMinimalisticBold from './IconSolarListUpMinimalisticBold'
+import IconSolarLockBold from './IconSolarLockBold'
+import IconSolarLockKeyholeBold from './IconSolarLockKeyholeBold'
+import IconSolarLockKeyholeMinimalisticBold from './IconSolarLockKeyholeMinimalisticBold'
+import IconSolarLockKeyholeMinimalisticUnlockedBold from './IconSolarLockKeyholeMinimalisticUnlockedBold'
+import IconSolarLockKeyholeUnlockedBold from './IconSolarLockKeyholeUnlockedBold'
+import IconSolarLockPasswordBold from './IconSolarLockPasswordBold'
+import IconSolarLockPasswordUnlockedBold from './IconSolarLockPasswordUnlockedBold'
+import IconSolarLockUnlockedBold from './IconSolarLockUnlockedBold'
+import IconSolarLogin2Bold from './IconSolarLogin2Bold'
+import IconSolarLogin3Bold from './IconSolarLogin3Bold'
+import IconSolarLoginBold from './IconSolarLoginBold'
+import IconSolarLogout2Bold from './IconSolarLogout2Bold'
+import IconSolarLogout3Bold from './IconSolarLogout3Bold'
+import IconSolarLogoutBold from './IconSolarLogoutBold'
+import IconSolarMagicStick2Bold from './IconSolarMagicStick2Bold'
+import IconSolarMagicStick3Bold from './IconSolarMagicStick3Bold'
+import IconSolarMagicStickBold from './IconSolarMagicStickBold'
+import IconSolarMagnetBold from './IconSolarMagnetBold'
+import IconSolarMagnetWaveBold from './IconSolarMagnetWaveBold'
+import IconSolarMagniferBold from './IconSolarMagniferBold'
+import IconSolarMagniferBugBold from './IconSolarMagniferBugBold'
+import IconSolarMagniferZoomInBold from './IconSolarMagniferZoomInBold'
+import IconSolarMagniferZoomOutBold from './IconSolarMagniferZoomOutBold'
+import IconSolarMailboxBold from './IconSolarMailboxBold'
+import IconSolarMapArrowDownBold from './IconSolarMapArrowDownBold'
+import IconSolarMapArrowLeftBold from './IconSolarMapArrowLeftBold'
+import IconSolarMapArrowRightBold from './IconSolarMapArrowRightBold'
+import IconSolarMapArrowSquareBold from './IconSolarMapArrowSquareBold'
+import IconSolarMapArrowUpBold from './IconSolarMapArrowUpBold'
+import IconSolarMapBold from './IconSolarMapBold'
+import IconSolarMapPointAddBold from './IconSolarMapPointAddBold'
+import IconSolarMapPointBold from './IconSolarMapPointBold'
+import IconSolarMapPointFavouriteBold from './IconSolarMapPointFavouriteBold'
+import IconSolarMapPointHospitalBold from './IconSolarMapPointHospitalBold'
+import IconSolarMapPointRemoveBold from './IconSolarMapPointRemoveBold'
+import IconSolarMapPointRotateBold from './IconSolarMapPointRotateBold'
+import IconSolarMapPointSchoolBold from './IconSolarMapPointSchoolBold'
+import IconSolarMapPointSearchBold from './IconSolarMapPointSearchBold'
+import IconSolarMapPointWaveBold from './IconSolarMapPointWaveBold'
+import IconSolarMaskHapplyBold from './IconSolarMaskHapplyBold'
+import IconSolarMaskSadBold from './IconSolarMaskSadBold'
+import IconSolarMasksBold from './IconSolarMasksBold'
+import IconSolarMaximizeBold from './IconSolarMaximizeBold'
+import IconSolarMaximizeSquare2Bold from './IconSolarMaximizeSquare2Bold'
+import IconSolarMaximizeSquare3Bold from './IconSolarMaximizeSquare3Bold'
+import IconSolarMaximizeSquareBold from './IconSolarMaximizeSquareBold'
+import IconSolarMaximizeSquareMinimalisticBold from './IconSolarMaximizeSquareMinimalisticBold'
+import IconSolarMedalRibbonBold from './IconSolarMedalRibbonBold'
+import IconSolarMedalRibbonStarBold from './IconSolarMedalRibbonStarBold'
+import IconSolarMedalRibbonsStarBold from './IconSolarMedalRibbonsStarBold'
+import IconSolarMedalStarBold from './IconSolarMedalStarBold'
+import IconSolarMedalStarCircleBold from './IconSolarMedalStarCircleBold'
+import IconSolarMedalStarSquareBold from './IconSolarMedalStarSquareBold'
+import IconSolarMedicalKitBold from './IconSolarMedicalKitBold'
+import IconSolarMeditationBold from './IconSolarMeditationBold'
+import IconSolarMeditationRoundBold from './IconSolarMeditationRoundBold'
+import IconSolarMenBold from './IconSolarMenBold'
+import IconSolarMentionCircleBold from './IconSolarMentionCircleBold'
+import IconSolarMentionSquareBold from './IconSolarMentionSquareBold'
+import IconSolarMenuDotsBold from './IconSolarMenuDotsBold'
+import IconSolarMenuDotsCircleBold from './IconSolarMenuDotsCircleBold'
+import IconSolarMenuDotsSquareBold from './IconSolarMenuDotsSquareBold'
+import IconSolarMicrophone2Bold from './IconSolarMicrophone2Bold'
+import IconSolarMicrophone3Bold from './IconSolarMicrophone3Bold'
+import IconSolarMicrophoneBold from './IconSolarMicrophoneBold'
+import IconSolarMicrophoneLargeBold from './IconSolarMicrophoneLargeBold'
+import IconSolarMinimalisticMagniferBold from './IconSolarMinimalisticMagniferBold'
+import IconSolarMinimalisticMagniferBugBold from './IconSolarMinimalisticMagniferBugBold'
+import IconSolarMinimalisticMagniferZoomInBold from './IconSolarMinimalisticMagniferZoomInBold'
+import IconSolarMinimalisticMagniferZoomOutBold from './IconSolarMinimalisticMagniferZoomOutBold'
+import IconSolarMinimizeBold from './IconSolarMinimizeBold'
+import IconSolarMinimizeSquare2Bold from './IconSolarMinimizeSquare2Bold'
+import IconSolarMinimizeSquare3Bold from './IconSolarMinimizeSquare3Bold'
+import IconSolarMinimizeSquareBold from './IconSolarMinimizeSquareBold'
+import IconSolarMinimizeSquareMinimalisticBold from './IconSolarMinimizeSquareMinimalisticBold'
+import IconSolarMinusCircleBold from './IconSolarMinusCircleBold'
+import IconSolarMinusSquareBold from './IconSolarMinusSquareBold'
+import IconSolarMirrorBold from './IconSolarMirrorBold'
+import IconSolarMirrorLeftBold from './IconSolarMirrorLeftBold'
+import IconSolarMirrorRightBold from './IconSolarMirrorRightBold'
+import IconSolarMoneyBagBold from './IconSolarMoneyBagBold'
+import IconSolarMonitorBold from './IconSolarMonitorBold'
+import IconSolarMonitorCameraBold from './IconSolarMonitorCameraBold'
+import IconSolarMonitorSmartphoneBold from './IconSolarMonitorSmartphoneBold'
+import IconSolarMoonBold from './IconSolarMoonBold'
+import IconSolarMoonFogBold from './IconSolarMoonFogBold'
+import IconSolarMoonSleepBold from './IconSolarMoonSleepBold'
+import IconSolarMoonStarsBold from './IconSolarMoonStarsBold'
+import IconSolarMouseBold from './IconSolarMouseBold'
+import IconSolarMouseCircleBold from './IconSolarMouseCircleBold'
+import IconSolarMouseMinimalisticBold from './IconSolarMouseMinimalisticBold'
+import IconSolarMoveToFolderBold from './IconSolarMoveToFolderBold'
+import IconSolarMultipleForwardLeftBold from './IconSolarMultipleForwardLeftBold'
+import IconSolarMultipleForwardRightBold from './IconSolarMultipleForwardRightBold'
+import IconSolarMusicLibrary2Bold from './IconSolarMusicLibrary2Bold'
+import IconSolarMusicLibraryBold from './IconSolarMusicLibraryBold'
+import IconSolarMusicNote2Bold from './IconSolarMusicNote2Bold'
+import IconSolarMusicNote3Bold from './IconSolarMusicNote3Bold'
+import IconSolarMusicNote4Bold from './IconSolarMusicNote4Bold'
+import IconSolarMusicNoteBold from './IconSolarMusicNoteBold'
+import IconSolarMusicNoteSlider2Bold from './IconSolarMusicNoteSlider2Bold'
+import IconSolarMusicNoteSliderBold from './IconSolarMusicNoteSliderBold'
+import IconSolarMusicNotesBold from './IconSolarMusicNotesBold'
+import IconSolarMutedBold from './IconSolarMutedBold'
+import IconSolarNotebookBold from './IconSolarNotebookBold'
+import IconSolarNotebookBookmarkBold from './IconSolarNotebookBookmarkBold'
+import IconSolarNotebookMinimalisticBold from './IconSolarNotebookMinimalisticBold'
+import IconSolarNotebookSquareBold from './IconSolarNotebookSquareBold'
+import IconSolarNotesBold from './IconSolarNotesBold'
+import IconSolarNotesMinimalisticBold from './IconSolarNotesMinimalisticBold'
+import IconSolarNotificationLinesRemoveBold from './IconSolarNotificationLinesRemoveBold'
+import IconSolarNotificationRemoveBold from './IconSolarNotificationRemoveBold'
+import IconSolarNotificationUnreadBold from './IconSolarNotificationUnreadBold'
+import IconSolarNotificationUnreadLinesBold from './IconSolarNotificationUnreadLinesBold'
+import IconSolarObjectScanBold from './IconSolarObjectScanBold'
+import IconSolarOutgoingCallBold from './IconSolarOutgoingCallBold'
+import IconSolarOutgoingCallRoundedBold from './IconSolarOutgoingCallRoundedBold'
+import IconSolarOvenMittsBold from './IconSolarOvenMittsBold'
+import IconSolarOvenMittsMinimalisticBold from './IconSolarOvenMittsMinimalisticBold'
+import IconSolarPaintRollerBold from './IconSolarPaintRollerBold'
+import IconSolarPaletteBold from './IconSolarPaletteBold'
+import IconSolarPaletteRoundBold from './IconSolarPaletteRoundBold'
+import IconSolarPallete2Bold from './IconSolarPallete2Bold'
+import IconSolarPanoramaBold from './IconSolarPanoramaBold'
+import IconSolarPaperBinBold from './IconSolarPaperBinBold'
+import IconSolarPaperclip2Bold from './IconSolarPaperclip2Bold'
+import IconSolarPaperclipBold from './IconSolarPaperclipBold'
+import IconSolarPaperclipRounded2Bold from './IconSolarPaperclipRounded2Bold'
+import IconSolarPaperclipRoundedBold from './IconSolarPaperclipRoundedBold'
+import IconSolarParagraphSpacingBold from './IconSolarParagraphSpacingBold'
+import IconSolarPassportBold from './IconSolarPassportBold'
+import IconSolarPassportMinimalisticBold from './IconSolarPassportMinimalisticBold'
+import IconSolarPasswordBold from './IconSolarPasswordBold'
+import IconSolarPasswordMinimalisticBold from './IconSolarPasswordMinimalisticBold'
+import IconSolarPasswordMinimalisticInputBold from './IconSolarPasswordMinimalisticInputBold'
+import IconSolarPauseBold from './IconSolarPauseBold'
+import IconSolarPauseCircleBold from './IconSolarPauseCircleBold'
+import IconSolarPawBold from './IconSolarPawBold'
+import IconSolarPen2Bold from './IconSolarPen2Bold'
+import IconSolarPenBold from './IconSolarPenBold'
+import IconSolarPenNewRoundBold from './IconSolarPenNewRoundBold'
+import IconSolarPenNewSquareBold from './IconSolarPenNewSquareBold'
+import IconSolarPeopleNearbyBold from './IconSolarPeopleNearbyBold'
+import IconSolarPerfumeBold from './IconSolarPerfumeBold'
+import IconSolarPhoneBold from './IconSolarPhoneBold'
+import IconSolarPhoneCallingBold from './IconSolarPhoneCallingBold'
+import IconSolarPhoneCallingRoundedBold from './IconSolarPhoneCallingRoundedBold'
+import IconSolarPhoneRoundedBold from './IconSolarPhoneRoundedBold'
+import IconSolarPieChart2Bold from './IconSolarPieChart2Bold'
+import IconSolarPieChart3Bold from './IconSolarPieChart3Bold'
+import IconSolarPieChartBold from './IconSolarPieChartBold'
+import IconSolarPillBold from './IconSolarPillBold'
+import IconSolarPills2Bold from './IconSolarPills2Bold'
+import IconSolarPills3Bold from './IconSolarPills3Bold'
+import IconSolarPillsBold from './IconSolarPillsBold'
+import IconSolarPinBold from './IconSolarPinBold'
+import IconSolarPinCircleBold from './IconSolarPinCircleBold'
+import IconSolarPinListBold from './IconSolarPinListBold'
+import IconSolarPip2Bold from './IconSolarPip2Bold'
+import IconSolarPipBold from './IconSolarPipBold'
+import IconSolarPipetteBold from './IconSolarPipetteBold'
+import IconSolarPlaaylistMinimalisticBold from './IconSolarPlaaylistMinimalisticBold'
+import IconSolarPlain2Bold from './IconSolarPlain2Bold'
+import IconSolarPlain3Bold from './IconSolarPlain3Bold'
+import IconSolarPlainBold from './IconSolarPlainBold'
+import IconSolarPlanet2Bold from './IconSolarPlanet2Bold'
+import IconSolarPlanet3Bold from './IconSolarPlanet3Bold'
+import IconSolarPlanet4Bold from './IconSolarPlanet4Bold'
+import IconSolarPlanetBold from './IconSolarPlanetBold'
+import IconSolarPlateBold from './IconSolarPlateBold'
+import IconSolarPlayBold from './IconSolarPlayBold'
+import IconSolarPlayCircleBold from './IconSolarPlayCircleBold'
+import IconSolarPlayStreamBold from './IconSolarPlayStreamBold'
+import IconSolarPlaybackSpeedBold from './IconSolarPlaybackSpeedBold'
+import IconSolarPlaylist2Bold from './IconSolarPlaylist2Bold'
+import IconSolarPlaylistBold from './IconSolarPlaylistBold'
+import IconSolarPlaylistMinimalistic2Bold from './IconSolarPlaylistMinimalistic2Bold'
+import IconSolarPlaylistMinimalistic3Bold from './IconSolarPlaylistMinimalistic3Bold'
+import IconSolarPlugCircleBold from './IconSolarPlugCircleBold'
+import IconSolarPlusMinusBold from './IconSolarPlusMinusBold'
+import IconSolarPodcastBold from './IconSolarPodcastBold'
+import IconSolarPointOnMapBold from './IconSolarPointOnMapBold'
+import IconSolarPointOnMapPerspectiveBold from './IconSolarPointOnMapPerspectiveBold'
+import IconSolarPostsCarouselHorizontalBold from './IconSolarPostsCarouselHorizontalBold'
+import IconSolarPostsCarouselVerticalBold from './IconSolarPostsCarouselVerticalBold'
+import IconSolarPowerBold from './IconSolarPowerBold'
+import IconSolarPresentationGraphBold from './IconSolarPresentationGraphBold'
+import IconSolarPrinter2Bold from './IconSolarPrinter2Bold'
+import IconSolarPrinterBold from './IconSolarPrinterBold'
+import IconSolarPrinterMinimalisticBold from './IconSolarPrinterMinimalisticBold'
+import IconSolarProgrammingBold from './IconSolarProgrammingBold'
+import IconSolarProjectorBold from './IconSolarProjectorBold'
+import IconSolarPulse2Bold from './IconSolarPulse2Bold'
+import IconSolarPulseBold from './IconSolarPulseBold'
+import IconSolarQrCodeBold from './IconSolarQrCodeBold'
+import IconSolarQuestionCircleBold from './IconSolarQuestionCircleBold'
+import IconSolarQuestionSquareBold from './IconSolarQuestionSquareBold'
+import IconSolarQuitFullScreenBold from './IconSolarQuitFullScreenBold'
+import IconSolarQuitFullScreenCircleBold from './IconSolarQuitFullScreenCircleBold'
+import IconSolarQuitFullScreenSquareBold from './IconSolarQuitFullScreenSquareBold'
+import IconSolarQuitPipBold from './IconSolarQuitPipBold'
+import IconSolarRadar2Bold from './IconSolarRadar2Bold'
+import IconSolarRadarBold from './IconSolarRadarBold'
+import IconSolarRadialBlurBold from './IconSolarRadialBlurBold'
+import IconSolarRadioBold from './IconSolarRadioBold'
+import IconSolarRadioMinimalisticBold from './IconSolarRadioMinimalisticBold'
+import IconSolarRankingBold from './IconSolarRankingBold'
+import IconSolarReciveSquareBold from './IconSolarReciveSquareBold'
+import IconSolarReciveTwiceSquareBold from './IconSolarReciveTwiceSquareBold'
+import IconSolarRecordBold from './IconSolarRecordBold'
+import IconSolarRecordCircleBold from './IconSolarRecordCircleBold'
+import IconSolarRecordMinimalisticBold from './IconSolarRecordMinimalisticBold'
+import IconSolarRecordSquareBold from './IconSolarRecordSquareBold'
+import IconSolarReel2Bold from './IconSolarReel2Bold'
+import IconSolarReelBold from './IconSolarReelBold'
+import IconSolarRefreshBold from './IconSolarRefreshBold'
+import IconSolarRefreshCircleBold from './IconSolarRefreshCircleBold'
+import IconSolarRefreshSquareBold from './IconSolarRefreshSquareBold'
+import IconSolarRemoteController2Bold from './IconSolarRemoteController2Bold'
+import IconSolarRemoteControllerBold from './IconSolarRemoteControllerBold'
+import IconSolarRemoteControllerMinimalisticBold from './IconSolarRemoteControllerMinimalisticBold'
+import IconSolarRemoveFolderBold from './IconSolarRemoveFolderBold'
+import IconSolarReorderBold from './IconSolarReorderBold'
+import IconSolarRepeatBold from './IconSolarRepeatBold'
+import IconSolarRepeatOneBold from './IconSolarRepeatOneBold'
+import IconSolarRepeatOneMinimalisticBold from './IconSolarRepeatOneMinimalisticBold'
+import IconSolarReply2Bold from './IconSolarReply2Bold'
+import IconSolarReplyBold from './IconSolarReplyBold'
+import IconSolarRestartBold from './IconSolarRestartBold'
+import IconSolarRestartCircleBold from './IconSolarRestartCircleBold'
+import IconSolarRestartSquareBold from './IconSolarRestartSquareBold'
+import IconSolarRevoteBold from './IconSolarRevoteBold'
+import IconSolarRewind10SecondsBackBold from './IconSolarRewind10SecondsBackBold'
+import IconSolarRewind10SecondsForwardBold from './IconSolarRewind10SecondsForwardBold'
+import IconSolarRewind15SecondsBackBold from './IconSolarRewind15SecondsBackBold'
+import IconSolarRewind15SecondsForwardBold from './IconSolarRewind15SecondsForwardBold'
+import IconSolarRewind5SecondsBackBold from './IconSolarRewind5SecondsBackBold'
+import IconSolarRewind5SecondsForwardBold from './IconSolarRewind5SecondsForwardBold'
+import IconSolarRewindBackBold from './IconSolarRewindBackBold'
+import IconSolarRewindBackCircleBold from './IconSolarRewindBackCircleBold'
+import IconSolarRewindForwardBold from './IconSolarRewindForwardBold'
+import IconSolarRewindForwardCircleBold from './IconSolarRewindForwardCircleBold'
+import IconSolarRocket2Bold from './IconSolarRocket2Bold'
+import IconSolarRocketBold from './IconSolarRocketBold'
+import IconSolarRollingPinBold from './IconSolarRollingPinBold'
+import IconSolarRoundAltArrowDownBold from './IconSolarRoundAltArrowDownBold'
+import IconSolarRoundAltArrowLeftBold from './IconSolarRoundAltArrowLeftBold'
+import IconSolarRoundAltArrowRightBold from './IconSolarRoundAltArrowRightBold'
+import IconSolarRoundAltArrowUpBold from './IconSolarRoundAltArrowUpBold'
+import IconSolarRoundArrowDownBold from './IconSolarRoundArrowDownBold'
+import IconSolarRoundArrowLeftBold from './IconSolarRoundArrowLeftBold'
+import IconSolarRoundArrowLeftDownBold from './IconSolarRoundArrowLeftDownBold'
+import IconSolarRoundArrowLeftUpBold from './IconSolarRoundArrowLeftUpBold'
+import IconSolarRoundArrowRightBold from './IconSolarRoundArrowRightBold'
+import IconSolarRoundArrowRightDownBold from './IconSolarRoundArrowRightDownBold'
+import IconSolarRoundArrowRightUpBold from './IconSolarRoundArrowRightUpBold'
+import IconSolarRoundArrowUpBold from './IconSolarRoundArrowUpBold'
+import IconSolarRoundDoubleAltArrowDownBold from './IconSolarRoundDoubleAltArrowDownBold'
+import IconSolarRoundDoubleAltArrowLeftBold from './IconSolarRoundDoubleAltArrowLeftBold'
+import IconSolarRoundDoubleAltArrowRightBold from './IconSolarRoundDoubleAltArrowRightBold'
+import IconSolarRoundDoubleAltArrowUpBold from './IconSolarRoundDoubleAltArrowUpBold'
+import IconSolarRoundGraphBold from './IconSolarRoundGraphBold'
+import IconSolarRoundSortHorizontalBold from './IconSolarRoundSortHorizontalBold'
+import IconSolarRoundSortVerticalBold from './IconSolarRoundSortVerticalBold'
+import IconSolarRoundTransferDiagonalBold from './IconSolarRoundTransferDiagonalBold'
+import IconSolarRoundTransferHorizontalBold from './IconSolarRoundTransferHorizontalBold'
+import IconSolarRoundTransferVerticalBold from './IconSolarRoundTransferVerticalBold'
+import IconSolarRoundedMagniferBold from './IconSolarRoundedMagniferBold'
+import IconSolarRoundedMagniferBugBold from './IconSolarRoundedMagniferBugBold'
+import IconSolarRoundedMagniferZoomInBold from './IconSolarRoundedMagniferZoomInBold'
+import IconSolarRoundedMagniferZoomOutBold from './IconSolarRoundedMagniferZoomOutBold'
+import IconSolarRouteBold from './IconSolarRouteBold'
+import IconSolarRouting2Bold from './IconSolarRouting2Bold'
+import IconSolarRouting3Bold from './IconSolarRouting3Bold'
+import IconSolarRoutingBold from './IconSolarRoutingBold'
+import IconSolarRubleBold from './IconSolarRubleBold'
+import IconSolarRugbyBold from './IconSolarRugbyBold'
+import IconSolarRulerAngularBold from './IconSolarRulerAngularBold'
+import IconSolarRulerBold from './IconSolarRulerBold'
+import IconSolarRulerCrossPenBold from './IconSolarRulerCrossPenBold'
+import IconSolarRulerPenBold from './IconSolarRulerPenBold'
+import IconSolarRunning2Bold from './IconSolarRunning2Bold'
+import IconSolarRunningBold from './IconSolarRunningBold'
+import IconSolarRunningRoundBold from './IconSolarRunningRoundBold'
+import IconSolarSadCircleBold from './IconSolarSadCircleBold'
+import IconSolarSadSquareBold from './IconSolarSadSquareBold'
+import IconSolarSafe2Bold from './IconSolarSafe2Bold'
+import IconSolarSafeCircleBold from './IconSolarSafeCircleBold'
+import IconSolarSafeSquareBold from './IconSolarSafeSquareBold'
+import IconSolarSaleBold from './IconSolarSaleBold'
+import IconSolarSaleSquareBold from './IconSolarSaleSquareBold'
+import IconSolarSatelliteBold from './IconSolarSatelliteBold'
+import IconSolarScaleBold from './IconSolarScaleBold'
+import IconSolarScanner2Bold from './IconSolarScanner2Bold'
+import IconSolarScannerBold from './IconSolarScannerBold'
+import IconSolarScissorsBold from './IconSolarScissorsBold'
+import IconSolarScissorsSquareBold from './IconSolarScissorsSquareBold'
+import IconSolarScooterBold from './IconSolarScooterBold'
+import IconSolarScreenShareBold from './IconSolarScreenShareBold'
+import IconSolarScreencast2Bold from './IconSolarScreencast2Bold'
+import IconSolarScreencastBold from './IconSolarScreencastBold'
+import IconSolarSdCardBold from './IconSolarSdCardBold'
+import IconSolarSendSquareBold from './IconSolarSendSquareBold'
+import IconSolarSendTwiceSquareBold from './IconSolarSendTwiceSquareBold'
+import IconSolarServer2Bold from './IconSolarServer2Bold'
+import IconSolarServerBold from './IconSolarServerBold'
+import IconSolarServerMinimalisticBold from './IconSolarServerMinimalisticBold'
+import IconSolarServerPathBold from './IconSolarServerPathBold'
+import IconSolarServerSquareBold from './IconSolarServerSquareBold'
+import IconSolarServerSquareCloudBold from './IconSolarServerSquareCloudBold'
+import IconSolarServerSquareUpdateBold from './IconSolarServerSquareUpdateBold'
+import IconSolarSettingsBold from './IconSolarSettingsBold'
+import IconSolarSettingsMinimalisticBold from './IconSolarSettingsMinimalisticBold'
+import IconSolarShareBold from './IconSolarShareBold'
+import IconSolarShareCircleBold from './IconSolarShareCircleBold'
+import IconSolarShieldBold from './IconSolarShieldBold'
+import IconSolarShieldCheckBold from './IconSolarShieldCheckBold'
+import IconSolarShieldCrossBold from './IconSolarShieldCrossBold'
+import IconSolarShieldKeyholeBold from './IconSolarShieldKeyholeBold'
+import IconSolarShieldKeyholeMinimalisticBold from './IconSolarShieldKeyholeMinimalisticBold'
+import IconSolarShieldMinimalisticBold from './IconSolarShieldMinimalisticBold'
+import IconSolarShieldMinusBold from './IconSolarShieldMinusBold'
+import IconSolarShieldNetworkBold from './IconSolarShieldNetworkBold'
+import IconSolarShieldPlusBold from './IconSolarShieldPlusBold'
+import IconSolarShieldStarBold from './IconSolarShieldStarBold'
+import IconSolarShieldUpBold from './IconSolarShieldUpBold'
+import IconSolarShieldUserBold from './IconSolarShieldUserBold'
+import IconSolarShieldWarningBold from './IconSolarShieldWarningBold'
+import IconSolarShockAbsorberBold from './IconSolarShockAbsorberBold'
+import IconSolarShop2Bold from './IconSolarShop2Bold'
+import IconSolarShopBold from './IconSolarShopBold'
+import IconSolarShopMinimalisticBold from './IconSolarShopMinimalisticBold'
+import IconSolarShuffleBold from './IconSolarShuffleBold'
+import IconSolarSidebarCodeBold from './IconSolarSidebarCodeBold'
+import IconSolarSidebarMinimalisticBold from './IconSolarSidebarMinimalisticBold'
+import IconSolarSiderbarBold from './IconSolarSiderbarBold'
+import IconSolarSignpost2Bold from './IconSolarSignpost2Bold'
+import IconSolarSignpostBold from './IconSolarSignpostBold'
+import IconSolarSimCardBold from './IconSolarSimCardBold'
+import IconSolarSimCardMinimalisticBold from './IconSolarSimCardMinimalisticBold'
+import IconSolarSimCardsBold from './IconSolarSimCardsBold'
+import IconSolarSirenBold from './IconSolarSirenBold'
+import IconSolarSirenRoundedBold from './IconSolarSirenRoundedBold'
+import IconSolarSkateboardBold from './IconSolarSkateboardBold'
+import IconSolarSkateboardingBold from './IconSolarSkateboardingBold'
+import IconSolarSkateboardingRoundBold from './IconSolarSkateboardingRoundBold'
+import IconSolarSkipNextBold from './IconSolarSkipNextBold'
+import IconSolarSkipPreviousBold from './IconSolarSkipPreviousBold'
+import IconSolarSkirtBold from './IconSolarSkirtBold'
+import IconSolarSlashCircleBold from './IconSolarSlashCircleBold'
+import IconSolarSlashSquareBold from './IconSolarSlashSquareBold'
+import IconSolarSledgehammerBold from './IconSolarSledgehammerBold'
+import IconSolarSleepingBold from './IconSolarSleepingBold'
+import IconSolarSleepingCircleBold from './IconSolarSleepingCircleBold'
+import IconSolarSleepingSquareBold from './IconSolarSleepingSquareBold'
+import IconSolarSliderHorizontalBold from './IconSolarSliderHorizontalBold'
+import IconSolarSliderMinimalisticHorizontalBold from './IconSolarSliderMinimalisticHorizontalBold'
+import IconSolarSliderVerticalBold from './IconSolarSliderVerticalBold'
+import IconSolarSliderVerticalMinimalisticBold from './IconSolarSliderVerticalMinimalisticBold'
+import IconSolarSmartHomeAngleBold from './IconSolarSmartHomeAngleBold'
+import IconSolarSmartHomeBold from './IconSolarSmartHomeBold'
+import IconSolarSmartSpeaker2Bold from './IconSolarSmartSpeaker2Bold'
+import IconSolarSmartSpeakerBold from './IconSolarSmartSpeakerBold'
+import IconSolarSmartSpeakerMinimalisticBold from './IconSolarSmartSpeakerMinimalisticBold'
+import IconSolarSmartVacuumCleaner2Bold from './IconSolarSmartVacuumCleaner2Bold'
+import IconSolarSmartVacuumCleanerBold from './IconSolarSmartVacuumCleanerBold'
+import IconSolarSmartphone2Bold from './IconSolarSmartphone2Bold'
+import IconSolarSmartphoneBold from './IconSolarSmartphoneBold'
+import IconSolarSmartphoneRotate2Bold from './IconSolarSmartphoneRotate2Bold'
+import IconSolarSmartphoneRotateAngleBold from './IconSolarSmartphoneRotateAngleBold'
+import IconSolarSmartphoneRotateOrientationBold from './IconSolarSmartphoneRotateOrientationBold'
+import IconSolarSmartphoneUpdateBold from './IconSolarSmartphoneUpdateBold'
+import IconSolarSmartphoneVibrationBold from './IconSolarSmartphoneVibrationBold'
+import IconSolarSmileCircleBold from './IconSolarSmileCircleBold'
+import IconSolarSmileSquareBold from './IconSolarSmileSquareBold'
+import IconSolarSnowflakeBold from './IconSolarSnowflakeBold'
+import IconSolarSocketBold from './IconSolarSocketBold'
+import IconSolarSofa2Bold from './IconSolarSofa2Bold'
+import IconSolarSofa3Bold from './IconSolarSofa3Bold'
+import IconSolarSofaBold from './IconSolarSofaBold'
+import IconSolarSortBold from './IconSolarSortBold'
+import IconSolarSortByAlphabetBold from './IconSolarSortByAlphabetBold'
+import IconSolarSortByTimeBold from './IconSolarSortByTimeBold'
+import IconSolarSortFromBottomToTopBold from './IconSolarSortFromBottomToTopBold'
+import IconSolarSortFromTopToBottomBold from './IconSolarSortFromTopToBottomBold'
+import IconSolarSortHorizontalBold from './IconSolarSortHorizontalBold'
+import IconSolarSortVerticalBold from './IconSolarSortVerticalBold'
+import IconSolarSoundwaveBold from './IconSolarSoundwaveBold'
+import IconSolarSoundwaveCircleBold from './IconSolarSoundwaveCircleBold'
+import IconSolarSoundwaveSquareBold from './IconSolarSoundwaveSquareBold'
+import IconSolarSpeakerBold from './IconSolarSpeakerBold'
+import IconSolarSpeakerMinimalisticBold from './IconSolarSpeakerMinimalisticBold'
+import IconSolarSpecialEffectsBold from './IconSolarSpecialEffectsBold'
+import IconSolarSpedometerLowBold from './IconSolarSpedometerLowBold'
+import IconSolarSpedometerMaxBold from './IconSolarSpedometerMaxBold'
+import IconSolarSpedometerMiddleBold from './IconSolarSpedometerMiddleBold'
+import IconSolarSquareAcademicCap2Bold from './IconSolarSquareAcademicCap2Bold'
+import IconSolarSquareAcademicCapBold from './IconSolarSquareAcademicCapBold'
+import IconSolarSquareAltArrowDownBold from './IconSolarSquareAltArrowDownBold'
+import IconSolarSquareAltArrowLeftBold from './IconSolarSquareAltArrowLeftBold'
+import IconSolarSquareAltArrowRightBold from './IconSolarSquareAltArrowRightBold'
+import IconSolarSquareAltArrowUpBold from './IconSolarSquareAltArrowUpBold'
+import IconSolarSquareArrowDownBold from './IconSolarSquareArrowDownBold'
+import IconSolarSquareArrowLeftBold from './IconSolarSquareArrowLeftBold'
+import IconSolarSquareArrowLeftDownBold from './IconSolarSquareArrowLeftDownBold'
+import IconSolarSquareArrowLeftUpBold from './IconSolarSquareArrowLeftUpBold'
+import IconSolarSquareArrowRightBold from './IconSolarSquareArrowRightBold'
+import IconSolarSquareArrowRightDownBold from './IconSolarSquareArrowRightDownBold'
+import IconSolarSquareArrowRightUpBold from './IconSolarSquareArrowRightUpBold'
+import IconSolarSquareArrowUpBold from './IconSolarSquareArrowUpBold'
+import IconSolarSquareBottomDownBold from './IconSolarSquareBottomDownBold'
+import IconSolarSquareBottomUpBold from './IconSolarSquareBottomUpBold'
+import IconSolarSquareDoubleAltArrowDownBold from './IconSolarSquareDoubleAltArrowDownBold'
+import IconSolarSquareDoubleAltArrowLeftBold from './IconSolarSquareDoubleAltArrowLeftBold'
+import IconSolarSquareDoubleAltArrowRightBold from './IconSolarSquareDoubleAltArrowRightBold'
+import IconSolarSquareDoubleAltArrowUpBold from './IconSolarSquareDoubleAltArrowUpBold'
+import IconSolarSquareForwardBold from './IconSolarSquareForwardBold'
+import IconSolarSquareShareLineBold from './IconSolarSquareShareLineBold'
+import IconSolarSquareSortHorizontalBold from './IconSolarSquareSortHorizontalBold'
+import IconSolarSquareSortVerticalBold from './IconSolarSquareSortVerticalBold'
+import IconSolarSquareTopDownBold from './IconSolarSquareTopDownBold'
+import IconSolarSquareTopUpBold from './IconSolarSquareTopUpBold'
+import IconSolarSquareTransferHorizontalBold from './IconSolarSquareTransferHorizontalBold'
+import IconSolarSquareTransferVerticalBold from './IconSolarSquareTransferVerticalBold'
+import IconSolarSsdRoundBold from './IconSolarSsdRoundBold'
+import IconSolarSsdSquareBold from './IconSolarSsdSquareBold'
+import IconSolarStarAngleBold from './IconSolarStarAngleBold'
+import IconSolarStarBold from './IconSolarStarBold'
+import IconSolarStarCircleBold from './IconSolarStarCircleBold'
+import IconSolarStarFall2Bold from './IconSolarStarFall2Bold'
+import IconSolarStarFallBold from './IconSolarStarFallBold'
+import IconSolarStarFallMinimalistic2Bold from './IconSolarStarFallMinimalistic2Bold'
+import IconSolarStarFallMinimalisticBold from './IconSolarStarFallMinimalisticBold'
+import IconSolarStarRainbowBold from './IconSolarStarRainbowBold'
+import IconSolarStarRingBold from './IconSolarStarRingBold'
+import IconSolarStarRingsBold from './IconSolarStarRingsBold'
+import IconSolarStarShineBold from './IconSolarStarShineBold'
+import IconSolarStarsBold from './IconSolarStarsBold'
+import IconSolarStarsLineBold from './IconSolarStarsLineBold'
+import IconSolarStarsMinimalisticBold from './IconSolarStarsMinimalisticBold'
+import IconSolarStationBold from './IconSolarStationBold'
+import IconSolarStationMinimalisticBold from './IconSolarStationMinimalisticBold'
+import IconSolarStethoscopeBold from './IconSolarStethoscopeBold'
+import IconSolarStickerCircleBold from './IconSolarStickerCircleBold'
+import IconSolarStickerSmileCircle2Bold from './IconSolarStickerSmileCircle2Bold'
+import IconSolarStickerSmileCircleBold from './IconSolarStickerSmileCircleBold'
+import IconSolarStickerSmileSquareBold from './IconSolarStickerSmileSquareBold'
+import IconSolarStickerSquareBold from './IconSolarStickerSquareBold'
+import IconSolarStopBold from './IconSolarStopBold'
+import IconSolarStopCircleBold from './IconSolarStopCircleBold'
+import IconSolarStopwatchBold from './IconSolarStopwatchBold'
+import IconSolarStopwatchPauseBold from './IconSolarStopwatchPauseBold'
+import IconSolarStopwatchPlayBold from './IconSolarStopwatchPlayBold'
+import IconSolarStreamBold from './IconSolarStreamBold'
+import IconSolarStreetsBold from './IconSolarStreetsBold'
+import IconSolarStreetsMapPointBold from './IconSolarStreetsMapPointBold'
+import IconSolarStreetsNavigationBold from './IconSolarStreetsNavigationBold'
+import IconSolarStretchingBold from './IconSolarStretchingBold'
+import IconSolarStretchingRoundBold from './IconSolarStretchingRoundBold'
+import IconSolarStructureBold from './IconSolarStructureBold'
+import IconSolarSubtitlesBold from './IconSolarSubtitlesBold'
+import IconSolarSuitcaseBold from './IconSolarSuitcaseBold'
+import IconSolarSuitcaseLinesBold from './IconSolarSuitcaseLinesBold'
+import IconSolarSuitcaseTagBold from './IconSolarSuitcaseTagBold'
+import IconSolarSun2Bold from './IconSolarSun2Bold'
+import IconSolarSunBold from './IconSolarSunBold'
+import IconSolarSunFogBold from './IconSolarSunFogBold'
+import IconSolarSunriseBold from './IconSolarSunriseBold'
+import IconSolarSunsetBold from './IconSolarSunsetBold'
+import IconSolarSuspensionBold from './IconSolarSuspensionBold'
+import IconSolarSuspensionBoltBold from './IconSolarSuspensionBoltBold'
+import IconSolarSuspensionCrossBold from './IconSolarSuspensionCrossBold'
+import IconSolarSwimmingBold from './IconSolarSwimmingBold'
+import IconSolarSyringeBold from './IconSolarSyringeBold'
+import IconSolarTShirtBold from './IconSolarTShirtBold'
+import IconSolarTabletBold from './IconSolarTabletBold'
+import IconSolarTagBold from './IconSolarTagBold'
+import IconSolarTagHorizontalBold from './IconSolarTagHorizontalBold'
+import IconSolarTagPriceBold from './IconSolarTagPriceBold'
+import IconSolarTargetBold from './IconSolarTargetBold'
+import IconSolarTeaCupBold from './IconSolarTeaCupBold'
+import IconSolarTelescopeBold from './IconSolarTelescopeBold'
+import IconSolarTemperatureBold from './IconSolarTemperatureBold'
+import IconSolarTennis2Bold from './IconSolarTennis2Bold'
+import IconSolarTennisBold from './IconSolarTennisBold'
+import IconSolarTestTubeBold from './IconSolarTestTubeBold'
+import IconSolarTestTubeMinimalisticBold from './IconSolarTestTubeMinimalisticBold'
+import IconSolarTextBold from './IconSolarTextBold'
+import IconSolarTextBoldBold from './IconSolarTextBoldBold'
+import IconSolarTextBoldCircleBold from './IconSolarTextBoldCircleBold'
+import IconSolarTextBoldSquareBold from './IconSolarTextBoldSquareBold'
+import IconSolarTextCircleBold from './IconSolarTextCircleBold'
+import IconSolarTextCrossBold from './IconSolarTextCrossBold'
+import IconSolarTextCrossCircleBold from './IconSolarTextCrossCircleBold'
+import IconSolarTextCrossSquareBold from './IconSolarTextCrossSquareBold'
+import IconSolarTextFieldBold from './IconSolarTextFieldBold'
+import IconSolarTextFieldFocusBold from './IconSolarTextFieldFocusBold'
+import IconSolarTextItalicBold from './IconSolarTextItalicBold'
+import IconSolarTextItalicCircleBold from './IconSolarTextItalicCircleBold'
+import IconSolarTextItalicSquareBold from './IconSolarTextItalicSquareBold'
+import IconSolarTextSelectionBold from './IconSolarTextSelectionBold'
+import IconSolarTextSquare2Bold from './IconSolarTextSquare2Bold'
+import IconSolarTextSquareBold from './IconSolarTextSquareBold'
+import IconSolarTextUnderlineBold from './IconSolarTextUnderlineBold'
+import IconSolarTextUnderlineCircleBold from './IconSolarTextUnderlineCircleBold'
+import IconSolarTextUnderlineCrossBold from './IconSolarTextUnderlineCrossBold'
+import IconSolarThermometerBold from './IconSolarThermometerBold'
+import IconSolarThreeSquaresBold from './IconSolarThreeSquaresBold'
+import IconSolarTickerStarBold from './IconSolarTickerStarBold'
+import IconSolarTicketBold from './IconSolarTicketBold'
+import IconSolarTicketSaleBold from './IconSolarTicketSaleBold'
+import IconSolarToPipBold from './IconSolarToPipBold'
+import IconSolarTornadoBold from './IconSolarTornadoBold'
+import IconSolarTornadoSmallBold from './IconSolarTornadoSmallBold'
+import IconSolarTrafficBold from './IconSolarTrafficBold'
+import IconSolarTrafficEconomyBold from './IconSolarTrafficEconomyBold'
+import IconSolarTramBold from './IconSolarTramBold'
+import IconSolarTransferHorizontalBold from './IconSolarTransferHorizontalBold'
+import IconSolarTransferVerticalBold from './IconSolarTransferVerticalBold'
+import IconSolarTranslation2Bold from './IconSolarTranslation2Bold'
+import IconSolarTranslationBold from './IconSolarTranslationBold'
+import IconSolarTransmissionBold from './IconSolarTransmissionBold'
+import IconSolarTransmissionCircleBold from './IconSolarTransmissionCircleBold'
+import IconSolarTransmissionSquareBold from './IconSolarTransmissionSquareBold'
+import IconSolarTrashBin2Bold from './IconSolarTrashBin2Bold'
+import IconSolarTrashBinMinimalistic2Bold from './IconSolarTrashBinMinimalistic2Bold'
+import IconSolarTrashBinMinimalisticBold from './IconSolarTrashBinMinimalisticBold'
+import IconSolarTrashBinTrashBold from './IconSolarTrashBinTrashBold'
+import IconSolarTreadmillBold from './IconSolarTreadmillBold'
+import IconSolarTreadmillRoundBold from './IconSolarTreadmillRoundBold'
+import IconSolarTrellisBold from './IconSolarTrellisBold'
+import IconSolarTuning2Bold from './IconSolarTuning2Bold'
+import IconSolarTuning3Bold from './IconSolarTuning3Bold'
+import IconSolarTuning4Bold from './IconSolarTuning4Bold'
+import IconSolarTuningBold from './IconSolarTuningBold'
+import IconSolarTuningSquare2Bold from './IconSolarTuningSquare2Bold'
+import IconSolarTuningSquareBold from './IconSolarTuningSquareBold'
+import IconSolarTurntableBold from './IconSolarTurntableBold'
+import IconSolarTurntableMinimalisticBold from './IconSolarTurntableMinimalisticBold'
+import IconSolarTurntableMusicNoteBold from './IconSolarTurntableMusicNoteBold'
+import IconSolarTvBold from './IconSolarTvBold'
+import IconSolarUfo2Bold from './IconSolarUfo2Bold'
+import IconSolarUfo3Bold from './IconSolarUfo3Bold'
+import IconSolarUfoBold from './IconSolarUfoBold'
+import IconSolarUmbrellaBold from './IconSolarUmbrellaBold'
+import IconSolarUndoLeftBold from './IconSolarUndoLeftBold'
+import IconSolarUndoLeftRoundBold from './IconSolarUndoLeftRoundBold'
+import IconSolarUndoLeftRoundSquareBold from './IconSolarUndoLeftRoundSquareBold'
+import IconSolarUndoLeftSquareBold from './IconSolarUndoLeftSquareBold'
+import IconSolarUndoRightBold from './IconSolarUndoRightBold'
+import IconSolarUndoRightRoundBold from './IconSolarUndoRightRoundBold'
+import IconSolarUndoRightRoundSquareBold from './IconSolarUndoRightRoundSquareBold'
+import IconSolarUndoRightSquareBold from './IconSolarUndoRightSquareBold'
+import IconSolarUnreadBold from './IconSolarUnreadBold'
+import IconSolarUploadBold from './IconSolarUploadBold'
+import IconSolarUploadMinimalisticBold from './IconSolarUploadMinimalisticBold'
+import IconSolarUploadSquareBold from './IconSolarUploadSquareBold'
+import IconSolarUploadTrack2Bold from './IconSolarUploadTrack2Bold'
+import IconSolarUploadTrackBold from './IconSolarUploadTrackBold'
+import IconSolarUploadTwiceSquareBold from './IconSolarUploadTwiceSquareBold'
+import IconSolarUsbBold from './IconSolarUsbBold'
+import IconSolarUsbCircleBold from './IconSolarUsbCircleBold'
+import IconSolarUsbSquareBold from './IconSolarUsbSquareBold'
+import IconSolarUserBlockBold from './IconSolarUserBlockBold'
+import IconSolarUserBlockRoundedBold from './IconSolarUserBlockRoundedBold'
+import IconSolarUserBold from './IconSolarUserBold'
+import IconSolarUserCheckBold from './IconSolarUserCheckBold'
+import IconSolarUserCheckRoundedBold from './IconSolarUserCheckRoundedBold'
+import IconSolarUserCircleBold from './IconSolarUserCircleBold'
+import IconSolarUserCrossBold from './IconSolarUserCrossBold'
+import IconSolarUserCrossRoundedBold from './IconSolarUserCrossRoundedBold'
+import IconSolarUserHandUpBold from './IconSolarUserHandUpBold'
+import IconSolarUserHandsBold from './IconSolarUserHandsBold'
+import IconSolarUserHeartBold from './IconSolarUserHeartBold'
+import IconSolarUserHeartRoundedBold from './IconSolarUserHeartRoundedBold'
+import IconSolarUserIdBold from './IconSolarUserIdBold'
+import IconSolarUserMinusBold from './IconSolarUserMinusBold'
+import IconSolarUserMinusRoundedBold from './IconSolarUserMinusRoundedBold'
+import IconSolarUserPlusBold from './IconSolarUserPlusBold'
+import IconSolarUserPlusRoundedBold from './IconSolarUserPlusRoundedBold'
+import IconSolarUserRoundedBold from './IconSolarUserRoundedBold'
+import IconSolarUserSpeakBold from './IconSolarUserSpeakBold'
+import IconSolarUserSpeakRoundedBold from './IconSolarUserSpeakRoundedBold'
+import IconSolarUsersGroupRoundedBold from './IconSolarUsersGroupRoundedBold'
+import IconSolarUsersGroupTwoRoundedBold from './IconSolarUsersGroupTwoRoundedBold'
+import IconSolarVerifiedCheckBold from './IconSolarVerifiedCheckBold'
+import IconSolarVideoFrame2Bold from './IconSolarVideoFrame2Bold'
+import IconSolarVideoFrameBold from './IconSolarVideoFrameBold'
+import IconSolarVideoFrameCut2Bold from './IconSolarVideoFrameCut2Bold'
+import IconSolarVideoFrameCutBold from './IconSolarVideoFrameCutBold'
+import IconSolarVideoFramePlayHorizontalBold from './IconSolarVideoFramePlayHorizontalBold'
+import IconSolarVideoFramePlayVerticalBold from './IconSolarVideoFramePlayVerticalBold'
+import IconSolarVideoFrameReplaceBold from './IconSolarVideoFrameReplaceBold'
+import IconSolarVideoLibraryBold from './IconSolarVideoLibraryBold'
+import IconSolarVideocameraAddBold from './IconSolarVideocameraAddBold'
+import IconSolarVideocameraBold from './IconSolarVideocameraBold'
+import IconSolarVideocameraRecordBold from './IconSolarVideocameraRecordBold'
+import IconSolarVinylBold from './IconSolarVinylBold'
+import IconSolarVinylRecordBold from './IconSolarVinylRecordBold'
+import IconSolarVirusBold from './IconSolarVirusBold'
+import IconSolarVolleyball2Bold from './IconSolarVolleyball2Bold'
+import IconSolarVolleyballBold from './IconSolarVolleyballBold'
+import IconSolarVolumeBold from './IconSolarVolumeBold'
+import IconSolarVolumeCrossBold from './IconSolarVolumeCrossBold'
+import IconSolarVolumeKnobBold from './IconSolarVolumeKnobBold'
+import IconSolarVolumeLoudBold from './IconSolarVolumeLoudBold'
+import IconSolarVolumeSmallBold from './IconSolarVolumeSmallBold'
+import IconSolarWadOfMoneyBold from './IconSolarWadOfMoneyBold'
+import IconSolarWalkingBold from './IconSolarWalkingBold'
+import IconSolarWalkingRoundBold from './IconSolarWalkingRoundBold'
+import IconSolarWallet2Bold from './IconSolarWallet2Bold'
+import IconSolarWalletBold from './IconSolarWalletBold'
+import IconSolarWalletMoneyBold from './IconSolarWalletMoneyBold'
+import IconSolarWallpaperBold from './IconSolarWallpaperBold'
+import IconSolarWashingMachineBold from './IconSolarWashingMachineBold'
+import IconSolarWashingMachineMinimalisticBold from './IconSolarWashingMachineMinimalisticBold'
+import IconSolarWatchRoundBold from './IconSolarWatchRoundBold'
+import IconSolarWatchSquareBold from './IconSolarWatchSquareBold'
+import IconSolarWatchSquareMinimalisticBold from './IconSolarWatchSquareMinimalisticBold'
+import IconSolarWatchSquareMinimalisticChargeBold from './IconSolarWatchSquareMinimalisticChargeBold'
+import IconSolarWaterBold from './IconSolarWaterBold'
+import IconSolarWaterSunBold from './IconSolarWaterSunBold'
+import IconSolarWaterdropBold from './IconSolarWaterdropBold'
+import IconSolarWaterdropsBold from './IconSolarWaterdropsBold'
+import IconSolarWeigherBold from './IconSolarWeigherBold'
+import IconSolarWheelAngleBold from './IconSolarWheelAngleBold'
+import IconSolarWheelBold from './IconSolarWheelBold'
+import IconSolarWhiskBold from './IconSolarWhiskBold'
+import IconSolarWiFiRouterBold from './IconSolarWiFiRouterBold'
+import IconSolarWiFiRouterMinimalisticBold from './IconSolarWiFiRouterMinimalisticBold'
+import IconSolarWiFiRouterRoundBold from './IconSolarWiFiRouterRoundBold'
+import IconSolarWidget2Bold from './IconSolarWidget2Bold'
+import IconSolarWidget3Bold from './IconSolarWidget3Bold'
+import IconSolarWidget4Bold from './IconSolarWidget4Bold'
+import IconSolarWidget5Bold from './IconSolarWidget5Bold'
+import IconSolarWidget6Bold from './IconSolarWidget6Bold'
+import IconSolarWidgetAddBold from './IconSolarWidgetAddBold'
+import IconSolarWidgetBold from './IconSolarWidgetBold'
+import IconSolarWindBold from './IconSolarWindBold'
+import IconSolarWindowFrameBold from './IconSolarWindowFrameBold'
+import IconSolarWineglassBold from './IconSolarWineglassBold'
+import IconSolarWineglassTriangleBold from './IconSolarWineglassTriangleBold'
+import IconSolarWinrarBold from './IconSolarWinrarBold'
+import IconSolarWirelessChargeBold from './IconSolarWirelessChargeBold'
+import IconSolarWomenBold from './IconSolarWomenBold'
+import IconSolarXxxBold from './IconSolarXxxBold'
+import IconSolarZipFileBold from './IconSolarZipFileBold'
+import IconSolarCloundCrossBold from './IconSolarCloundCrossBold'
 export default {
 	IconSolar4kLinear,
 	IconSolarAccessibilityLinear,
@@ -2468,5 +3704,1240 @@ export default {
 	IconSolarWomenLinear,
 	IconSolarXxxLinear,
 	IconSolarZipFileLinear,
-	IconSolarCloundCrossLinear
+	IconSolarCloundCrossLinear,
+	IconSolar4kBold,
+	IconSolarAccessibilityBold,
+	IconSolarAccumulatorBold,
+	IconSolarAddCircleBold,
+	IconSolarAddFolderBold,
+	IconSolarAddSquareBold,
+	IconSolarAdhesivePlaster2Bold,
+	IconSolarAdhesivePlasterBold,
+	IconSolarAirbudsBold,
+	IconSolarAirbudsCaseBold,
+	IconSolarAirbudsCaseChargeBold,
+	IconSolarAirbudsCaseMinimalisticBold,
+	IconSolarAirbudsCaseOpenBold,
+	IconSolarAirbudsChargeBold,
+	IconSolarAirbudsCheckBold,
+	IconSolarAirbudsLeftBold,
+	IconSolarAirbudsRemoveBold,
+	IconSolarAirbudsRightBold,
+	IconSolarAlarmAddBold,
+	IconSolarAlarmBold,
+	IconSolarAlarmPauseBold,
+	IconSolarAlarmPlayBold,
+	IconSolarAlarmRemoveBold,
+	IconSolarAlarmSleepBold,
+	IconSolarAlarmTurnOffBold,
+	IconSolarAlbumBold,
+	IconSolarAlignBottomBold,
+	IconSolarAlignHorizontaSpacingBold,
+	IconSolarAlignHorizontalCenterBold,
+	IconSolarAlignLeftBold,
+	IconSolarAlignRightBold,
+	IconSolarAlignTopBold,
+	IconSolarAlignVerticalCenterBold,
+	IconSolarAlignVerticalSpacingBold,
+	IconSolarAltArrowDownBold,
+	IconSolarAltArrowLeftBold,
+	IconSolarAltArrowRightBold,
+	IconSolarAltArrowUpBold,
+	IconSolarArchiveBold,
+	IconSolarArchiveCheckBold,
+	IconSolarArchiveDownBold,
+	IconSolarArchiveDownMinimlisticBold,
+	IconSolarArchiveMinimalisticBold,
+	IconSolarArchiveUpBold,
+	IconSolarArchiveUpMinimlisticBold,
+	IconSolarArmchair2Bold,
+	IconSolarArmchairBold,
+	IconSolarArrowDownBold,
+	IconSolarArrowLeftBold,
+	IconSolarArrowLeftDownBold,
+	IconSolarArrowLeftUpBold,
+	IconSolarArrowRightBold,
+	IconSolarArrowRightDownBold,
+	IconSolarArrowRightUpBold,
+	IconSolarArrowToDownLeftBold,
+	IconSolarArrowToDownRightBold,
+	IconSolarArrowToTopLeftBold,
+	IconSolarArrowToTopRightBold,
+	IconSolarArrowUpBold,
+	IconSolarAsteroidBold,
+	IconSolarAtomBold,
+	IconSolarAugmentedRealityBold,
+	IconSolarBackpackBold,
+	IconSolarBackspaceBold,
+	IconSolarBacteriaBold,
+	IconSolarBag2Bold,
+	IconSolarBag3Bold,
+	IconSolarBag4Bold,
+	IconSolarBag5Bold,
+	IconSolarBagBold,
+	IconSolarBagCheckBold,
+	IconSolarBagCrossBold,
+	IconSolarBagHeartBold,
+	IconSolarBagMusic2Bold,
+	IconSolarBagMusicBold,
+	IconSolarBagSmileBold,
+	IconSolarBalloonBold,
+	IconSolarBallsBold,
+	IconSolarBanknote2Bold,
+	IconSolarBanknoteBold,
+	IconSolarBarChairBold,
+	IconSolarBasketballBold,
+	IconSolarBathBold,
+	IconSolarBatteryChargeBold,
+	IconSolarBatteryChargeMinimalisticBold,
+	IconSolarBatteryFullBold,
+	IconSolarBatteryFullMinimalisticBold,
+	IconSolarBatteryHalfBold,
+	IconSolarBatteryHalfMinimalisticBold,
+	IconSolarBatteryLowBold,
+	IconSolarBatteryLowMinimalisticBold,
+	IconSolarBedBold,
+	IconSolarBedsideTable2Bold,
+	IconSolarBedsideTable3Bold,
+	IconSolarBedsideTable4Bold,
+	IconSolarBedsideTableBold,
+	IconSolarBellBingBold,
+	IconSolarBellBold,
+	IconSolarBellOffBold,
+	IconSolarBenzeneRingBold,
+	IconSolarBicyclingBold,
+	IconSolarBicyclingRoundBold,
+	IconSolarBillBold,
+	IconSolarBillCheckBold,
+	IconSolarBillCrossBold,
+	IconSolarBillListBold,
+	IconSolarBlackHole2Bold,
+	IconSolarBlackHole3Bold,
+	IconSolarBlackHoleBold,
+	IconSolarBluetoothBold,
+	IconSolarBluetoothCircleBold,
+	IconSolarBluetoothSquareBold,
+	IconSolarBluetoothWaveBold,
+	IconSolarBodyBold,
+	IconSolarBodyShapeBold,
+	IconSolarBodyShapeMinimalisticBold,
+	IconSolarBoltBold,
+	IconSolarBoltCircleBold,
+	IconSolarBombBold,
+	IconSolarBombEmojiBold,
+	IconSolarBombMinimalisticBold,
+	IconSolarBoneBold,
+	IconSolarBoneBrokenBold,
+	IconSolarBoneCrackBold,
+	IconSolarBonesBold,
+	IconSolarBonfireBold,
+	IconSolarBook2Bold,
+	IconSolarBookBold,
+	IconSolarBookBookmarkBold,
+	IconSolarBookBookmarkMinimalisticBold,
+	IconSolarBookMinimalisticBold,
+	IconSolarBookmarkBold,
+	IconSolarBookmarkCircleBold,
+	IconSolarBookmarkOpenedBold,
+	IconSolarBookmarkSquareBold,
+	IconSolarBookmarkSquareMinimalisticBold,
+	IconSolarBoomboxBold,
+	IconSolarBottleBold,
+	IconSolarBowlingBold,
+	IconSolarBoxBold,
+	IconSolarBoxMinimalisticBold,
+	IconSolarBranchingPathsDownBold,
+	IconSolarBranchingPathsUpBold,
+	IconSolarBroomBold,
+	IconSolarBugBold,
+	IconSolarBugMinimalisticBold,
+	IconSolarBuildings2Bold,
+	IconSolarBuildings3Bold,
+	IconSolarBuildingsBold,
+	IconSolarBusBold,
+	IconSolarCalculatorBold,
+	IconSolarCalculatorMinimalisticBold,
+	IconSolarCalendarAddBold,
+	IconSolarCalendarBold,
+	IconSolarCalendarDateBold,
+	IconSolarCalendarMarkBold,
+	IconSolarCalendarMinimalisticBold,
+	IconSolarCalendarSearchBold,
+	IconSolarCallCancelBold,
+	IconSolarCallCancelRoundedBold,
+	IconSolarCallChatBold,
+	IconSolarCallChatRoundedBold,
+	IconSolarCallDroppedBold,
+	IconSolarCallDroppedRoundedBold,
+	IconSolarCallMedicineBold,
+	IconSolarCallMedicineRoundedBold,
+	IconSolarCameraAddBold,
+	IconSolarCameraBold,
+	IconSolarCameraMinimalisticBold,
+	IconSolarCameraRotateBold,
+	IconSolarCameraSquareBold,
+	IconSolarCard2Bold,
+	IconSolarCardBold,
+	IconSolarCardReciveBold,
+	IconSolarCardSearchBold,
+	IconSolarCardSendBold,
+	IconSolarCardTransferBold,
+	IconSolarCardholderBold,
+	IconSolarCart2Bold,
+	IconSolarCart3Bold,
+	IconSolarCart4Bold,
+	IconSolarCart5Bold,
+	IconSolarCartBold,
+	IconSolarCartCheckBold,
+	IconSolarCartCrossBold,
+	IconSolarCartLarge2Bold,
+	IconSolarCartLarge3Bold,
+	IconSolarCartLarge4Bold,
+	IconSolarCartLargeBold,
+	IconSolarCartLargeMinimalisticBold,
+	IconSolarCartPlusBold,
+	IconSolarCaseBold,
+	IconSolarCaseMinimalisticBold,
+	IconSolarCaseRoundBold,
+	IconSolarCaseRoundMinimalisticBold,
+	IconSolarCashOutBold,
+	IconSolarCassette2Bold,
+	IconSolarCassetteBold,
+	IconSolarCatBold,
+	IconSolarChair2Bold,
+	IconSolarChairBold,
+	IconSolarChandelierBold,
+	IconSolarChart2Bold,
+	IconSolarChartBold,
+	IconSolarChartSquareBold,
+	IconSolarChatDotsBold,
+	IconSolarChatLineBold,
+	IconSolarChatRoundBold,
+	IconSolarChatRoundCallBold,
+	IconSolarChatRoundCheckBold,
+	IconSolarChatRoundDotsBold,
+	IconSolarChatRoundLikeBold,
+	IconSolarChatRoundLineBold,
+	IconSolarChatRoundMoneyBold,
+	IconSolarChatRoundUnreadBold,
+	IconSolarChatRoundVideoBold,
+	IconSolarChatSquare2Bold,
+	IconSolarChatSquareArrowBold,
+	IconSolarChatSquareBold,
+	IconSolarChatSquareCallBold,
+	IconSolarChatSquareCheckBold,
+	IconSolarChatSquareCodeBold,
+	IconSolarChatSquareLikeBold,
+	IconSolarChatUnreadBold,
+	IconSolarCheckCircleBold,
+	IconSolarCheckReadBold,
+	IconSolarCheckSquareBold,
+	IconSolarChecklistBold,
+	IconSolarChecklistMinimalisticBold,
+	IconSolarChefHatBold,
+	IconSolarChefHatHeartBold,
+	IconSolarChefHatMinimalisticBold,
+	IconSolarCircleBottomDownBold,
+	IconSolarCircleBottomUpBold,
+	IconSolarCircleTopDownBold,
+	IconSolarCircleTopUpBold,
+	IconSolarCityBold,
+	IconSolarClapperboardBold,
+	IconSolarClapperboardEditBold,
+	IconSolarClapperboardOpenBold,
+	IconSolarClapperboardOpenPlayBold,
+	IconSolarClapperboardPlayBold,
+	IconSolarClapperboardTextBold,
+	IconSolarClipboardAddBold,
+	IconSolarClipboardBold,
+	IconSolarClipboardCheckBold,
+	IconSolarClipboardHeartBold,
+	IconSolarClipboardListBold,
+	IconSolarClipboardRemoveBold,
+	IconSolarClipboardTextBold,
+	IconSolarClockCircleBold,
+	IconSolarClockSquareBold,
+	IconSolarCloseCircleBold,
+	IconSolarCloseSquareBold,
+	IconSolarCloset2Bold,
+	IconSolarClosetBold,
+	IconSolarCloudBold,
+	IconSolarCloudBoltBold,
+	IconSolarCloudBoltMinimalisticBold,
+	IconSolarCloudCheckBold,
+	IconSolarCloudCrossBold,
+	IconSolarCloudDownloadBold,
+	IconSolarCloudFileBold,
+	IconSolarCloudMinusBold,
+	IconSolarCloudPlusBold,
+	IconSolarCloudRainBold,
+	IconSolarCloudSnowfallBold,
+	IconSolarCloudSnowfallMinimalisticBold,
+	IconSolarCloudStorageBold,
+	IconSolarCloudStormBold,
+	IconSolarCloudSun2Bold,
+	IconSolarCloudSunBold,
+	IconSolarCloudUploadBold,
+	IconSolarCloudWaterdropBold,
+	IconSolarCloudWaterdropsBold,
+	IconSolarCloudsBold,
+	IconSolarCloudyMoonBold,
+	IconSolarCode2Bold,
+	IconSolarCodeBold,
+	IconSolarCodeCircleBold,
+	IconSolarCodeFileBold,
+	IconSolarCodeScanBold,
+	IconSolarCodeSquareBold,
+	IconSolarColourTuneingBold,
+	IconSolarCommandBold,
+	IconSolarCompassBigBold,
+	IconSolarCompassBold,
+	IconSolarCompassSquareBold,
+	IconSolarCondicioner2Bold,
+	IconSolarCondicionerBold,
+	IconSolarConfettiBold,
+	IconSolarConfettiMinimalisticBold,
+	IconSolarConfoundedCircleBold,
+	IconSolarConfoundedSquareBold,
+	IconSolarCopyBold,
+	IconSolarCopyrightBold,
+	IconSolarCorkscrewBold,
+	IconSolarCosmeticBold,
+	IconSolarCourseDownBold,
+	IconSolarCourseUpBold,
+	IconSolarCpuBold,
+	IconSolarCpuBoltBold,
+	IconSolarCreativeCommonsBold,
+	IconSolarCropBold,
+	IconSolarCropMinimalisticBold,
+	IconSolarCrownBold,
+	IconSolarCrownLineBold,
+	IconSolarCrownMinimalisticBold,
+	IconSolarCrownStarBold,
+	IconSolarCupBold,
+	IconSolarCupFirstBold,
+	IconSolarCupHotBold,
+	IconSolarCupMusicBold,
+	IconSolarCupPaperBold,
+	IconSolarCupStarBold,
+	IconSolarCursorBold,
+	IconSolarCursorSquareBold,
+	IconSolarDangerBold,
+	IconSolarDangerCircleBold,
+	IconSolarDangerSquareBold,
+	IconSolarDangerTriangleBold,
+	IconSolarDatabaseBold,
+	IconSolarDeliveryBold,
+	IconSolarDevicesBold,
+	IconSolarDiagramDownBold,
+	IconSolarDiagramUpBold,
+	IconSolarDialog2Bold,
+	IconSolarDialogBold,
+	IconSolarDiplomaBold,
+	IconSolarDiplomaVerifiedBold,
+	IconSolarDisketteBold,
+	IconSolarDislikeBold,
+	IconSolarDisplayBold,
+	IconSolarDnaBold,
+	IconSolarDocumentAddBold,
+	IconSolarDocumentBold,
+	IconSolarDocumentMedicineBold,
+	IconSolarDocumentTextBold,
+	IconSolarDocumentsBold,
+	IconSolarDocumentsMinimalisticBold,
+	IconSolarDollarBold,
+	IconSolarDollarMinimalisticBold,
+	IconSolarDonutBittenBold,
+	IconSolarDonutBold,
+	IconSolarDoubleAltArrowDownBold,
+	IconSolarDoubleAltArrowLeftBold,
+	IconSolarDoubleAltArrowRightBold,
+	IconSolarDoubleAltArrowUpBold,
+	IconSolarDownloadBold,
+	IconSolarDownloadMinimalisticBold,
+	IconSolarDownloadSquareBold,
+	IconSolarDownloadTwiceSquareBold,
+	IconSolarDropper2Bold,
+	IconSolarDropper3Bold,
+	IconSolarDropperBold,
+	IconSolarDropperMinimalistic2Bold,
+	IconSolarDropperMinimalisticBold,
+	IconSolarDumbbellBold,
+	IconSolarDumbbellLargeBold,
+	IconSolarDumbbellLargeMinimalisticBold,
+	IconSolarDumbbellSmallBold,
+	IconSolarDumbbells2Bold,
+	IconSolarDumbbellsBold,
+	IconSolarEarthBold,
+	IconSolarElectricRefuelingBold,
+	IconSolarEmojiFunnyCircleBold,
+	IconSolarEmojiFunnySquareBold,
+	IconSolarEndCallBold,
+	IconSolarEndCallRoundedBold,
+	IconSolarEraserBold,
+	IconSolarEraserCircleBold,
+	IconSolarEraserSquareBold,
+	IconSolarEuroBold,
+	IconSolarExitBold,
+	IconSolarExplicitBold,
+	IconSolarExportBold,
+	IconSolarExpressionlessCircleBold,
+	IconSolarExpressionlessSquareBold,
+	IconSolarEyeBold,
+	IconSolarEyeClosedBold,
+	IconSolarEyeScanBold,
+	IconSolarFaceScanCircleBold,
+	IconSolarFaceScanSquareBold,
+	IconSolarFacemaskCircleBold,
+	IconSolarFacemaskSquareBold,
+	IconSolarFeedBold,
+	IconSolarFerrisWheelBold,
+	IconSolarFigmaBold,
+	IconSolarFigmaFileBold,
+	IconSolarFileBold,
+	IconSolarFileCheckBold,
+	IconSolarFileCorruptedBold,
+	IconSolarFileDownloadBold,
+	IconSolarFileFavouriteBold,
+	IconSolarFileLeftBold,
+	IconSolarFileRemoveBold,
+	IconSolarFileRightBold,
+	IconSolarFileSendBold,
+	IconSolarFileSmileBold,
+	IconSolarFileTextBold,
+	IconSolarFilterBold,
+	IconSolarFiltersBold,
+	IconSolarFireBold,
+	IconSolarFireMinimalisticBold,
+	IconSolarFireSquareBold,
+	IconSolarFlag2Bold,
+	IconSolarFlagBold,
+	IconSolarFlameBold,
+	IconSolarFlashDriveBold,
+	IconSolarFlashlightBold,
+	IconSolarFlashlightOnBold,
+	IconSolarFlipHorizontalBold,
+	IconSolarFlipVerticalBold,
+	IconSolarFloorLampBold,
+	IconSolarFloorLampMinimalisticBold,
+	IconSolarFogBold,
+	IconSolarFolder2Bold,
+	IconSolarFolderBold,
+	IconSolarFolderCheckBold,
+	IconSolarFolderCloudBold,
+	IconSolarFolderErrorBold,
+	IconSolarFolderFavouriteBookmarkBold,
+	IconSolarFolderFavouriteStarBold,
+	IconSolarFolderOpenBold,
+	IconSolarFolderPathConnectBold,
+	IconSolarFolderSecurityBold,
+	IconSolarFolderWithFilesBold,
+	IconSolarFootballBold,
+	IconSolarForbiddenBold,
+	IconSolarForbiddenCircleBold,
+	IconSolarForward2Bold,
+	IconSolarForwardBold,
+	IconSolarFridgeBold,
+	IconSolarFuelBold,
+	IconSolarFullScreenBold,
+	IconSolarFullScreenCircleBold,
+	IconSolarFullScreenSquareBold,
+	IconSolarGalleryAddBold,
+	IconSolarGalleryBold,
+	IconSolarGalleryCheckBold,
+	IconSolarGalleryCircleBold,
+	IconSolarGalleryDownloadBold,
+	IconSolarGalleryEditBold,
+	IconSolarGalleryFavouriteBold,
+	IconSolarGalleryMinimalisticBold,
+	IconSolarGalleryRemoveBold,
+	IconSolarGalleryRoundBold,
+	IconSolarGallerySendBold,
+	IconSolarGalleryWideBold,
+	IconSolarGameboyBold,
+	IconSolarGamepadBold,
+	IconSolarGamepadChargeBold,
+	IconSolarGamepadMinimalisticBold,
+	IconSolarGamepadNoChargeBold,
+	IconSolarGamepadOldBold,
+	IconSolarGarageBold,
+	IconSolarGasStationBold,
+	IconSolarGhostBold,
+	IconSolarGhostSmileBold,
+	IconSolarGiftBold,
+	IconSolarGlassesBold,
+	IconSolarGlobalBold,
+	IconSolarGlobusBold,
+	IconSolarGolfBold,
+	IconSolarGpsBold,
+	IconSolarGraphBold,
+	IconSolarGraphDownBold,
+	IconSolarGraphDownNewBold,
+	IconSolarGraphNewBold,
+	IconSolarGraphNewUpBold,
+	IconSolarGraphUpBold,
+	IconSolarHamburgerMenuBold,
+	IconSolarHandHeartBold,
+	IconSolarHandMoneyBold,
+	IconSolarHandPillsBold,
+	IconSolarHandShakeBold,
+	IconSolarHandStarsBold,
+	IconSolarHanger2Bold,
+	IconSolarHangerBold,
+	IconSolarHashtagBold,
+	IconSolarHashtagChatBold,
+	IconSolarHashtagCircleBold,
+	IconSolarHashtagSquareBold,
+	IconSolarHeadphonesRoundBold,
+	IconSolarHeadphonesRoundSoundBold,
+	IconSolarHeadphonesSquareBold,
+	IconSolarHeadphonesSquareSoundBold,
+	IconSolarHealthBold,
+	IconSolarHeartAngleBold,
+	IconSolarHeartBold,
+	IconSolarHeartBrokenBold,
+	IconSolarHeartLockBold,
+	IconSolarHeartPulse2Bold,
+	IconSolarHeartPulseBold,
+	IconSolarHeartShineBold,
+	IconSolarHeartUnlockBold,
+	IconSolarHeartsBold,
+	IconSolarHelpBold,
+	IconSolarHighDefinitionBold,
+	IconSolarHighQualityBold,
+	IconSolarHikingBold,
+	IconSolarHikingMinimalisticBold,
+	IconSolarHikingRoundBold,
+	IconSolarHistory2Bold,
+	IconSolarHistory3Bold,
+	IconSolarHistoryBold,
+	IconSolarHome2Bold,
+	IconSolarHomeAddAngleBold,
+	IconSolarHomeAddBold,
+	IconSolarHomeAngle2Bold,
+	IconSolarHomeAngleBold,
+	IconSolarHomeBold,
+	IconSolarHomeSmileAngleBold,
+	IconSolarHomeSmileBold,
+	IconSolarHomeWifiAngleBold,
+	IconSolarHomeWifiBold,
+	IconSolarHospitalBold,
+	IconSolarHourglassBold,
+	IconSolarHourglassLineBold,
+	IconSolarImportBold,
+	IconSolarInboxArchiveBold,
+	IconSolarInboxBold,
+	IconSolarInboxInBold,
+	IconSolarInboxLineBold,
+	IconSolarInboxOutBold,
+	IconSolarInboxUnreadBold,
+	IconSolarIncognitoBold,
+	IconSolarIncomingCallBold,
+	IconSolarIncomingCallRoundedBold,
+	IconSolarInfinityBold,
+	IconSolarInfoCircleBold,
+	IconSolarInfoSquareBold,
+	IconSolarIphoneBold,
+	IconSolarJarOfPills2Bold,
+	IconSolarJarOfPillsBold,
+	IconSolarKeyBold,
+	IconSolarKeyMinimalistic2Bold,
+	IconSolarKeyMinimalisticBold,
+	IconSolarKeyMinimalisticSquare2Bold,
+	IconSolarKeyMinimalisticSquare3Bold,
+	IconSolarKeyMinimalisticSquareBold,
+	IconSolarKeySquare2Bold,
+	IconSolarKeySquareBold,
+	IconSolarKeyboardBold,
+	IconSolarKickScooterBold,
+	IconSolarLadleBold,
+	IconSolarLampBold,
+	IconSolarLaptop2Bold,
+	IconSolarLaptop3Bold,
+	IconSolarLaptopBold,
+	IconSolarLaptopMinimalisticBold,
+	IconSolarLayersBold,
+	IconSolarLayersMinimalisticBold,
+	IconSolarLeafBold,
+	IconSolarLetterBold,
+	IconSolarLetterOpenedBold,
+	IconSolarLetterUnreadBold,
+	IconSolarLibraryBold,
+	IconSolarLightbulbBold,
+	IconSolarLightbulbBoltBold,
+	IconSolarLightbulbMinimalisticBold,
+	IconSolarLightningBold,
+	IconSolarLikeBold,
+	IconSolarLinkBold,
+	IconSolarLinkBrokenBold,
+	IconSolarLinkBrokenMinimalisticBold,
+	IconSolarLinkCircleBold,
+	IconSolarLinkMinimalistic2Bold,
+	IconSolarLinkMinimalisticBold,
+	IconSolarLinkRoundAngleBold,
+	IconSolarLinkRoundBold,
+	IconSolarLinkSquareBold,
+	IconSolarListArrowDownBold,
+	IconSolarListArrowDownMinimalisticBold,
+	IconSolarListArrowUpBold,
+	IconSolarListArrowUpMinimalisticBold,
+	IconSolarListBold,
+	IconSolarListCheckBold,
+	IconSolarListCheckMinimalisticBold,
+	IconSolarListCrossBold,
+	IconSolarListCrossMinimalisticBold,
+	IconSolarListDownBold,
+	IconSolarListDownMinimalisticBold,
+	IconSolarListHeartBold,
+	IconSolarListHeartMinimalisticBold,
+	IconSolarListUpBold,
+	IconSolarListUpMinimalisticBold,
+	IconSolarLockBold,
+	IconSolarLockKeyholeBold,
+	IconSolarLockKeyholeMinimalisticBold,
+	IconSolarLockKeyholeMinimalisticUnlockedBold,
+	IconSolarLockKeyholeUnlockedBold,
+	IconSolarLockPasswordBold,
+	IconSolarLockPasswordUnlockedBold,
+	IconSolarLockUnlockedBold,
+	IconSolarLogin2Bold,
+	IconSolarLogin3Bold,
+	IconSolarLoginBold,
+	IconSolarLogout2Bold,
+	IconSolarLogout3Bold,
+	IconSolarLogoutBold,
+	IconSolarMagicStick2Bold,
+	IconSolarMagicStick3Bold,
+	IconSolarMagicStickBold,
+	IconSolarMagnetBold,
+	IconSolarMagnetWaveBold,
+	IconSolarMagniferBold,
+	IconSolarMagniferBugBold,
+	IconSolarMagniferZoomInBold,
+	IconSolarMagniferZoomOutBold,
+	IconSolarMailboxBold,
+	IconSolarMapArrowDownBold,
+	IconSolarMapArrowLeftBold,
+	IconSolarMapArrowRightBold,
+	IconSolarMapArrowSquareBold,
+	IconSolarMapArrowUpBold,
+	IconSolarMapBold,
+	IconSolarMapPointAddBold,
+	IconSolarMapPointBold,
+	IconSolarMapPointFavouriteBold,
+	IconSolarMapPointHospitalBold,
+	IconSolarMapPointRemoveBold,
+	IconSolarMapPointRotateBold,
+	IconSolarMapPointSchoolBold,
+	IconSolarMapPointSearchBold,
+	IconSolarMapPointWaveBold,
+	IconSolarMaskHapplyBold,
+	IconSolarMaskSadBold,
+	IconSolarMasksBold,
+	IconSolarMaximizeBold,
+	IconSolarMaximizeSquare2Bold,
+	IconSolarMaximizeSquare3Bold,
+	IconSolarMaximizeSquareBold,
+	IconSolarMaximizeSquareMinimalisticBold,
+	IconSolarMedalRibbonBold,
+	IconSolarMedalRibbonStarBold,
+	IconSolarMedalRibbonsStarBold,
+	IconSolarMedalStarBold,
+	IconSolarMedalStarCircleBold,
+	IconSolarMedalStarSquareBold,
+	IconSolarMedicalKitBold,
+	IconSolarMeditationBold,
+	IconSolarMeditationRoundBold,
+	IconSolarMenBold,
+	IconSolarMentionCircleBold,
+	IconSolarMentionSquareBold,
+	IconSolarMenuDotsBold,
+	IconSolarMenuDotsCircleBold,
+	IconSolarMenuDotsSquareBold,
+	IconSolarMicrophone2Bold,
+	IconSolarMicrophone3Bold,
+	IconSolarMicrophoneBold,
+	IconSolarMicrophoneLargeBold,
+	IconSolarMinimalisticMagniferBold,
+	IconSolarMinimalisticMagniferBugBold,
+	IconSolarMinimalisticMagniferZoomInBold,
+	IconSolarMinimalisticMagniferZoomOutBold,
+	IconSolarMinimizeBold,
+	IconSolarMinimizeSquare2Bold,
+	IconSolarMinimizeSquare3Bold,
+	IconSolarMinimizeSquareBold,
+	IconSolarMinimizeSquareMinimalisticBold,
+	IconSolarMinusCircleBold,
+	IconSolarMinusSquareBold,
+	IconSolarMirrorBold,
+	IconSolarMirrorLeftBold,
+	IconSolarMirrorRightBold,
+	IconSolarMoneyBagBold,
+	IconSolarMonitorBold,
+	IconSolarMonitorCameraBold,
+	IconSolarMonitorSmartphoneBold,
+	IconSolarMoonBold,
+	IconSolarMoonFogBold,
+	IconSolarMoonSleepBold,
+	IconSolarMoonStarsBold,
+	IconSolarMouseBold,
+	IconSolarMouseCircleBold,
+	IconSolarMouseMinimalisticBold,
+	IconSolarMoveToFolderBold,
+	IconSolarMultipleForwardLeftBold,
+	IconSolarMultipleForwardRightBold,
+	IconSolarMusicLibrary2Bold,
+	IconSolarMusicLibraryBold,
+	IconSolarMusicNote2Bold,
+	IconSolarMusicNote3Bold,
+	IconSolarMusicNote4Bold,
+	IconSolarMusicNoteBold,
+	IconSolarMusicNoteSlider2Bold,
+	IconSolarMusicNoteSliderBold,
+	IconSolarMusicNotesBold,
+	IconSolarMutedBold,
+	IconSolarNotebookBold,
+	IconSolarNotebookBookmarkBold,
+	IconSolarNotebookMinimalisticBold,
+	IconSolarNotebookSquareBold,
+	IconSolarNotesBold,
+	IconSolarNotesMinimalisticBold,
+	IconSolarNotificationLinesRemoveBold,
+	IconSolarNotificationRemoveBold,
+	IconSolarNotificationUnreadBold,
+	IconSolarNotificationUnreadLinesBold,
+	IconSolarObjectScanBold,
+	IconSolarOutgoingCallBold,
+	IconSolarOutgoingCallRoundedBold,
+	IconSolarOvenMittsBold,
+	IconSolarOvenMittsMinimalisticBold,
+	IconSolarPaintRollerBold,
+	IconSolarPaletteBold,
+	IconSolarPaletteRoundBold,
+	IconSolarPallete2Bold,
+	IconSolarPanoramaBold,
+	IconSolarPaperBinBold,
+	IconSolarPaperclip2Bold,
+	IconSolarPaperclipBold,
+	IconSolarPaperclipRounded2Bold,
+	IconSolarPaperclipRoundedBold,
+	IconSolarParagraphSpacingBold,
+	IconSolarPassportBold,
+	IconSolarPassportMinimalisticBold,
+	IconSolarPasswordBold,
+	IconSolarPasswordMinimalisticBold,
+	IconSolarPasswordMinimalisticInputBold,
+	IconSolarPauseBold,
+	IconSolarPauseCircleBold,
+	IconSolarPawBold,
+	IconSolarPen2Bold,
+	IconSolarPenBold,
+	IconSolarPenNewRoundBold,
+	IconSolarPenNewSquareBold,
+	IconSolarPeopleNearbyBold,
+	IconSolarPerfumeBold,
+	IconSolarPhoneBold,
+	IconSolarPhoneCallingBold,
+	IconSolarPhoneCallingRoundedBold,
+	IconSolarPhoneRoundedBold,
+	IconSolarPieChart2Bold,
+	IconSolarPieChart3Bold,
+	IconSolarPieChartBold,
+	IconSolarPillBold,
+	IconSolarPills2Bold,
+	IconSolarPills3Bold,
+	IconSolarPillsBold,
+	IconSolarPinBold,
+	IconSolarPinCircleBold,
+	IconSolarPinListBold,
+	IconSolarPip2Bold,
+	IconSolarPipBold,
+	IconSolarPipetteBold,
+	IconSolarPlaaylistMinimalisticBold,
+	IconSolarPlain2Bold,
+	IconSolarPlain3Bold,
+	IconSolarPlainBold,
+	IconSolarPlanet2Bold,
+	IconSolarPlanet3Bold,
+	IconSolarPlanet4Bold,
+	IconSolarPlanetBold,
+	IconSolarPlateBold,
+	IconSolarPlayBold,
+	IconSolarPlayCircleBold,
+	IconSolarPlayStreamBold,
+	IconSolarPlaybackSpeedBold,
+	IconSolarPlaylist2Bold,
+	IconSolarPlaylistBold,
+	IconSolarPlaylistMinimalistic2Bold,
+	IconSolarPlaylistMinimalistic3Bold,
+	IconSolarPlugCircleBold,
+	IconSolarPlusMinusBold,
+	IconSolarPodcastBold,
+	IconSolarPointOnMapBold,
+	IconSolarPointOnMapPerspectiveBold,
+	IconSolarPostsCarouselHorizontalBold,
+	IconSolarPostsCarouselVerticalBold,
+	IconSolarPowerBold,
+	IconSolarPresentationGraphBold,
+	IconSolarPrinter2Bold,
+	IconSolarPrinterBold,
+	IconSolarPrinterMinimalisticBold,
+	IconSolarProgrammingBold,
+	IconSolarProjectorBold,
+	IconSolarPulse2Bold,
+	IconSolarPulseBold,
+	IconSolarQrCodeBold,
+	IconSolarQuestionCircleBold,
+	IconSolarQuestionSquareBold,
+	IconSolarQuitFullScreenBold,
+	IconSolarQuitFullScreenCircleBold,
+	IconSolarQuitFullScreenSquareBold,
+	IconSolarQuitPipBold,
+	IconSolarRadar2Bold,
+	IconSolarRadarBold,
+	IconSolarRadialBlurBold,
+	IconSolarRadioBold,
+	IconSolarRadioMinimalisticBold,
+	IconSolarRankingBold,
+	IconSolarReciveSquareBold,
+	IconSolarReciveTwiceSquareBold,
+	IconSolarRecordBold,
+	IconSolarRecordCircleBold,
+	IconSolarRecordMinimalisticBold,
+	IconSolarRecordSquareBold,
+	IconSolarReel2Bold,
+	IconSolarReelBold,
+	IconSolarRefreshBold,
+	IconSolarRefreshCircleBold,
+	IconSolarRefreshSquareBold,
+	IconSolarRemoteController2Bold,
+	IconSolarRemoteControllerBold,
+	IconSolarRemoteControllerMinimalisticBold,
+	IconSolarRemoveFolderBold,
+	IconSolarReorderBold,
+	IconSolarRepeatBold,
+	IconSolarRepeatOneBold,
+	IconSolarRepeatOneMinimalisticBold,
+	IconSolarReply2Bold,
+	IconSolarReplyBold,
+	IconSolarRestartBold,
+	IconSolarRestartCircleBold,
+	IconSolarRestartSquareBold,
+	IconSolarRevoteBold,
+	IconSolarRewind10SecondsBackBold,
+	IconSolarRewind10SecondsForwardBold,
+	IconSolarRewind15SecondsBackBold,
+	IconSolarRewind15SecondsForwardBold,
+	IconSolarRewind5SecondsBackBold,
+	IconSolarRewind5SecondsForwardBold,
+	IconSolarRewindBackBold,
+	IconSolarRewindBackCircleBold,
+	IconSolarRewindForwardBold,
+	IconSolarRewindForwardCircleBold,
+	IconSolarRocket2Bold,
+	IconSolarRocketBold,
+	IconSolarRollingPinBold,
+	IconSolarRoundAltArrowDownBold,
+	IconSolarRoundAltArrowLeftBold,
+	IconSolarRoundAltArrowRightBold,
+	IconSolarRoundAltArrowUpBold,
+	IconSolarRoundArrowDownBold,
+	IconSolarRoundArrowLeftBold,
+	IconSolarRoundArrowLeftDownBold,
+	IconSolarRoundArrowLeftUpBold,
+	IconSolarRoundArrowRightBold,
+	IconSolarRoundArrowRightDownBold,
+	IconSolarRoundArrowRightUpBold,
+	IconSolarRoundArrowUpBold,
+	IconSolarRoundDoubleAltArrowDownBold,
+	IconSolarRoundDoubleAltArrowLeftBold,
+	IconSolarRoundDoubleAltArrowRightBold,
+	IconSolarRoundDoubleAltArrowUpBold,
+	IconSolarRoundGraphBold,
+	IconSolarRoundSortHorizontalBold,
+	IconSolarRoundSortVerticalBold,
+	IconSolarRoundTransferDiagonalBold,
+	IconSolarRoundTransferHorizontalBold,
+	IconSolarRoundTransferVerticalBold,
+	IconSolarRoundedMagniferBold,
+	IconSolarRoundedMagniferBugBold,
+	IconSolarRoundedMagniferZoomInBold,
+	IconSolarRoundedMagniferZoomOutBold,
+	IconSolarRouteBold,
+	IconSolarRouting2Bold,
+	IconSolarRouting3Bold,
+	IconSolarRoutingBold,
+	IconSolarRubleBold,
+	IconSolarRugbyBold,
+	IconSolarRulerAngularBold,
+	IconSolarRulerBold,
+	IconSolarRulerCrossPenBold,
+	IconSolarRulerPenBold,
+	IconSolarRunning2Bold,
+	IconSolarRunningBold,
+	IconSolarRunningRoundBold,
+	IconSolarSadCircleBold,
+	IconSolarSadSquareBold,
+	IconSolarSafe2Bold,
+	IconSolarSafeCircleBold,
+	IconSolarSafeSquareBold,
+	IconSolarSaleBold,
+	IconSolarSaleSquareBold,
+	IconSolarSatelliteBold,
+	IconSolarScaleBold,
+	IconSolarScanner2Bold,
+	IconSolarScannerBold,
+	IconSolarScissorsBold,
+	IconSolarScissorsSquareBold,
+	IconSolarScooterBold,
+	IconSolarScreenShareBold,
+	IconSolarScreencast2Bold,
+	IconSolarScreencastBold,
+	IconSolarSdCardBold,
+	IconSolarSendSquareBold,
+	IconSolarSendTwiceSquareBold,
+	IconSolarServer2Bold,
+	IconSolarServerBold,
+	IconSolarServerMinimalisticBold,
+	IconSolarServerPathBold,
+	IconSolarServerSquareBold,
+	IconSolarServerSquareCloudBold,
+	IconSolarServerSquareUpdateBold,
+	IconSolarSettingsBold,
+	IconSolarSettingsMinimalisticBold,
+	IconSolarShareBold,
+	IconSolarShareCircleBold,
+	IconSolarShieldBold,
+	IconSolarShieldCheckBold,
+	IconSolarShieldCrossBold,
+	IconSolarShieldKeyholeBold,
+	IconSolarShieldKeyholeMinimalisticBold,
+	IconSolarShieldMinimalisticBold,
+	IconSolarShieldMinusBold,
+	IconSolarShieldNetworkBold,
+	IconSolarShieldPlusBold,
+	IconSolarShieldStarBold,
+	IconSolarShieldUpBold,
+	IconSolarShieldUserBold,
+	IconSolarShieldWarningBold,
+	IconSolarShockAbsorberBold,
+	IconSolarShop2Bold,
+	IconSolarShopBold,
+	IconSolarShopMinimalisticBold,
+	IconSolarShuffleBold,
+	IconSolarSidebarCodeBold,
+	IconSolarSidebarMinimalisticBold,
+	IconSolarSiderbarBold,
+	IconSolarSignpost2Bold,
+	IconSolarSignpostBold,
+	IconSolarSimCardBold,
+	IconSolarSimCardMinimalisticBold,
+	IconSolarSimCardsBold,
+	IconSolarSirenBold,
+	IconSolarSirenRoundedBold,
+	IconSolarSkateboardBold,
+	IconSolarSkateboardingBold,
+	IconSolarSkateboardingRoundBold,
+	IconSolarSkipNextBold,
+	IconSolarSkipPreviousBold,
+	IconSolarSkirtBold,
+	IconSolarSlashCircleBold,
+	IconSolarSlashSquareBold,
+	IconSolarSledgehammerBold,
+	IconSolarSleepingBold,
+	IconSolarSleepingCircleBold,
+	IconSolarSleepingSquareBold,
+	IconSolarSliderHorizontalBold,
+	IconSolarSliderMinimalisticHorizontalBold,
+	IconSolarSliderVerticalBold,
+	IconSolarSliderVerticalMinimalisticBold,
+	IconSolarSmartHomeAngleBold,
+	IconSolarSmartHomeBold,
+	IconSolarSmartSpeaker2Bold,
+	IconSolarSmartSpeakerBold,
+	IconSolarSmartSpeakerMinimalisticBold,
+	IconSolarSmartVacuumCleaner2Bold,
+	IconSolarSmartVacuumCleanerBold,
+	IconSolarSmartphone2Bold,
+	IconSolarSmartphoneBold,
+	IconSolarSmartphoneRotate2Bold,
+	IconSolarSmartphoneRotateAngleBold,
+	IconSolarSmartphoneRotateOrientationBold,
+	IconSolarSmartphoneUpdateBold,
+	IconSolarSmartphoneVibrationBold,
+	IconSolarSmileCircleBold,
+	IconSolarSmileSquareBold,
+	IconSolarSnowflakeBold,
+	IconSolarSocketBold,
+	IconSolarSofa2Bold,
+	IconSolarSofa3Bold,
+	IconSolarSofaBold,
+	IconSolarSortBold,
+	IconSolarSortByAlphabetBold,
+	IconSolarSortByTimeBold,
+	IconSolarSortFromBottomToTopBold,
+	IconSolarSortFromTopToBottomBold,
+	IconSolarSortHorizontalBold,
+	IconSolarSortVerticalBold,
+	IconSolarSoundwaveBold,
+	IconSolarSoundwaveCircleBold,
+	IconSolarSoundwaveSquareBold,
+	IconSolarSpeakerBold,
+	IconSolarSpeakerMinimalisticBold,
+	IconSolarSpecialEffectsBold,
+	IconSolarSpedometerLowBold,
+	IconSolarSpedometerMaxBold,
+	IconSolarSpedometerMiddleBold,
+	IconSolarSquareAcademicCap2Bold,
+	IconSolarSquareAcademicCapBold,
+	IconSolarSquareAltArrowDownBold,
+	IconSolarSquareAltArrowLeftBold,
+	IconSolarSquareAltArrowRightBold,
+	IconSolarSquareAltArrowUpBold,
+	IconSolarSquareArrowDownBold,
+	IconSolarSquareArrowLeftBold,
+	IconSolarSquareArrowLeftDownBold,
+	IconSolarSquareArrowLeftUpBold,
+	IconSolarSquareArrowRightBold,
+	IconSolarSquareArrowRightDownBold,
+	IconSolarSquareArrowRightUpBold,
+	IconSolarSquareArrowUpBold,
+	IconSolarSquareBottomDownBold,
+	IconSolarSquareBottomUpBold,
+	IconSolarSquareDoubleAltArrowDownBold,
+	IconSolarSquareDoubleAltArrowLeftBold,
+	IconSolarSquareDoubleAltArrowRightBold,
+	IconSolarSquareDoubleAltArrowUpBold,
+	IconSolarSquareForwardBold,
+	IconSolarSquareShareLineBold,
+	IconSolarSquareSortHorizontalBold,
+	IconSolarSquareSortVerticalBold,
+	IconSolarSquareTopDownBold,
+	IconSolarSquareTopUpBold,
+	IconSolarSquareTransferHorizontalBold,
+	IconSolarSquareTransferVerticalBold,
+	IconSolarSsdRoundBold,
+	IconSolarSsdSquareBold,
+	IconSolarStarAngleBold,
+	IconSolarStarBold,
+	IconSolarStarCircleBold,
+	IconSolarStarFall2Bold,
+	IconSolarStarFallBold,
+	IconSolarStarFallMinimalistic2Bold,
+	IconSolarStarFallMinimalisticBold,
+	IconSolarStarRainbowBold,
+	IconSolarStarRingBold,
+	IconSolarStarRingsBold,
+	IconSolarStarShineBold,
+	IconSolarStarsBold,
+	IconSolarStarsLineBold,
+	IconSolarStarsMinimalisticBold,
+	IconSolarStationBold,
+	IconSolarStationMinimalisticBold,
+	IconSolarStethoscopeBold,
+	IconSolarStickerCircleBold,
+	IconSolarStickerSmileCircle2Bold,
+	IconSolarStickerSmileCircleBold,
+	IconSolarStickerSmileSquareBold,
+	IconSolarStickerSquareBold,
+	IconSolarStopBold,
+	IconSolarStopCircleBold,
+	IconSolarStopwatchBold,
+	IconSolarStopwatchPauseBold,
+	IconSolarStopwatchPlayBold,
+	IconSolarStreamBold,
+	IconSolarStreetsBold,
+	IconSolarStreetsMapPointBold,
+	IconSolarStreetsNavigationBold,
+	IconSolarStretchingBold,
+	IconSolarStretchingRoundBold,
+	IconSolarStructureBold,
+	IconSolarSubtitlesBold,
+	IconSolarSuitcaseBold,
+	IconSolarSuitcaseLinesBold,
+	IconSolarSuitcaseTagBold,
+	IconSolarSun2Bold,
+	IconSolarSunBold,
+	IconSolarSunFogBold,
+	IconSolarSunriseBold,
+	IconSolarSunsetBold,
+	IconSolarSuspensionBold,
+	IconSolarSuspensionBoltBold,
+	IconSolarSuspensionCrossBold,
+	IconSolarSwimmingBold,
+	IconSolarSyringeBold,
+	IconSolarTShirtBold,
+	IconSolarTabletBold,
+	IconSolarTagBold,
+	IconSolarTagHorizontalBold,
+	IconSolarTagPriceBold,
+	IconSolarTargetBold,
+	IconSolarTeaCupBold,
+	IconSolarTelescopeBold,
+	IconSolarTemperatureBold,
+	IconSolarTennis2Bold,
+	IconSolarTennisBold,
+	IconSolarTestTubeBold,
+	IconSolarTestTubeMinimalisticBold,
+	IconSolarTextBold,
+	IconSolarTextBoldBold,
+	IconSolarTextBoldCircleBold,
+	IconSolarTextBoldSquareBold,
+	IconSolarTextCircleBold,
+	IconSolarTextCrossBold,
+	IconSolarTextCrossCircleBold,
+	IconSolarTextCrossSquareBold,
+	IconSolarTextFieldBold,
+	IconSolarTextFieldFocusBold,
+	IconSolarTextItalicBold,
+	IconSolarTextItalicCircleBold,
+	IconSolarTextItalicSquareBold,
+	IconSolarTextSelectionBold,
+	IconSolarTextSquare2Bold,
+	IconSolarTextSquareBold,
+	IconSolarTextUnderlineBold,
+	IconSolarTextUnderlineCircleBold,
+	IconSolarTextUnderlineCrossBold,
+	IconSolarThermometerBold,
+	IconSolarThreeSquaresBold,
+	IconSolarTickerStarBold,
+	IconSolarTicketBold,
+	IconSolarTicketSaleBold,
+	IconSolarToPipBold,
+	IconSolarTornadoBold,
+	IconSolarTornadoSmallBold,
+	IconSolarTrafficBold,
+	IconSolarTrafficEconomyBold,
+	IconSolarTramBold,
+	IconSolarTransferHorizontalBold,
+	IconSolarTransferVerticalBold,
+	IconSolarTranslation2Bold,
+	IconSolarTranslationBold,
+	IconSolarTransmissionBold,
+	IconSolarTransmissionCircleBold,
+	IconSolarTransmissionSquareBold,
+	IconSolarTrashBin2Bold,
+	IconSolarTrashBinMinimalistic2Bold,
+	IconSolarTrashBinMinimalisticBold,
+	IconSolarTrashBinTrashBold,
+	IconSolarTreadmillBold,
+	IconSolarTreadmillRoundBold,
+	IconSolarTrellisBold,
+	IconSolarTuning2Bold,
+	IconSolarTuning3Bold,
+	IconSolarTuning4Bold,
+	IconSolarTuningBold,
+	IconSolarTuningSquare2Bold,
+	IconSolarTuningSquareBold,
+	IconSolarTurntableBold,
+	IconSolarTurntableMinimalisticBold,
+	IconSolarTurntableMusicNoteBold,
+	IconSolarTvBold,
+	IconSolarUfo2Bold,
+	IconSolarUfo3Bold,
+	IconSolarUfoBold,
+	IconSolarUmbrellaBold,
+	IconSolarUndoLeftBold,
+	IconSolarUndoLeftRoundBold,
+	IconSolarUndoLeftRoundSquareBold,
+	IconSolarUndoLeftSquareBold,
+	IconSolarUndoRightBold,
+	IconSolarUndoRightRoundBold,
+	IconSolarUndoRightRoundSquareBold,
+	IconSolarUndoRightSquareBold,
+	IconSolarUnreadBold,
+	IconSolarUploadBold,
+	IconSolarUploadMinimalisticBold,
+	IconSolarUploadSquareBold,
+	IconSolarUploadTrack2Bold,
+	IconSolarUploadTrackBold,
+	IconSolarUploadTwiceSquareBold,
+	IconSolarUsbBold,
+	IconSolarUsbCircleBold,
+	IconSolarUsbSquareBold,
+	IconSolarUserBlockBold,
+	IconSolarUserBlockRoundedBold,
+	IconSolarUserBold,
+	IconSolarUserCheckBold,
+	IconSolarUserCheckRoundedBold,
+	IconSolarUserCircleBold,
+	IconSolarUserCrossBold,
+	IconSolarUserCrossRoundedBold,
+	IconSolarUserHandUpBold,
+	IconSolarUserHandsBold,
+	IconSolarUserHeartBold,
+	IconSolarUserHeartRoundedBold,
+	IconSolarUserIdBold,
+	IconSolarUserMinusBold,
+	IconSolarUserMinusRoundedBold,
+	IconSolarUserPlusBold,
+	IconSolarUserPlusRoundedBold,
+	IconSolarUserRoundedBold,
+	IconSolarUserSpeakBold,
+	IconSolarUserSpeakRoundedBold,
+	IconSolarUsersGroupRoundedBold,
+	IconSolarUsersGroupTwoRoundedBold,
+	IconSolarVerifiedCheckBold,
+	IconSolarVideoFrame2Bold,
+	IconSolarVideoFrameBold,
+	IconSolarVideoFrameCut2Bold,
+	IconSolarVideoFrameCutBold,
+	IconSolarVideoFramePlayHorizontalBold,
+	IconSolarVideoFramePlayVerticalBold,
+	IconSolarVideoFrameReplaceBold,
+	IconSolarVideoLibraryBold,
+	IconSolarVideocameraAddBold,
+	IconSolarVideocameraBold,
+	IconSolarVideocameraRecordBold,
+	IconSolarVinylBold,
+	IconSolarVinylRecordBold,
+	IconSolarVirusBold,
+	IconSolarVolleyball2Bold,
+	IconSolarVolleyballBold,
+	IconSolarVolumeBold,
+	IconSolarVolumeCrossBold,
+	IconSolarVolumeKnobBold,
+	IconSolarVolumeLoudBold,
+	IconSolarVolumeSmallBold,
+	IconSolarWadOfMoneyBold,
+	IconSolarWalkingBold,
+	IconSolarWalkingRoundBold,
+	IconSolarWallet2Bold,
+	IconSolarWalletBold,
+	IconSolarWalletMoneyBold,
+	IconSolarWallpaperBold,
+	IconSolarWashingMachineBold,
+	IconSolarWashingMachineMinimalisticBold,
+	IconSolarWatchRoundBold,
+	IconSolarWatchSquareBold,
+	IconSolarWatchSquareMinimalisticBold,
+	IconSolarWatchSquareMinimalisticChargeBold,
+	IconSolarWaterBold,
+	IconSolarWaterSunBold,
+	IconSolarWaterdropBold,
+	IconSolarWaterdropsBold,
+	IconSolarWeigherBold,
+	IconSolarWheelAngleBold,
+	IconSolarWheelBold,
+	IconSolarWhiskBold,
+	IconSolarWiFiRouterBold,
+	IconSolarWiFiRouterMinimalisticBold,
+	IconSolarWiFiRouterRoundBold,
+	IconSolarWidget2Bold,
+	IconSolarWidget3Bold,
+	IconSolarWidget4Bold,
+	IconSolarWidget5Bold,
+	IconSolarWidget6Bold,
+	IconSolarWidgetAddBold,
+	IconSolarWidgetBold,
+	IconSolarWindBold,
+	IconSolarWindowFrameBold,
+	IconSolarWineglassBold,
+	IconSolarWineglassTriangleBold,
+	IconSolarWinrarBold,
+	IconSolarWirelessChargeBold,
+	IconSolarWomenBold,
+	IconSolarXxxBold,
+	IconSolarZipFileBold,
+	IconSolarCloundCrossBold
 }
