@@ -9,7 +9,7 @@ import themeConfig from '@/config/theme.config'
 import { Redirect, useRouter } from 'expo-router'
 import React from 'react'
 import * as ImagePicker from 'expo-image-picker'
-import { Alert, Image, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native'
+import { Alert, Image, ScrollView, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native'
 import Modal, { ModalContent } from '@/components/Modal'
 import { CameraView, CameraType, useCameraPermissions } from 'expo-camera'
 import CameraFlip from '@/svg/CameraFlip'
@@ -46,17 +46,20 @@ export default function PhotosScreen () {
         front: { uri: string, name: string, type: string } | null
         leftside: { uri: string, name: string, type: string } | null
         rightside: { uri: string, name: string, type: string } | null
+        signature: { uri: string, name: string, type: string } | null
     }>({
         front: null,
         leftside: null,
         rightside: null,
+        signature: null,
     })
     const [photosUri, setPhotosUri] = React.useState({
         front: '',
         leftside: '',
         rightside: '',
+        signature: '',
     })
-    const [currentMode, setCurrentMode] = React.useState<'front' | 'leftside' | 'rightside' | ''>('')
+    const [currentMode, setCurrentMode] = React.useState<'front' | 'leftside' | 'rightside' | 'signature' | ''>('')
     
     const [facing, setFacing] = React.useState<CameraType>('front')
     const [permission, requestPermission] = useCameraPermissions()
@@ -139,7 +142,7 @@ export default function PhotosScreen () {
         }
     }
 
-    const onUploadImage = async (side: 'front' | 'leftside' | 'rightside') => {
+    const onUploadImage = async (side: 'front' | 'leftside' | 'rightside' | 'signature') => {
         if (!permission.granted) {
             await requestPermission()
         }
@@ -155,6 +158,9 @@ export default function PhotosScreen () {
         formData.append('front', photos.front as any)
         formData.append('leftside', photos.leftside as any)
         formData.append('rightside', photos.rightside as any)
+        if (photos.signature) {
+            formData.append('signature', photos.signature as any)
+        }
         formData.append('name', params.name)
         formData.append('age', params.age.toString())
         formData.append('occupation', params.occupation)
@@ -210,7 +216,7 @@ export default function PhotosScreen () {
     return (
         <React.Fragment>
             <Container style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', paddingHorizontal: 16, paddingTop: 77 }}>
-                <View>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <Typography fontWeight='semibold' fontSize='h2' sx={{ textAlign: 'center', color: themeConfig.colors.main['A700'], marginBottom: 10 }}>
                         Método IrisViva
                     </Typography>
@@ -296,6 +302,29 @@ export default function PhotosScreen () {
                             {photosUri.rightside && (
                                 <Image source={{ uri: photosUri.rightside }} style={{ width: '100%', height: 100, objectFit: 'cover', borderRadius: 16, marginBottom: 10 }} />
                             )}
+
+                            <Button
+                                title='4. Foto da assinatura'
+                                titleProps={{
+                                    style: {
+                                        fontSize: 14,
+                                    }
+                                }}
+                                sx={{
+                                    borderWidth: 1.5,
+                                    borderStyle: 'dashed',
+                                    borderColor: themeConfig.colors.gray['A200'],
+                                    borderRadius: 16,
+                                    padding: 16,
+                                    width: '100%',
+                                    marginBottom: 10
+                                }}
+                                onPress={() => onUploadImage('signature')}
+                            />
+
+                            {photosUri.signature && (
+                                <Image source={{ uri: photosUri.signature }} style={{ width: '100%', height: 100, objectFit: 'cover', borderRadius: 16, marginBottom: 10 }} />
+                            )}
                         </View>
 
                         <View style={{ marginTop: 20, display: 'flex', flexDirection: 'row', gap: 10 }}>
@@ -324,7 +353,7 @@ export default function PhotosScreen () {
                             />
                         </View>
                     </View>
-                </View>
+                </ScrollView>
             </Container>
             <Modal visible={modalVisible} contentContainerStyle={{ marginHorizontal: 0, borderRadius: 0, padding: 0, minHeight: dimensions.height, width: '100%' }}>
                 <ModalContent style={{ width: '100%', height: '100%' }}>
