@@ -258,6 +258,21 @@ export default function AnalysisScreen () {
               </View>
             )}
 
+            {result.analise_grafopsicologica && (
+              <View style={{ width: '100%', backgroundColor: 'white', padding: 15, borderRadius: 10, marginBottom: 20 }}>
+                <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 10 }}>
+                  <Icon name='IconSolarDocumentAddLinear' size={25} color={themeConfig.colors.main['A700']} />
+                  <Typography fontWeight='bold' fontSize='h4' sx={{ color: themeConfig.colors.main['A700'], flex: 1 }}>
+                    Análise Grafopsicológica
+                  </Typography>
+                </View>
+
+                <Typography fontWeight='regular' fontSize='h4' sx={{ textAlign: 'justify', color: themeConfig.colors.gray['A600'] }}>
+                  {result.analise_grafopsicologica}
+                </Typography>
+              </View>
+            )}
+
             <View style={{ width: '100%', backgroundColor: formatUtil.hexToRgba(themeConfig.colors.warning['A300'], 0.3), padding: 15, borderRadius: 10, marginBottom: 20 }}>
               <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 10 }}>
                 <Icon name='IconSolarDangerTriangleLinear' size={25} color={themeConfig.colors.warning['A600']} />
