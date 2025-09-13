@@ -12,6 +12,7 @@ import { useRoute } from '@react-navigation/native';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import { Alert, ScrollView, View, Share } from 'react-native';
+import * as FileSystem from 'expo-file-system';
 
 interface Result {
   titulo: string

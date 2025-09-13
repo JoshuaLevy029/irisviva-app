@@ -1,7 +1,8 @@
 import Icons from '@/svg/index'
+import Emojis from '@/emojis/index'
 
 export interface IconProps {
-    name: keyof typeof Icons
+    name: keyof typeof Icons | keyof typeof Emojis
     color?: string
     size?: number | string
 }
@@ -11,6 +12,7 @@ export default function Icon({ name, color = '#1f1f1f', size = 32 }: IconProps) 
 
     let AllIcons = {
         ...Icons,
+        ...Emojis,
     }
 
     if (name in AllIcons) {

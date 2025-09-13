@@ -45,13 +45,13 @@ export default function AnalysisScreen () {
       })
     } else {
       router.push({
-        pathname: '/(analysis)/photos',
+        pathname: '/(analysis)/tips',
         params: {
           name: data.name,
           age: data.age,
           occupation: data.occupation,
           gender: data.gender,
-        gender_definition: data.gender_definition || '',
+          gender_definition: data.gender_definition || '',
         },
       })
     }
