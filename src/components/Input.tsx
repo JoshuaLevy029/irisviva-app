@@ -40,6 +40,7 @@ const Input = ({
   borderColor,
   customComponentProps = {},
   labelProps = {},
+  style: inputStyle = {},
   ...rest
 }: InputProps) => {
   const [isFocused, setIsFocused] = useState(false)
@@ -104,6 +105,7 @@ const Input = ({
               height: 40,
               paddingRight: endIcon ? 10 : 0,
               paddingLeft: startIcon ? 10 : 0,
+              ...inputStyle as any,
             }}
             onChangeText={(formatted, raw) => onChangeText(useRawValue ? raw : formatted)}
             onFocus={handleFocus}
@@ -121,6 +123,7 @@ const Input = ({
               height: 40,
               paddingRight: endIcon ? 10 : 0,
               paddingLeft: startIcon ? 10 : 0,
+              ...inputStyle as any,
             }}
             onFocus={handleFocus}
             onBlur={handleBlur}

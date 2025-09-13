@@ -40,6 +40,8 @@ export default function PhotosScreen () {
         name: string
         age: number
         occupation: string
+        gender: string
+        gender_definition: string
     }
 
     const [photos, setPhotos] = React.useState<{
@@ -164,6 +166,8 @@ export default function PhotosScreen () {
         formData.append('name', params.name)
         formData.append('age', params.age.toString())
         formData.append('occupation', params.occupation)
+        formData.append('gender', params.gender)
+        formData.append('gender_definition', params.gender_definition || '')
 
         const response = await axiosUtil.post({
             url: '/analysis',
@@ -215,7 +219,7 @@ export default function PhotosScreen () {
 
     return (
         <React.Fragment>
-            <Container style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', paddingHorizontal: 16, paddingTop: 77 }}>
+            <Container style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', paddingHorizontal: 16, paddingTop: 77, marginBottom: 32 }}>
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <Typography fontWeight='semibold' fontSize='h2' sx={{ textAlign: 'center', color: themeConfig.colors.main['A700'], marginBottom: 10 }}>
                         Método IrisViva
