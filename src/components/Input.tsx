@@ -4,6 +4,7 @@ import { KeyboardTypeOptions, TextInput, TextInputProps, TextProps, View, ViewSt
 import { MaskedTextInput, MaskedTextInputProps } from 'react-native-mask-text'
 import Typography, { TypographyProps } from './Typography'
 import { Column, Row } from './standard/Common'
+import themeConfig from '@/config/theme.config'
 
 export type InputProps = TextInputProps & Omit<MaskedTextInputProps, 'style' | 'onChangeText'> & {
   label?: string
@@ -100,11 +101,13 @@ const Input = ({
             placeholder={placeholder}
             value={value}
             keyboardType={keyboardType}
+            placeholderTextColor={themeConfig.colors.gray.A500}
             style={{
               flex: 1,
               height: 40,
               paddingRight: endIcon ? 10 : 0,
               paddingLeft: startIcon ? 10 : 0,
+              color: themeConfig.colors.gray.A800,
               ...inputStyle as any,
             }}
             onChangeText={(formatted, raw) => onChangeText(useRawValue ? raw : formatted)}
@@ -118,11 +121,13 @@ const Input = ({
             value={value}
             keyboardType={keyboardType}
             onChangeText={v => onChangeText(v)}
+            placeholderTextColor={themeConfig.colors.gray.A500}
             style={{
               flex: 1,
               height: 40,
               paddingRight: endIcon ? 10 : 0,
               paddingLeft: startIcon ? 10 : 0,
+              color: themeConfig.colors.gray.A800,
               ...inputStyle as any,
             }}
             onFocus={handleFocus}
