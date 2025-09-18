@@ -31,7 +31,7 @@ export default () => {
         >
             <Icon name='IconSolarMagniferLinear' size={20} color={themeConfig.colors.main['A700']} />
             <Typography fontWeight='semibold' sx={{ color: themeConfig.colors.main['A700'], fontSize: 14 }}>
-                Nenhum plano encontrado
+                Nenhum usuário encontrado
             </Typography>
         </View>
     );

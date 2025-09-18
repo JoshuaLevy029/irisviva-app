@@ -31,7 +31,7 @@ export default () => {
         >
             <Icon name='IconSolarDangerTriangleLinear' size={30} color={themeConfig.colors.error['A500']} />
             <Typography fontWeight='semibold' sx={{ color: themeConfig.colors.error['A600'], fontSize: 14 }}>
-                Ocorreu um erro ao carregar os usuários
+                Ocorreu um erro ao carregar os relatórios
             </Typography>
         </View>
     );

@@ -2,6 +2,7 @@
 import { IconButton } from '@/components/Button';
 import Container from '@/components/Container';
 import Icon from '@/components/Icon';
+import PrivatePolicyAndTermsOfUse from '@/components/PrivatePolicyAndTermsOfUse';
 import Typography from '@/components/Typography';
 import AnimatedScrollView from '@/components/animatedScrollView';
 import themeConfig from '@/config/theme.config';
@@ -16,6 +17,7 @@ import { TouchableOpacity, View } from 'react-native';
 export default function ProfileScreen () {
   const { signOut, getSession, isAuthenticated, isLoading } = useSession()
   const [user, setUser] = React.useState<User|null>(null)
+  const [openPolicy, setOpenPolicy] = React.useState<boolean>(false)
 
   if (isLoading) {
     return null
@@ -35,7 +37,10 @@ export default function ProfileScreen () {
       getUser()
     }
   }, [isLoading, isAuthenticated])
-  
+
+  const handleOpenPolicy = () => setOpenPolicy(true)
+  const handleClosePolicy = () => setOpenPolicy(false)
+
   return (
     <Container style={{ alignItems: 'center', justifyContent: 'flex-start', paddingHorizontal: 16, paddingTop: 77 }}>
       <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%', height: 32 }}>
@@ -57,7 +62,7 @@ export default function ProfileScreen () {
         </Typography>
 
         <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginBottom: 10 }}>
-          <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8 }} onPress={() => {}}>
+          <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8 }} onPress={handleOpenPolicy}>
             <Icon name='IconSolarFileTextLinear' size={16} color={themeConfig.colors.gray['A600']} />
             <Typography fontWeight='semibold' fontSize={14} sx={{ margin: 0, padding: 0 }}>
               Política de Privacidade
@@ -89,6 +94,8 @@ export default function ProfileScreen () {
           <IconButton icon='IconSolarAltArrowRightLinear' onPress={() => signOut()} color={themeConfig.colors.gray['A600']} size={16} />
         </View>
       </View>
+
+      <PrivatePolicyAndTermsOfUse open={openPolicy} onClose={handleClosePolicy} />
     </Container>
   );
 }

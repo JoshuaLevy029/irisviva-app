@@ -2468,5 +2468,6 @@ export enum Icons {
 	IconSolarWomenBold = "IconSolarWomenBold",
 	IconSolarXxxBold = "IconSolarXxxBold",
 	IconSolarZipFileBold = "IconSolarZipFileBold",
-	IconSolarCloundCrossBold = "IconSolarCloundCrossBold"
+	IconSolarCloundCrossBold = "IconSolarCloundCrossBold",
+	Ai = "Ai",
 }

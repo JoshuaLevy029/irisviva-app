@@ -15,6 +15,10 @@ export interface ButtonProps extends TouchableOpacityProps {
     textColor?: string
     fullWidth?: boolean
     children?: React.ReactNode
+    icon?: IconProps['name']
+    iconSize?: number
+    iconColor?: string
+    iconPosition?: 'start' | 'end'
 }
 
 export default (props: ButtonProps) => {
@@ -31,6 +35,10 @@ export default (props: ButtonProps) => {
         disabled = false,
         textColor: rawTextColor,
         children,
+        icon,
+        iconSize = 20,
+        iconColor: rawIconColor,
+        iconPosition = 'start',
         ...buttonResProps
     } = props
     const { style: textStyle = {}, ...restTitleProps } = titleProps ?? {} as TextProps
@@ -98,6 +106,39 @@ export default (props: ButtonProps) => {
 
         return _textColor
     }, [bgColor, variant, color, style, sx,  disabled, rawTextColor])
+
+    const iconColor = React.useMemo(() => {
+        let _iconColor = themeConfig.colors.main.main
+
+        if (rawIconColor) {
+            _iconColor = rawIconColor
+            return _iconColor
+        } else if (variant === 'text') {
+            if (color === 'primary') {
+                _iconColor = themeConfig.colors.primary
+            } else if (color === 'secondary' || color === 'error' || color === 'success' || color === 'warning' || color === 'info') {
+                _iconColor = themeConfig.colors[color]['main']
+            } else if (color) {
+                _iconColor = color
+            }
+        } else if (variant === 'outlined') {
+            if (color === 'primary') {
+                _iconColor = themeConfig.colors.primary
+            } else if (color === 'secondary' || color === 'error' || color === 'success' || color === 'warning' || color === 'info') {
+                _iconColor = themeConfig.colors[color]['main']
+            } else if (color) {
+                _iconColor = color
+            }
+        } else if (variant === 'contained') {
+            _iconColor = themeConfig.colors.text
+        }
+
+        /* if (disabled) {
+            _iconColor = formatUtil.alpha(_iconColor, disableOpacity)
+        } */
+
+        return _iconColor
+    }, [bgColor, variant, color, style, sx,  disabled, rawIconColor])
 
     const buildStyleView = React.useMemo(() => {
         let styles: ViewStyle = {
@@ -188,11 +229,13 @@ export default (props: ButtonProps) => {
             disabled={disabled}
             {...buttonResProps}
         >
+            {title && typeof title === 'string' && icon && iconPosition === 'start' && <Icon name={icon} size={iconSize} color={iconColor} />}
             {title && typeof title === 'string' && (
                 <Text style={buildStyleText} {...restTitleProps}>
                     {title}
                 </Text>
             )}
+            {title && typeof title === 'string' && icon && iconPosition === 'end' && <Icon name={icon} size={iconSize} color={iconColor} />}
             {title && typeof title !== 'string' && (title)}
             {children}
         </TouchableOpacity>

@@ -15,4 +15,8 @@ export type User = {
     created_at: Date
     updated_at: Date
     deleted_at: Date
+
+    reports: number
+    plan: string
+    max_reports: number
 }

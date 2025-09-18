@@ -107,6 +107,7 @@ export default function SessionProvider({ children }: PropsWithChildren) {
 
   const signOut = () => {
     setSession(null)
+    setUser(null)
     setRefreshToken(null)
   }
 

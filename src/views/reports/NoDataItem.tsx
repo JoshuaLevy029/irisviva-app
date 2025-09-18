@@ -14,7 +14,7 @@ export default () => {
     return (
         <View 
             style={{
-                backgroundColor: formatUtil.alpha(themeConfig.colors.error['A500'], 0.3),
+                backgroundColor: formatUtil.alpha(themeConfig.colors.main['A500'], 0.3),
                 opacity: 0.7,
                 borderRadius: 16,
                 padding: 16,
@@ -29,9 +29,9 @@ export default () => {
                 gap: 4,
             }}
         >
-            <Icon name='IconSolarDangerTriangleLinear' size={30} color={themeConfig.colors.error['A500']} />
-            <Typography fontWeight='semibold' sx={{ color: themeConfig.colors.error['A600'], fontSize: 14 }}>
-                Ocorreu um erro ao carregar os usuários
+            <Icon name='IconSolarMagniferLinear' size={20} color={themeConfig.colors.main['A700']} />
+            <Typography fontWeight='semibold' sx={{ color: themeConfig.colors.main['A700'], fontSize: 14 }}>
+                Nenhum relatório encontrado
             </Typography>
         </View>
     );

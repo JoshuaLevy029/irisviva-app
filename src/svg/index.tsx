@@ -2469,6 +2469,8 @@ import IconSolarWomenBold from './IconSolarWomenBold'
 import IconSolarXxxBold from './IconSolarXxxBold'
 import IconSolarZipFileBold from './IconSolarZipFileBold'
 import IconSolarCloundCrossBold from './IconSolarCloundCrossBold'
+import Ai from './Ai'
+
 export default {
 	IconSolar4kLinear,
 	IconSolarAccessibilityLinear,
@@ -4939,5 +4941,6 @@ export default {
 	IconSolarWomenBold,
 	IconSolarXxxBold,
 	IconSolarZipFileBold,
-	IconSolarCloundCrossBold
+	IconSolarCloundCrossBold,
+	Ai,
 }

@@ -5,12 +5,25 @@ import Icon from '@/components/Icon';
 import Typography from '@/components/Typography';
 import AnimatedScrollView from '@/components/animatedScrollView';
 import themeConfig from '@/config/theme.config';
-import { useRouter } from 'expo-router';
-import { View } from 'react-native';
+import { useSession } from '@/context/auth';
+import { User } from '@/entities/user.entity';
+import { Redirect, useRouter } from 'expo-router';
+import React from 'react';
+import { Text, View } from 'react-native';
 
 
 export default function HomeScreen () {
   const router = useRouter()
+  const { signOut, getSession, isAuthenticated, isLoading, user: sessionUser } = useSession();
+  const [user, setUser] = React.useState<User|null>(null);
+
+  if (!isAuthenticated || !sessionUser) {
+    return <Redirect href='/(signin)' />;
+  }
+
+  React.useEffect(() => {
+    setUser(JSON.parse(sessionUser));
+  }, [sessionUser]);
 
   return (
     <Container style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
@@ -49,7 +62,8 @@ export default function HomeScreen () {
             </Typography>
           </View>
 
-          <Button
+          {user && user.max_reports > user.reports && (
+            <Button
               title='Iniciar Análise'
               variant='contained'
               disabled={false}
@@ -58,7 +72,40 @@ export default function HomeScreen () {
                 router.push('/(analysis)/analysis')
               }}
               sx={{ marginTop: 20 }}
-          />
+            />
+          )}
+          {user && user.max_reports <= user.reports && (
+            <React.Fragment>
+              <View
+                style={{
+                  backgroundColor: themeConfig.colors.error['A100'],
+                  padding: 16,
+                  borderLeftColor: themeConfig.colors.error['A400'],
+                  borderLeftWidth: 4,
+                  borderRadius: 10,
+                  marginTop: 20,
+                }}
+              >
+                <Typography fontWeight='regular' sx={{ color: themeConfig.colors.warning['A700'] }}>
+                  Você atingiu o limite de análises mensais. Para continuar usando o aplicativo, você precisa adquirir um plano ou fazer upgrade.
+                </Typography>
+              </View>
+
+              <Button
+                title='Upgrade'
+                icon='Ai'
+                iconPosition='start'
+                variant='contained'
+                color={themeConfig.colors.main.A600}
+                disabled={false}
+                fullWidth
+                onPress={() => {
+                  router.push('/(analysis)/analysis')
+                }}
+                sx={{ marginTop: 20 }}
+              />
+            </React.Fragment>
+          )}
         </View>
       </View>
     </Container>
