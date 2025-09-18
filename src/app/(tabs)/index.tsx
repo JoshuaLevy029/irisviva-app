@@ -100,7 +100,7 @@ export default function HomeScreen () {
                 disabled={false}
                 fullWidth
                 onPress={() => {
-                  router.push('/(analysis)/analysis')
+                  router.push('/(plans)')
                 }}
                 sx={{ marginTop: 20 }}
               />

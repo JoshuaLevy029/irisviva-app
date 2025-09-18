@@ -164,6 +164,10 @@ function RootLayoutNav() {
                       options={{ headerShown: false }}
                     />
                     <Stack.Screen
+                      name='(plans)'
+                      options={{ headerShown: false }}
+                    />
+                    <Stack.Screen
                       name='(admin)'
                       options={{ headerShown: false }}
                     />
