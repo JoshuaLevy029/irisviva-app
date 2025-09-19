@@ -394,7 +394,7 @@ export default function PlansScreen () {
                                     </Typography>
 
                                     <Typography fontWeight='regular' fontSize='smallmedium' style={{ marginBottom: 5 }}>
-                                        10% de análise da íris
+                                        20% de análise da íris
                                     </Typography>
 
                                     <Typography fontWeight='regular' fontSize='smallmedium' style={{ marginBottom: 5 }}>
@@ -410,7 +410,7 @@ export default function PlansScreen () {
                                     </Typography>
 
 
-                                    {user?.plan === 'Gratuito' ? (
+                                    {user?.plan === 'Gratuito' && (
                                         <Button 
                                             title='Plano atual' 
                                             onPress={() => {}} 
@@ -419,16 +419,6 @@ export default function PlansScreen () {
                                             size='medium'
                                             color={themeConfig.colors.gray.A600}
                                             disabled
-                                        />
-                                    ) : (
-                                        <Button 
-                                            title='Selecionar plano' 
-                                            onPress={() => {}} 
-                                            variant='contained'
-                                            fullWidth
-                                            size='medium'
-                                            color={themeConfig.colors.primary}
-                                            style={{ opacity: 0 }}
                                         />
                                     )}
                                 </View>
