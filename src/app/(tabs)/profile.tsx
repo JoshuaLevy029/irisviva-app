@@ -147,7 +147,7 @@ export default function ProfileScreen () {
 
               <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 4, marginTop: 5 }}>
                 <Typography fontWeight='bold' fontSize={12} color={themeConfig.colors.gray['A900']}>
-                  Percentual de análisse
+                  Percentual de análise
                 </Typography>
                 <Typography fontWeight='semibold' fontSize={12} color={themeConfig.colors.gray['A800']}>
                   {user?.analyzes_percentage ?? 0}%

@@ -350,6 +350,88 @@ export default function PlansScreen () {
                                     scrollEnabled={true}
                                     contentContainerCustomStyle={{ alignItems: 'center' }}
                                 /> */}
+                                <View 
+                                    key={`plan-gratuito`} 
+                                    style={{ 
+                                        width: dimensions.width - 64, 
+                                        display: 'flex', 
+                                        flexDirection: 'column', 
+                                        justifyContent: 'center', 
+                                        alignItems: 'center', 
+                                        backgroundColor: '#fff',
+                                        padding: 16,
+                                        borderRadius: 20,
+                                        boxShadow: '0px 0px 10px 0px rgba(0, 0, 0, 0.1)',
+                                        marginBottom: 10,
+                                        marginHorizontal: 16,
+                                        ...(user?.plan === 'Gratuito' && {
+                                            borderWidth: 1.5,
+                                            borderColor: themeConfig.colors.primary,
+                                        })
+                                    }}
+                                >
+                                    <View 
+                                        style={{ 
+                                            display: 'flex', 
+                                            flexDirection: 'row', 
+                                            justifyContent: 'center', 
+                                            alignItems: 'center', 
+                                            borderWidth: 2, 
+                                            borderColor: themeConfig.colors.warning.A500,
+                                            borderRadius: 100,
+                                            padding: 5,
+                                            marginBottom: 10,
+                                        }}
+                                    >
+                                        <Icon name={user?.plan === 'Gratuito' ? 'IconSolarStarBold' : 'IconSolarStarLinear'} size={30} color={themeConfig.colors.warning.A500} />
+                                    </View>
+                                    <Typography fontWeight='semibold' fontSize='h5' color='primary' align='center' sx={{ marginBottom: 20 }}>
+                                        Gratuito
+                                    </Typography>
+
+                                    <Typography fontWeight='regular' fontSize='smallmedium' style={{ marginBottom: 5 }}>
+                                        3 análises por mês
+                                    </Typography>
+
+                                    <Typography fontWeight='regular' fontSize='smallmedium' style={{ marginBottom: 5 }}>
+                                        10% de análise da íris
+                                    </Typography>
+
+                                    <Typography fontWeight='regular' fontSize='smallmedium' style={{ marginBottom: 5 }}>
+                                        Compartilhamento dos resultados
+                                    </Typography>
+
+                                    <Typography fontWeight='regular' fontSize='smallmedium' style={{ marginBottom: 5 }}>
+                                        Histórico de análises
+                                    </Typography>
+
+                                    <Typography fontWeight='semibold' fontSize='h4' color={themeConfig.colors.main.A900} align='center' sx={{ marginTop: 20, marginBottom: 30 }}>
+                                        {formatUtil.money(0)}/mês
+                                    </Typography>
+
+
+                                    {user?.plan === 'Gratuito' ? (
+                                        <Button 
+                                            title='Plano atual' 
+                                            onPress={() => {}} 
+                                            variant='contained'
+                                            fullWidth
+                                            size='medium'
+                                            color={themeConfig.colors.gray.A600}
+                                            disabled
+                                        />
+                                    ) : (
+                                        <Button 
+                                            title='Selecionar plano' 
+                                            onPress={() => {}} 
+                                            variant='contained'
+                                            fullWidth
+                                            size='medium'
+                                            color={themeConfig.colors.primary}
+                                            style={{ opacity: 0 }}
+                                        />
+                                    )}
+                                </View>
                                 {plans.items.map((item) => (
                                     <View 
                                         key={`plan-${item.id}`} 
@@ -365,6 +447,10 @@ export default function PlansScreen () {
                                             boxShadow: '0px 0px 10px 0px rgba(0, 0, 0, 0.1)',
                                             marginBottom: 10,
                                             marginHorizontal: 16,
+                                            ...(user?.plan === item.name && {
+                                                borderWidth: 1.5,
+                                                borderColor: themeConfig.colors.primary,
+                                            })
                                         }}
                                     >
                                         <View 
@@ -380,7 +466,7 @@ export default function PlansScreen () {
                                                 marginBottom: 10,
                                             }}
                                         >
-                                            <Icon name='IconSolarStarLinear' size={30} color={themeConfig.colors.warning.A500} />
+                                            <Icon name={user?.plan === item.name ? 'IconSolarStarBold' : 'IconSolarStarLinear'} size={30} color={themeConfig.colors.warning.A500} />
                                         </View>
                                         <Typography fontWeight='semibold' fontSize='h5' color='primary' align='center' sx={{ marginBottom: 20 }}>{item.name}</Typography>
 
@@ -403,6 +489,12 @@ export default function PlansScreen () {
                                         {user && user.role === 'professional' && item.recommendation_priority > 0 && (
                                             <Typography fontWeight='regular' fontSize='smallmedium' style={{ marginBottom: 5 }}>
                                             Prioridade de recomendação: {RecommendationPriority[Number(item.recommendation_priority) as keyof typeof RecommendationPriority]}
+                                            </Typography>
+                                        )}
+
+                                        {item.name === 'Premium' && (
+                                            <Typography fontWeight='semibold' fontSize='smallmedium' style={{ marginBottom: 5 }}>
+                                                Análise grafológica
                                             </Typography>
                                         )}
 

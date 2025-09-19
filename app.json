@@ -12,17 +12,12 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.joshlevy029.iris-viva"
     },
-    "splash": {
-      "image": "./src/assets/images/adaptive-icon.png",
-      "resizeMode": "cover",
-      "backgroundColor": "#ffffff"
-    },
     "assetBundlePatterns": [
       "**/*"
     ],
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/images/adaptive-icon.png",
+        "foregroundImage": "./src/assets/images/splash-icon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
@@ -58,15 +53,6 @@
       ],
       "expo-secure-store",
       [
-        "expo-splash-screen",
-        {
-          "image": "./src/assets/images/splash-icon.png",
-          "imageWidth": 200,
-          "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
-        }
-      ],
-      [
         "expo-camera",
         {
           "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera",
@@ -79,6 +65,19 @@
         {
           "merchantIdentifier": "merchant.com.joshlevy029.iris-viva",
           "enableGooglePay": true
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#ffffff",
+          "image": "./src/assets/images/icon.png",
+          "dark": {
+            "image": "./src/assets/images/icon.png",
+            "backgroundColor": "#ffffff"
+          },
+          "imageWidth": 100,
+          "resizeMode": "contain"
         }
       ]
     ],

@@ -46,7 +46,7 @@ export default function HomeScreen () {
           </Typography>
 
           <Typography fontWeight='regular' sx={{ textAlign: 'center', color: themeConfig.colors.gray['A600'], marginBottom: 40, }}>
-            Este aplicativo agora usa a avançada inteligência artificial do Gemini para analisar a foto da sua íris. O objetivo é oferecer um relatório verdadeiramente personalizado para seu autoconhecimento.
+            Este aplicativo utiliza inteligência artificial avançada para analisar a foto da sua íris. O objetivo é oferecer um relatório verdadeiramente personalizado para seu autoconhecimento.
           </Typography>
 
           <View
