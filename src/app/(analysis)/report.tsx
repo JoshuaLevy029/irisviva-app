@@ -1,5 +1,5 @@
 
-import Button from '@/components/Button';
+import Button, { IconButton } from '@/components/Button';
 import Container from '@/components/Container';
 import Disclaimer, { useDisclaimer } from '@/components/Disclaimer';
 import Icon from '@/components/Icon';
@@ -11,8 +11,10 @@ import formatUtil from '@/utils/format.util';
 import { useRoute } from '@react-navigation/native';
 import { useRouter } from 'expo-router';
 import React from 'react';
-import { Alert, ScrollView, View, Share } from 'react-native';
+import { Alert, ScrollView, View, Share, Animated } from 'react-native';
 import * as FileSystem from 'expo-file-system';
+import * as Sharing from 'expo-sharing';
+import { DateTime } from 'luxon';
 
 interface Result {
   titulo: string
@@ -76,30 +78,61 @@ export default function AnalysisScreen () {
 
   const { openDisclaimer, closeDisclaimer, ...disclaimerProps } = useDisclaimer()
 
+  // State for "To Top" button
+  const [showScrollToTop, setShowScrollToTop] = React.useState(false)
+  const scrollViewRef = React.useRef<ScrollView>(null)
+
+  // Handle scroll events to show/hide "To Top" button
+  const handleScroll = (event: any) => {
+    const offsetY = event.nativeEvent.contentOffset.y
+    setShowScrollToTop(offsetY > 200) // Show button after scrolling 200px
+  }
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    scrollViewRef.current?.scrollTo({ y: 0, animated: true })
+  }
+
   const onShare = async () => {
     try {
       const response = await Share.share({
         message: `
-          Olá ${result.dados_paciente.nome}! Aqui está o que seus olhos nos contam
+        *Olá ${result.dados_paciente.nome}! Aqui está o que seus olhos nos contam*
 
-          ${result.resumo_analise}
+        ${result.resumo_analise}
 
-          Detalhamento Técnico:
-          ${result.detalhamento_tecnico.map((item) => `
-            Sinais: ${item.sinal}
-            Impacto: ${item.impacto}
-            Explicação: ${item.explicacao_para_leigo}
-          `).join('\n')}
+        *Detalhamento Técnico:*
+        ${result.detalhamento_tecnico.map((item) => `
+          *${item.zona}*
+            *Sinais:* ${item.sinal}
+            *Impacto:* ${item.impacto}
+            *Explicação:* ${item.explicacao_para_leigo}
+        `).join('\n')}
 
-          Hipóteses Emocionais:
-          ${result.hipoteses_emocionais.map((item) => `
-            - ${item}
-          `).join('\n')}
+        *Hipóteses Emocionais:*
+        ${result.hipoteses_emocionais.map((item) => `
+          - ${item}
+        `).join('\n')}
 
-          Encaminhamentos Sugeridos:
-          ${result.encaminhamentos_sugeridos.map((item) => `
-            - ${item}
-          `).join('\n')}
+        *Encaminhamentos Sugeridos:*
+        ${result.encaminhamentos_sugeridos.map((item) => `
+          - ${item}
+        `).join('\n')}
+
+        *Forças e Fragilidades Emocionais:*
+        *Forças:*
+        ${result.forcas_x_fragilidades_emocionais.forcas.map((item) => `
+          - ${item}
+        `).join('\n')}
+
+        *Fragilidades:*
+        ${result.forcas_x_fragilidades_emocionais.fragilidades.map((item) => `
+          - ${item}
+        `).join('\n')}
+
+        *Análise Grafopsicológica:* ${result.analise_grafopsicologica}
+
+        *Aviso Importante:* ${result.aviso}
         `,
       })
 
@@ -118,12 +151,93 @@ export default function AnalysisScreen () {
         actions: []
       })
     }
-  }  
+  }
+
+  const onSave = async () => {
+    if (!(await Sharing.isAvailableAsync())) {
+      openDisclaimer({
+        open: true,
+        title: '',
+        content: 'Não foi possível salvar o relatório. Por favor, tente novamente.',
+        closeText: 'Fechar',
+        onClose: () => closeDisclaimer(),
+        actions: []
+      })
+      return;
+    }
+
+    const fileName = `IrisViva-${DateTime.now().toFormat('yyyy_MM_dd_HH_mm_ss')}.txt`;
+
+    const textToShare = `
+    *Olá ${result.dados_paciente.nome}! Aqui está o que seus olhos nos contam*
+
+    ${result.resumo_analise}
+
+    *Detalhamento Técnico:*
+    ${result.detalhamento_tecnico.map((item) => `
+      *${item.zona}*
+        *Sinais:* ${item.sinal}
+        *Impacto:* ${item.impacto}
+        *Explicação:* ${item.explicacao_para_leigo}
+    `).join('\n')}
+
+    *Hipóteses Emocionais:*
+    ${result.hipoteses_emocionais.map((item) => `
+      - ${item}
+    `).join('\n')}
+
+    *Encaminhamentos Sugeridos:*
+    ${result.encaminhamentos_sugeridos.map((item) => `
+      - ${item}
+    `).join('\n')}
+
+    *Forças e Fragilidades Emocionais:*
+    *Forças:*
+    ${result.forcas_x_fragilidades_emocionais.forcas.map((item) => `
+      - ${item}
+    `).join('\n')}
+
+    *Fragilidades:*
+    ${result.forcas_x_fragilidades_emocionais.fragilidades.map((item) => `
+      - ${item}
+    `).join('\n')}
+
+    *Análise Grafopsicológica:* ${result.analise_grafopsicologica}
+
+    *Aviso Importante:* ${result.aviso}
+    `;
+
+    const fileUri = FileSystem.documentDirectory + fileName;
+    try {
+      await FileSystem.writeAsStringAsync(fileUri, textToShare);
+      await Sharing.shareAsync(fileUri);
+    } catch (error: any) {
+      console.error('Error sharing text file:', error.message);
+      openDisclaimer({
+        open: true,
+        title: '',
+        content: 'Não foi possível salvar o relatório. Por favor, tente novamente.',
+        closeText: 'Fechar',
+        onClose: () => closeDisclaimer(),
+        actions: []
+      })
+      return;
+    }
+  }
 
   return (
     <React.Fragment>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <Container style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', paddingHorizontal: 16, paddingTop: 77 }}>
+      <ScrollView 
+        ref={scrollViewRef}
+        showsVerticalScrollIndicator={false}
+        onScroll={handleScroll}
+        scrollEventThrottle={16}
+      >
+        <Container style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', paddingHorizontal: 16, paddingTop: 40 }}>
+            <View style={{ width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start' }}>
+              <Button title='Voltar' icon='IconSolarAltArrowLeftLinear' onPress={() => router.push('/(tabs)')} sx={{ marginBottom: 10, paddingHorizontal: 0, paddingVertical: 0 }} />
+            </View>
+
             <Typography fontWeight='semibold' fontSize='h2' sx={{ textAlign: 'center', color: themeConfig.colors.main['A700'], marginBottom: 30 }}>
               {result.titulo}
             </Typography>
@@ -288,11 +402,24 @@ export default function AnalysisScreen () {
 
             <Button
               title='Compartilhar Relatório'
+              icon='IconSolarSquareShareLineLinear'
               variant='contained'
               disabled={false}
               fullWidth
               onPress={onShare}
               sx={{ marginBottom: 10 }}
+              titleProps={{ style: { marginLeft: 10 } }}
+            />
+
+            <Button
+              title='Salvar Relatório'
+              icon='IconSolarDisketteLinear'
+              variant='contained'
+              disabled={false}
+              fullWidth
+              onPress={onSave}
+              sx={{ marginBottom: 10 }}
+              titleProps={{ style: { marginLeft: 10 } }}
             />
 
             <Button
@@ -319,6 +446,29 @@ export default function AnalysisScreen () {
 
         </Container>
       </ScrollView>
+
+      {showScrollToTop && (
+        <View style={{ 
+          position: 'absolute', 
+          bottom: 30, 
+          right: 20, 
+          zIndex: 1000,
+        }}>
+          <IconButton 
+            icon='IconSolarAltArrowUpLinear' 
+            onPress={scrollToTop} 
+            size={25} 
+            style={{ 
+              backgroundColor: themeConfig.colors.primary, 
+              borderRadius: 30,
+              width: 40,
+              height: 40,
+              boxShadow: '0px 0px 10px 0px rgba(0, 0, 0, 0.1)',
+            }} 
+            color='white'
+          />
+        </View>
+      )}
 
       <Disclaimer {...disclaimerProps} />
     </React.Fragment>

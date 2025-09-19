@@ -15,7 +15,7 @@ import themeConfig from '@/config/theme.config'
 import SessionProvider from '@/context/auth'
 import { TranslatorProvider } from '@/context/translator'
 import * as NavigationBar from 'expo-navigation-bar'
-import { Platform } from 'react-native'
+import { KeyboardAvoidingView, Platform } from 'react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 
 export {

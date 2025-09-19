@@ -6,7 +6,7 @@ import Input, { ErrorInput } from '@/components/Input'
 import Typography from '@/components/Typography'
 import AnimatedScrollView from '@/components/animatedScrollView'
 import themeConfig from '@/config/theme.config'
-import { Redirect, useRouter } from 'expo-router'
+import { Redirect, useFocusEffect, useRouter } from 'expo-router'
 import React from 'react'
 import * as ImagePicker from 'expo-image-picker'
 import { Alert, Image, ScrollView, Text, TouchableOpacity, useWindowDimensions, View } from 'react-native'
@@ -24,6 +24,7 @@ import { Http } from '@/utils/http.util'
 
 export default function PhotosScreen () {
     const { getSession, isAuthenticated, isLoading, session } = useSession()
+    const [user, setUser] = React.useState<User | null>(null)
 
     if (isLoading) {
         return null
@@ -32,6 +33,10 @@ export default function PhotosScreen () {
     if (!isAuthenticated) {
         return <Redirect href='/(signin)' />
     }
+    
+    useFocusEffect(React.useCallback(() => { 
+        getSession().then((user) => setUser(user))
+    }, [isLoading, isAuthenticated]))
 
     const dimensions = useWindowDimensions()
     const router = useRouter()
@@ -307,27 +312,31 @@ export default function PhotosScreen () {
                                 <Image source={{ uri: photosUri.rightside }} style={{ width: '100%', height: 100, objectFit: 'cover', borderRadius: 16, marginBottom: 10 }} />
                             )}
 
-                            <Button
-                                title='4. Foto da assinatura'
-                                titleProps={{
-                                    style: {
-                                        fontSize: 14,
-                                    }
-                                }}
-                                sx={{
-                                    borderWidth: 1.5,
-                                    borderStyle: 'dashed',
-                                    borderColor: themeConfig.colors.gray['A200'],
-                                    borderRadius: 16,
-                                    padding: 16,
-                                    width: '100%',
-                                    marginBottom: 10
-                                }}
-                                onPress={() => onUploadImage('signature')}
-                            />
+                            {user?.plan === 'Premium' && (
+                                <React.Fragment>
+                                    <Button
+                                        title='4. Foto da assinatura'
+                                        titleProps={{
+                                            style: {
+                                                fontSize: 14,
+                                            }
+                                        }}
+                                        sx={{
+                                            borderWidth: 1.5,
+                                            borderStyle: 'dashed',
+                                            borderColor: themeConfig.colors.gray['A200'],
+                                            borderRadius: 16,
+                                            padding: 16,
+                                            width: '100%',
+                                            marginBottom: 10
+                                        }}
+                                        onPress={() => onUploadImage('signature')}
+                                    />
 
-                            {photosUri.signature && (
-                                <Image source={{ uri: photosUri.signature }} style={{ width: '100%', height: 100, objectFit: 'cover', borderRadius: 16, marginBottom: 10 }} />
+                                    {photosUri.signature && (
+                                        <Image source={{ uri: photosUri.signature }} style={{ width: '100%', height: 100, objectFit: 'cover', borderRadius: 16, marginBottom: 10 }} />
+                                    )}
+                                </React.Fragment>
                             )}
                         </View>
 
@@ -447,7 +456,7 @@ export default function PhotosScreen () {
                     </Typography>
 
                     <Typography fontSize='h5' fontWeight='semibold' color='primary' sx={{ marginTop: 10, textAlign: 'center' }}>
-                        A inteligência artificial está examinando sua foto para criar um relatório exclusivo. Isso pode levar alguns instantes.
+                        A inteligência artificial está examinando sua foto para criar um relatório exclusivo. Isso pode levar alguns instantes, por favor aguarde na tela.
                     </Typography>
                 </ModalContent>
             </Modal>

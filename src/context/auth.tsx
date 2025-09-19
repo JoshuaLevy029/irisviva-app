@@ -121,7 +121,7 @@ export default function SessionProvider({ children }: PropsWithChildren) {
         return null
       }
 
-      setUser(JSON.stringify(response.data))
+      //setUser(JSON.stringify(response.data))
 
       return response.data
     }

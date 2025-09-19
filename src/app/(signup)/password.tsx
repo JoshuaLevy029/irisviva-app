@@ -2,6 +2,7 @@ import Back from "@/components/Back"
 import Button from "@/components/Button"
 import { CheckListItem } from "@/components/Checklist"
 import Container from "@/components/Container"
+import Disclaimer, { useDisclaimer } from "@/components/Disclaimer"
 import Icon from "@/components/Icon"
 import Input from "@/components/Input"
 import LoadingAction from "@/components/LoadingAction"
@@ -37,6 +38,8 @@ export default function Page () {
     const [passwordCriteria, setPasswordCriteria] = React.useState(validateUtil.passwordStrength(''))
     const [isLoading, setIsLoading] = React.useState<boolean>(false)
 
+    const { openDisclaimer, closeDisclaimer, ...disclaimerProps } = useDisclaimer();
+
     const onChange = (value: string) => {
         setPassword(value)
         setPasswordCriteria(validateUtil.passwordStrength(value))
@@ -63,10 +66,27 @@ export default function Page () {
 
                 if (signup) {
                     router.navigate({
-                        pathname: '/(tabs)',
+                        pathname: '/(plans)',
+                        params: {
+                            justCreated: 'yes',
+                        }
                     })
                 } else {
-                    console.log('Erro ao criar conta')
+                    openDisclaimer({
+                        open: true,
+                        title: '',
+                        content: (
+                          <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10 }}>
+                            <Icon name='IconSolarDangerTriangleLinear' size={50} color={themeConfig.colors.error.main} />
+                            <Typography fontWeight='semibold' fontSize='h4' color='primary' align='center'>
+                                Não foi possível criar a conta. Por favor, tente novamente.
+                            </Typography>
+                          </View>
+                        ),
+                        closeText: 'Fechar',
+                        onClose: () => closeDisclaimer(),
+                        actions: [],
+                    });
                 }
             } catch (error) {
                 console.log(error)
@@ -124,5 +144,7 @@ export default function Page () {
         </View>
 
         {isLoading && <LoadingAction message="Estamos criando sua conta..." />}
+
+        <Disclaimer {...disclaimerProps} />
     </Container>
 }

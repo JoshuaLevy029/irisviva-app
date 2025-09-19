@@ -73,6 +73,13 @@
           "microphonePermission": "Allow $(PRODUCT_NAME) to access your microphone",
           "recordAudioAndroid": true
         }
+      ],
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "merchant.com.joshlevy029.iris-viva",
+          "enableGooglePay": true
+        }
       ]
     ],
     "experiments": {

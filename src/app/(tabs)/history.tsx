@@ -41,7 +41,7 @@ export default function HistoryScreen () {
 
   React.useEffect(() => {
     get()
-  }, [get, filters])
+  }, [get, filters, session, user])
 
   const onOpen = React.useCallback((report?: Report) => () => {
     if (!session || !user) return
@@ -78,7 +78,7 @@ export default function HistoryScreen () {
         </Typography>
       </View>
 
-      <Pagination page={filters.page} last={reports.last} onPage={v => setFilters(prev => ({ ...prev, page: v }))} containerProps={{ style: { marginBottom: 8, marginTop: 10 } }} />
+      <Pagination page={filters.page} last={reports.last} onPage={v => setFilters(prev => ({ ...prev, page: v }))} containerProps={{ style: { marginBottom: 16, marginTop: 10 } }} />
 
       <ScrollView showsVerticalScrollIndicator={false}>
         {reports.status === 'loading' && (

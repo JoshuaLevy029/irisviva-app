@@ -1,6 +1,7 @@
 export type Report = {
     id: string
     user_id: number
+    plan: string
     name: string
     age: number
     occupation: string

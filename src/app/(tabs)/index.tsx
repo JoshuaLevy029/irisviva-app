@@ -1,29 +1,33 @@
 
 import Button from '@/components/Button';
 import Container from '@/components/Container';
-import Icon from '@/components/Icon';
 import Typography from '@/components/Typography';
-import AnimatedScrollView from '@/components/animatedScrollView';
 import themeConfig from '@/config/theme.config';
 import { useSession } from '@/context/auth';
 import { User } from '@/entities/user.entity';
+import useAuth from '@/hooks/useAuth';
+import { useFocusEffect } from '@react-navigation/native';
 import { Redirect, useRouter } from 'expo-router';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 
 
 export default function HomeScreen () {
   const router = useRouter()
-  const { signOut, getSession, isAuthenticated, isLoading, user: sessionUser } = useSession();
-  const [user, setUser] = React.useState<User|null>(null);
+  const { isAuthenticated, isLoading, session, getSession } = useSession();
+  const [user, setUser] = React.useState<User | null>(null);
 
-  if (!isAuthenticated || !sessionUser) {
+  if (isLoading) {
+    return null;
+  }
+
+  if (!isAuthenticated || !session) {
     return <Redirect href='/(signin)' />;
   }
 
-  React.useEffect(() => {
-    setUser(JSON.parse(sessionUser));
-  }, [sessionUser]);
+  useFocusEffect(React.useCallback(() => { 
+    getSession().then((user) => setUser(user))
+ }, [isAuthenticated]))
 
   return (
     <Container style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>

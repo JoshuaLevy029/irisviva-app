@@ -12,11 +12,14 @@ export type User = {
     password: string
     status: boolean
     refresh_token: string
-    created_at: Date
-    updated_at: Date
-    deleted_at: Date
+    created_at: string
+    updated_at: string
+    deleted_at: string
 
     reports: number
     plan: string
     max_reports: number
+    end_date: string
+    start_date: string
+    analyzes_percentage: number
 }
