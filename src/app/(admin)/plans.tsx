@@ -8,7 +8,7 @@ import Typography from '@/components/Typography';
 import AnimatedScrollView from '@/components/animatedScrollView';
 import themeConfig from '@/config/theme.config';
 import { useRouter } from 'expo-router';
-import { Modal, ScrollView, useWindowDimensions, View } from 'react-native';
+import { FlatList, Modal, RefreshControl, ScrollView, useWindowDimensions, View } from 'react-native';
 import Input, { ErrorInput } from '@/components/Input';
 import useClass from '@/hooks/useClass';
 import { Plan } from '@/entities/plan.entity';
@@ -318,7 +318,16 @@ export default function PlanScreen () {
         />
       </View>
 
-      <ScrollView style={{ flex: 1 }}>
+      <ScrollView 
+        style={{ flex: 1 }}
+        showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            refreshing={plans.status === 'loading'}
+            onRefresh={get}
+          />
+        }
+      >
         {plans.status === 'loading' && (
           <React.Fragment>
             <LoadingItem />

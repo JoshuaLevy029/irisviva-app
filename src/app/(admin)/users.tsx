@@ -8,7 +8,7 @@ import Typography from '@/components/Typography';
 import AnimatedScrollView from '@/components/animatedScrollView';
 import themeConfig from '@/config/theme.config';
 import { useRouter } from 'expo-router';
-import { Modal, ScrollView, TouchableOpacity, useWindowDimensions, View } from 'react-native';
+import { Modal, RefreshControl, ScrollView, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 import Input, { ErrorInput } from '@/components/Input';
 import useClass from '@/hooks/useClass';
 import LoadingItem from '@/views/users/LoadingItem';
@@ -72,7 +72,7 @@ export default function UserScreen () {
   const [store, setStore] = React.useState<Store>(initialState);
   const [errors, setErrors] = React.useState<StoreErrors>(initialStateErrors);
   const [open, setOpen] = React.useState<''|'store'>('');
-  const [loading, setLoading] = React.useState<''|'store'|'delete'|'status'|'open'>('');
+  const [loading, setLoading] = React.useState<''|'store'|'delete'|'status'|'open'|'type'>('');
 
   const { openDisclaimer, closeDisclaimer, ...disclaimerProps } = useDisclaimer();
 
@@ -88,7 +88,6 @@ export default function UserScreen () {
     axiosUtil.get({ url: '/users', data: { ...filters }, token: session, process: true })
     .then(res => {
       users.set(res.data, 'ready')
-      console.log(res.data)
     })
     .catch(err => users.set({ items: [], current: 1, last: 1, per_page: 10, total: 0 }, 'error'))
   }, 500), [session, user, filters])
@@ -349,6 +348,49 @@ export default function UserScreen () {
     })
   }, [session, user])
 
+  const onType = React.useCallback((user: User, type: 'user' | 'professional' | 'admin') => () => {
+    setLoading('type')
+
+    axiosUtil.patch({ url: `/users/${user.id}/type`, token: session || '', process: true, data: { type } })
+    .then(res => {
+      onDismiss()
+      setLoading('')
+      openDisclaimer({
+        open: true,
+        title: '',
+        content: (
+          <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10 }}>
+            <Icon name='IconSolarCheckCircleLinear' size={50} color={themeConfig.colors.success.main} />
+            <Typography fontWeight='semibold' fontSize='h4' color='primary'>{res.data.message}</Typography>
+          </View>
+        ),
+        closeText: 'Fechar',
+        onClose: () => closeDisclaimer(),
+        actions: [],
+        sx: {
+          zIndex: 9999,
+        }
+      })
+      get()
+    })
+    .catch(err => {
+      setLoading('')
+      openDisclaimer({
+        open: true,
+        title: '',
+        content: (
+          <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10 }}>
+            <Icon name='IconSolarDangerTriangleLinear' size={50} color={themeConfig.colors.error.main} />
+            <Typography fontWeight='semibold' fontSize='h4' color='primary'>{err.data.message || 'Ocorreu um erro ao atualizar o status. Por favor, tente novamente.'}</Typography>
+          </View>
+        ),
+        closeText: 'Fechar',
+        onClose: () => closeDisclaimer(),
+        actions: [],
+      })
+    })
+  }, [session, user])
+
   return (
     <Container style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', paddingTop: 60, paddingHorizontal: 16, paddingBottom: 100 }}>
       <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
@@ -376,7 +418,15 @@ export default function UserScreen () {
 
       <Pagination page={filters.page} last={users.last} onPage={v => setFilters(prev => ({ ...prev, page: v }))} containerProps={{ style: { marginBottom: 8 } }} />
 
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView 
+        showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            refreshing={users.status === 'loading'}
+            onRefresh={get}
+          />
+        }
+      >
         {users.status === 'loading' && (
           <React.Fragment>
             <LoadingItem />
@@ -396,7 +446,7 @@ export default function UserScreen () {
         )}
 
         {users.status === 'ready' && users.items.length > 0 && users.items.map(user => (
-          <UserItem key={`user-item-${user.id}`} user={user} onEdit={onStore} onStatus={onStatus} onDelete={onDelete} onVerified={onVerified} />
+          <UserItem key={`user-item-${user.id}`} user={user} onEdit={onStore} onStatus={onStatus} onDelete={onDelete} onVerified={onVerified} onType={onType} />
         ))}
       </ScrollView>
 

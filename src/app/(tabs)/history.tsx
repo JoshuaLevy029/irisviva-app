@@ -7,7 +7,7 @@ import useClass from '@/hooks/useClass';
 import { FilterProps } from '@/types/filter';
 import { Paginate } from '@/types/paginate';
 import React from 'react';
-import { ScrollView, View } from 'react-native';
+import { RefreshControl, ScrollView, View } from 'react-native';
 import axiosUtil from '@/utils/axios.util';
 import Pagination from '@/components/Pagination';
 import LoadingItem from '@/views/reports/LoadingItem';
@@ -80,7 +80,15 @@ export default function HistoryScreen () {
 
       <Pagination page={filters.page} last={reports.last} onPage={v => setFilters(prev => ({ ...prev, page: v }))} containerProps={{ style: { marginBottom: 16, marginTop: 10 } }} />
 
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView 
+        showsVerticalScrollIndicator={false}
+        refreshControl={
+          <RefreshControl
+            refreshing={reports.status === 'loading'}
+            onRefresh={get}
+          />
+        }
+      >
         {reports.status === 'loading' && (
           <React.Fragment>
             <LoadingItem />

@@ -84,7 +84,7 @@ export default function TabLayout () {
             name='index' 
             options={{
                 tabBarShowLabel: false,
-                tabBarIcon: ({ focused }) => <TabScreen label='Dashboard' iconName='IconSolarChart2Linear' theme={theme as any} focused={focused} />
+                tabBarIcon: ({ focused }) => <TabScreen label='Dashboard' iconName={focused ? 'IconSolarChart2Bold' : 'IconSolarChart2Linear'} theme={theme as any} focused={focused} />
                 
             }}
         />
@@ -93,7 +93,7 @@ export default function TabLayout () {
             name='plans' 
             options={{
                 tabBarShowLabel: false,
-                tabBarIcon: ({ focused }) => <TabScreen label='Planos' iconName='IconSolarDocumentsLinear' theme={theme as any} focused={focused} />
+                tabBarIcon: ({ focused }) => <TabScreen label='Planos' iconName={focused ? 'IconSolarDocumentsBold' : 'IconSolarDocumentsLinear'} theme={theme as any} focused={focused} />
                 
             }}
         />
@@ -102,7 +102,7 @@ export default function TabLayout () {
             name='users' 
             options={{
                 tabBarShowLabel: false,
-                tabBarIcon: ({ focused }) => <TabScreen label='Usuários' iconName='IconSolarUsersGroupTwoRoundedLinear' theme={theme as any} focused={focused} />
+                tabBarIcon: ({ focused }) => <TabScreen label='Usuários' iconName={focused ? 'IconSolarUsersGroupTwoRoundedBold' : 'IconSolarUsersGroupTwoRoundedLinear'} theme={theme as any} focused={focused} />
                 
             }}
         />
@@ -111,7 +111,7 @@ export default function TabLayout () {
             name='profile' 
             options={{
                 tabBarShowLabel: false,
-                tabBarIcon: ({ focused }) => <TabScreen label='Perfil' iconName='IconSolarUserCircleLinear' theme={theme as any} focused={focused} />
+                tabBarIcon: ({ focused }) => <TabScreen label='Perfil' iconName={focused ? 'IconSolarUserCircleBold' : 'IconSolarUserCircleLinear'} theme={theme as any} focused={focused} />
             }}
         />
         </Tabs>

@@ -24,7 +24,7 @@ export default function ProfileScreen () {
     return null;
   }
 
-  if (!isAuthenticated || !isLoading) {
+  if (!isAuthenticated && !isLoading) {
     return <Redirect href='/(signin)' />;
   }
 

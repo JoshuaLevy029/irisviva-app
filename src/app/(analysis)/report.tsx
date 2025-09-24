@@ -154,21 +154,9 @@ export default function AnalysisScreen () {
   }
 
   const onSave = async () => {
-    if (!(await Sharing.isAvailableAsync())) {
-      openDisclaimer({
-        open: true,
-        title: '',
-        content: 'Não foi possível salvar o relatório. Por favor, tente novamente.',
-        closeText: 'Fechar',
-        onClose: () => closeDisclaimer(),
-        actions: []
-      })
-      return;
-    }
-
     const fileName = `IrisViva-${DateTime.now().toFormat('yyyy_MM_dd_HH_mm_ss')}.txt`;
 
-    const textToShare = `
+    const textToSave = `
     *Olá ${result.dados_paciente.nome}! Aqui está o que seus olhos nos contam*
 
     ${result.resumo_analise}
@@ -208,20 +196,83 @@ export default function AnalysisScreen () {
     `;
 
     const fileUri = FileSystem.documentDirectory + fileName;
+    console.log(fileUri);
     try {
-      await FileSystem.writeAsStringAsync(fileUri, textToShare);
-      await Sharing.shareAsync(fileUri);
+      // Save the file first
+      await FileSystem.writeAsStringAsync(fileUri, textToSave, { encoding: FileSystem.EncodingType.UTF8 });
+      
+      // Check if sharing is available on this platform
+      const isAvailable = await Sharing.isAvailableAsync();
+      if (isAvailable) {
+        // Share the file so user can save it to their device
+        await Sharing.shareAsync(fileUri, {
+          mimeType: 'text/plain',
+          dialogTitle: 'Salvar Relatório IrisViva',
+          UTI: 'public.plain-text',
+        });
+        
+        openDisclaimer({
+          open: true,
+          title: '',
+          content: (
+            <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10 }}>
+              <Icon name='IconSolarCheckCircleLinear' size={50} color={themeConfig.colors.success.main} />
+              <Typography fontWeight='semibold' fontSize='h4' color='primary' align='center'>
+                Relatório disponível para download
+              </Typography>
+              <Typography fontSize='medium' color='secondary' align='center'>
+                Escolha onde salvar o arquivo no menu que apareceu
+              </Typography>
+            </View>
+          ),
+          closeText: 'Fechar',
+          onClose: () => closeDisclaimer(),
+          actions: [],
+          sx: {
+            zIndex: 9999,
+          }
+        });
+      } else {
+        // Fallback: show file location for web or other platforms
+        openDisclaimer({
+          open: true,
+          title: '',
+          content: (
+            <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10 }}>
+              <Icon name='IconSolarCheckCircleLinear' size={50} color={themeConfig.colors.success.main} />
+              <Typography fontWeight='semibold' fontSize='h4' color='primary'>
+                Relatório salvo com sucesso
+              </Typography>
+              <Typography fontSize='medium' color='secondary' align='center'>
+                Arquivo salvo em: {fileName}
+              </Typography>
+            </View>
+          ),
+          closeText: 'Fechar',
+          onClose: () => closeDisclaimer(),
+          actions: [],
+          sx: {
+            zIndex: 9999,
+          }
+        });
+      }
     } catch (error: any) {
-      console.error('Error sharing text file:', error.message);
+      console.error('Error saving text file:', error.message);
       openDisclaimer({
         open: true,
         title: '',
-        content: 'Não foi possível salvar o relatório. Por favor, tente novamente.',
+        content: (
+          <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10 }}>
+            <Icon name='IconSolarDangerTriangleLinear' size={50} color={themeConfig.colors.error.main} />
+            <Typography fontWeight='semibold' fontSize='h4' color='primary' align='center'>
+                Não foi possível salvar o relatório. Por favor, tente novamente.
+            </Typography>
+          </View>
+        ),
         closeText: 'Fechar',
         onClose: () => closeDisclaimer(),
-        actions: []
-      })
-      return;
+        actions: [],
+      });
     }
   }
 

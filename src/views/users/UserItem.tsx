@@ -16,9 +16,10 @@ interface UserItemProps {
     onStatus: (user: User) => () => void
     onDelete: (user: User) => () => void
     onVerified: (user: User) => () => void
+    onType: (user: User, type: 'user' | 'professional' | 'admin') => () => void
 }
 
-export default ({ user, onEdit, onStatus, onDelete, onVerified }: UserItemProps) => {
+export default ({ user, onEdit, onStatus, onDelete, onVerified, onType }: UserItemProps) => {
     const dimensions = useWindowDimensions();
     const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
 
@@ -39,7 +40,7 @@ export default ({ user, onEdit, onStatus, onDelete, onVerified }: UserItemProps)
         >
             <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', gap: 10 }}>
                 <View style={{ position: 'relative', width: 40, height: 40, borderRadius: 20, backgroundColor: themeConfig.colors.primary, justifyContent: 'center', alignItems: 'center' }}>
-                    <Icon name={user.role === 'user' ? 'IconSolarUserLinear' : 'IconSolarStethoscopeLinear'} size={30} color='white' />
+                    <Icon name={user.role === 'user' ? 'IconSolarUserLinear' : user.role === 'professional' ? 'IconSolarStethoscopeLinear' : 'IconSolarShieldUserLinear'} size={30} color='white' />
                     <View style={{ position: 'absolute', top: -2, right: -2, width: 12.5, height: 12.5, borderRadius: 10, backgroundColor: themeConfig.colors[user.status ? 'success' : 'error'].main }}/>
                 </View>
                 <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -48,7 +49,7 @@ export default ({ user, onEdit, onStatus, onDelete, onVerified }: UserItemProps)
                             <Typography fontWeight='semibold' color='black'>
                                 {user.name}
                             </Typography>
-                            {user.verified && <Icon name='IconSolarVerifiedCheckBold' size={20} color={themeConfig.colors.main['A600']} />}
+                            {user.verified && user.role === 'professional' && <Icon name='IconSolarVerifiedCheckBold' size={20} color={themeConfig.colors.main['A600']} />}
                         </View>
                         <Typography fontWeight='medium' color='gray' fontSize={12}>
                             {user.email}
@@ -113,6 +114,22 @@ export default ({ user, onEdit, onStatus, onDelete, onVerified }: UserItemProps)
                                     </View>)} 
                                 />
                             )}
+
+                            <Menu.Item 
+                                style={{ height: 'fit-content', padding: 5 } as any}
+                                onPress={() => {
+                                    onClose()
+                                    _.delay(() => onType(user, user.role === 'user' ? 'professional' : user.role === 'professional' ? 'admin' : 'user')(), 200)
+                                }} 
+                                title={(<View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 5, }}>
+                                    <Icon name='IconSolarShieldUpLinear' size={20} />
+                                    <Typography fontWeight='medium' color='black' sx={{ margin: 0, padding: 0 }}>
+                                        {user.role === 'user' ? 'Promover para terapeuta' : (
+                                            user.role === 'professional' ? 'Promover para administrador' : 'Promover para usuário'
+                                        )}
+                                    </Typography>
+                                </View>)} 
+                            />
                         </Menu>
                         {/* <IconButton icon='IconSolarPenNewSquareLinear' onPress={onEdit(user)} size={20} />
                         <IconButton icon={user.status ? 'IconSolarLockKeyholeMinimalisticLinear' : 'IconSolarLockKeyholeMinimalisticUnlockedLinear'} onPress={onStatus(user)} size={20} />
