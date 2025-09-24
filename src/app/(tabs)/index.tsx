@@ -9,7 +9,7 @@ import useAuth from '@/hooks/useAuth';
 import { useFocusEffect } from '@react-navigation/native';
 import { Redirect, useRouter } from 'expo-router';
 import React from 'react';
-import { View } from 'react-native';
+import { Linking, ScrollView, View } from 'react-native';
 
 
 export default function HomeScreen () {
@@ -30,8 +30,8 @@ export default function HomeScreen () {
  }, [isAuthenticated]))
 
   return (
-    <Container style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-      <View style={{ padding: 16 }}>
+    <Container style={{ paddingTop: 20 }}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ padding: 16 }}>
         <Typography fontWeight='semibold' fontSize='h2' sx={{ textAlign: 'center', color: themeConfig.colors.main['A700'], marginBottom: 10 }}>
           Método IrisViva
         </Typography>
@@ -45,9 +45,31 @@ export default function HomeScreen () {
             Bem-vindo(a) à Análise Real da Íris!
           </Typography>
 
-          <Typography fontWeight='regular' sx={{ textAlign: 'center', color: themeConfig.colors.gray['A600'], marginBottom: 40, }}>
-            Este aplicativo utiliza inteligência artificial avançada para analisar a foto da sua íris. O objetivo é oferecer um relatório verdadeiramente personalizado para seu autoconhecimento.
+          <Typography fontWeight='regular' sx={{ textAlign: 'center', color: themeConfig.colors.gray['A600'], marginBottom: 5, }}>
+            Este aplicativo foi idealizado por Helder Chabudé, criador do Método ÍRIS VIVA. Através de uma tecnologia inovadora, o sistema identifica sinais presentes nos olhos e transforma essa leitura em informações preciosas para a prevenção da saúde. Com sua experiência como iridólogo, escritor e hipnoterapeuta, Helder reuniu ciência, autoconhecimento e recursos digitais para criar uma ferramenta única, que une tradição e inovação em benefício da qualidade de vida.
           </Typography>
+
+          <Button
+            title='Me siga no Instagram'
+            size='medium'
+            icon='IconSkillIconsInstagram'
+            iconSize={20}
+            onPress={() => {
+              // Open Instagram profile in browser
+              window.open?.(
+                "https://www.instagram.com/helderchabude?igsh=MThuNTlnZG1hdTVhcw==",
+                "_blank"
+              ) ||
+              (typeof Linking !== "undefined" &&
+                Linking.openURL &&
+                Linking.openURL("https://www.instagram.com/helderchabude?igsh=MThuNTlnZG1hdTVhcw=="));
+            }}
+          />
+
+          <Typography fontWeight='regular' sx={{ textAlign: 'center', color: themeConfig.colors.gray['A600'], marginBottom: 20, }}>
+            Utilizamos inteligência artificial avançada para analisar a foto da sua íris. O objetivo é oferecer um relatório verdadeiramente personalizado para seu autoconhecimento.
+          </Typography>
+
 
           <View
             style={{
@@ -111,7 +133,7 @@ export default function HomeScreen () {
             </React.Fragment>
           )}
         </View>
-      </View>
+      </ScrollView>
     </Container>
   );
 }

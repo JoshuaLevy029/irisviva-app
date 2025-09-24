@@ -59,7 +59,7 @@ const initialStateErrors: StoreErrors = {
 export default function PlanScreen () {
   const router = useRouter();
   const dimensions = useWindowDimensions()
-  const { session, user } = useSession()
+  const { session } = useSession()
   const plans = useClass<{ items: Plan[] }>({ items: [] }, 'loading');
   const [search, setSearch] = React.useState('');
   const [store, setStore] = React.useState<Store>(initialState);
@@ -75,13 +75,13 @@ export default function PlanScreen () {
   }
 
   const get = React.useCallback(_.debounce(() => {
-    if (!session || !user) return
+    if (!session) return
 
     plans.on('loading')
     axiosUtil.get({ url: '/plans', data: { search }, token: session, process: true })
     .then(res => plans.set({ items: res.data}, 'ready'))
     .catch(err => plans.set({ items: []}, 'error'))
-  }, 500), [session, user, search])
+  }, 500), [session, search])
 
   React.useEffect(() => {
     get()
@@ -191,7 +191,7 @@ export default function PlanScreen () {
         })
       }
     })
-  }, [store, errors, session, user])
+  }, [store, errors, session])
 
   const onDelete = React.useCallback((plan: Plan) => () => {
     openDisclaimer({
@@ -291,7 +291,7 @@ export default function PlanScreen () {
         actions: [],
       })
     })
-  }, [session, user])
+  }, [session])
 
   return (
     <Container style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', paddingTop: 60, paddingHorizontal: 16 }}>

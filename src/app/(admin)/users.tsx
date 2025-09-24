@@ -66,7 +66,7 @@ const initialStateErrors: StoreErrors = {
 export default function UserScreen () {
   const router = useRouter();
   const dimensions = useWindowDimensions()
-  const { session, user } = useSession()
+  const { session } = useSession()
   const users = useClass<Paginate<User>>({ items: [], current: 1, last: 1, per_page: 10, total: 0 }, 'loading');
   const [filters, setFilters] = React.useState<FilterProps<{ role?: 'user' | 'professional' }>>({ page: 1, limit: 10, by: 'id', direction: 'ASC', search: '' });
   const [store, setStore] = React.useState<Store>(initialState);
@@ -82,7 +82,7 @@ export default function UserScreen () {
   }
 
   const get = React.useCallback(_.debounce(() => {
-    if (!session || !user) return
+    if (!session) return
 
     users.on('loading')
     axiosUtil.get({ url: '/users', data: { ...filters }, token: session, process: true })
@@ -90,7 +90,7 @@ export default function UserScreen () {
       users.set(res.data, 'ready')
     })
     .catch(err => users.set({ items: [], current: 1, last: 1, per_page: 10, total: 0 }, 'error'))
-  }, 500), [session, user, filters])
+  }, 500), [session, filters])
 
   React.useEffect(() => {
     get()
@@ -203,7 +203,7 @@ export default function UserScreen () {
         })
       }
     })
-  }, [store, errors, session, user])
+  }, [store, errors, session])
 
   const onDelete = React.useCallback((user: User) => () => {
     openDisclaimer({
@@ -303,7 +303,7 @@ export default function UserScreen () {
         actions: [],
       })
     })
-  }, [session, user])
+  }, [session])
 
   const onVerified = React.useCallback((user: User) => () => {
     setLoading('status')
@@ -346,7 +346,7 @@ export default function UserScreen () {
         actions: [],
       })
     })
-  }, [session, user])
+  }, [session])
 
   const onType = React.useCallback((user: User, type: 'user' | 'professional' | 'admin') => () => {
     setLoading('type')
@@ -389,7 +389,7 @@ export default function UserScreen () {
         actions: [],
       })
     })
-  }, [session, user])
+  }, [session])
 
   return (
     <Container style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', paddingTop: 60, paddingHorizontal: 16, paddingBottom: 100 }}>

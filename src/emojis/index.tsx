@@ -3,6 +3,7 @@ import IconNotoV1Girl from "./IconNotoV1Girl";
 import IconNotoV1LightBulb from "./IconNotoV1LightBulb";
 import IconNotoV1ManAstronaut from "./IconNotoV1ManAstronaut";
 import IconNotoV1Pen from "./IconNotoV1Pen";
+import IconSkillIconsInstagram from "./IconSkillIconsInstagram";
 
 export default {
     IconNotoV1Eye,
@@ -10,4 +11,5 @@ export default {
     IconNotoV1LightBulb,
     IconNotoV1ManAstronaut,
     IconNotoV1Pen,
+    IconSkillIconsInstagram,
 }

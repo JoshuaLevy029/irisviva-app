@@ -456,7 +456,7 @@ export default function PhotosScreen () {
                     </Typography>
 
                     <Typography fontSize='h5' fontWeight='semibold' color='primary' sx={{ marginTop: 10, textAlign: 'center' }}>
-                        A inteligência artificial está examinando sua foto para criar um relatório exclusivo. Isso pode levar alguns instantes, por favor aguarde na tela.
+                        A inteligência artificial está examinando sua foto para criar um relatório exclusivo. Isso pode levar alguns minutos (aprox. 1-3 minutos), por favor aguarde na tela.
                     </Typography>
                 </ModalContent>
             </Modal>

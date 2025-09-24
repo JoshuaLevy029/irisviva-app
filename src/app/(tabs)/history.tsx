@@ -21,14 +21,14 @@ import Icon from '@/components/Icon';
 
 export default function HistoryScreen () {
   const router = useRouter()
-  const { session, user } = useSession()
+  const { session } = useSession()
   const reports = useClass<Paginate<Report>>({ items: [], current: 1, last: 1, per_page: 10, total: 0 }, 'loading');
   const [filters, setFilters] = React.useState<FilterProps<{  }>>({ page: 1, limit: 10, by: 'created_at', direction: 'DESC', search: '' });
 
   const { openDisclaimer, closeDisclaimer, ...disclaimerProps } = useDisclaimer();
 
   const get = React.useCallback(_.debounce(() => {
-    if (!session || !user) return
+    if (!session) return
 
     reports.on('loading')
     axiosUtil.get({ url: '/analysis', data: { ...filters }, token: session, process: true })
@@ -37,14 +37,14 @@ export default function HistoryScreen () {
       console.log(res.data)
     })
     .catch(err => reports.set({ items: [], current: 1, last: 1, per_page: 10, total: 0 }, 'error'))
-  }, 500), [session, user, filters])
+  }, 500), [session, filters])
 
   React.useEffect(() => {
     get()
-  }, [get, filters, session, user])
+  }, [get, filters, session])
 
   const onOpen = React.useCallback((report?: Report) => () => {
-    if (!session || !user) return
+    if (!session) return
 
     axiosUtil.get({ url: `/analysis/${report?.id}`, token: session, process: true })
     .then(res => {
@@ -68,7 +68,7 @@ export default function HistoryScreen () {
         actions: [],
       })
     })
-  }, [session, user])
+  }, [session])
 
   return (
     <Container style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', paddingTop: 60, paddingHorizontal: 16 }}>

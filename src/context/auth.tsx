@@ -100,8 +100,6 @@ export default function SessionProvider({ children }: PropsWithChildren) {
       return { success: false, message: _response.data.message ?? 'Erro ao entrar' }
     }
 
-    setUser(JSON.stringify(_response.data))
-
     return { success: true, accessToken: response.data.accessToken, refreshToken: response.data.refreshToken }
   }
 

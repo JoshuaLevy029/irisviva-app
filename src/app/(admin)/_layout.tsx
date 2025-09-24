@@ -4,7 +4,7 @@ import { useSession } from '@/context/auth'
 import { User } from '@/entities/user.entity'
 import { Icons } from '@/enums/icons.enum'
 import { Theme, useTheme } from '@react-navigation/native'
-import { Redirect, Tabs, useRouter } from 'expo-router'
+import { Redirect, Tabs, useFocusEffect, useRouter } from 'expo-router'
 import React from 'react'
 import { Text, View } from 'react-native'
 
@@ -36,22 +36,33 @@ const TabScreen = ({ label, iconName, theme, focused, center = false }: { label:
 }
 
 export default function TabLayout () {
-    const router = useRouter();
-    const theme = useTheme();
-    const { isLoading, session, isAuthenticated, user, ...sessionData } = useSession();
+    const theme = useTheme()
+  const { isLoading, session, isAuthenticated, getSession, ...sessionData } = useSession()
+  const [user, setUser] = React.useState<User | null>(null)
+  const router = useRouter()
 
-    if (isLoading) {
-        return null;
-    }
+  useFocusEffect(React.useCallback(() => { 
+    if (isAuthenticated && !isLoading) {
+      getSession().then((user) => {
+        setUser(user)
 
-    if (!isAuthenticated) {
-        return <Redirect href='/(signin)' />;
+        if (user && user.role !== 'admin') {
+          router.navigate({
+            pathname: '/(tabs)',
+            params: {}
+          })
+        }
+      })
     }
-    
+  }, [isLoading, isAuthenticated, getSession, router]))
 
-    if (user && JSON.parse(user).role !== 'admin') {
-        return <Redirect href='/(tabs)' />;
-    }
+  if (isLoading) {
+    return null
+  }
+
+  if (!isAuthenticated) {
+    return <Redirect href='/(signin)' />
+  }
 
     return (
         <Tabs

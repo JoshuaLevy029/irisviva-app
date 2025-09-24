@@ -14,6 +14,7 @@ import React from 'react';
 import { Alert, ScrollView, View, Share, Animated } from 'react-native';
 import * as FileSystem from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
+import * as Clipboard from 'expo-clipboard';
 import { DateTime } from 'luxon';
 
 interface Result {
@@ -95,117 +96,162 @@ export default function AnalysisScreen () {
 
   const onShare = async () => {
     try {
-      const response = await Share.share({
-        message: `
-        *Olá ${result.dados_paciente.nome}! Aqui está o que seus olhos nos contam*
+      let message = '';
 
-        ${result.resumo_analise}
+      message += `_*${result.titulo}*_\n`;
+      message += `*Olá ${result.dados_paciente.nome}! Aqui está o que seus olhos nos contam*`;
+      message += `\n\n${result.resumo_analise}`;
+      message += `\n\n*Detalhamento Técnico:*`;
+      message += `\n${result.detalhamento_tecnico.map((item) => `\t*${item.zona}*\n\t\t*Sinais:* ${item.sinal}\n\t\t*Impacto:* ${item.impacto}\n\t\t*Explicação:* ${item.explicacao_para_leigo}`).join('\n')}`;
+      message += `\n\n*Hipóteses Emocionais:*`;
+      message += `\n${result.hipoteses_emocionais.map((item) => `\t- ${item}`).join('\n')}`;
+      message += `\n\n*Encaminhamentos Sugeridos:*`;
+      message += `\n${result.encaminhamentos_sugeridos.map((item) => `\t- ${item}`).join('\n')}`;
+      
+      if (result.forcas_x_fragilidades_emocionais.forcas.length > 0 && result.forcas_x_fragilidades_emocionais.fragilidades.length > 0) {
+        message += `\n\n*Forças e Fragilidades Emocionais:*`;
+        if (result.forcas_x_fragilidades_emocionais.forcas.length > 0) {
+          message += `\n*Forças:*`;
+          message += `\n${result.forcas_x_fragilidades_emocionais.forcas.map((item) => `\t- ${item}`).join('\n')}`;
+        }
+        
+        if (result.forcas_x_fragilidades_emocionais.fragilidades.length > 0) {
+          message += `\n\n*Fragilidades:*`;
+          message += `\n${result.forcas_x_fragilidades_emocionais.fragilidades.map((item) => `\t- ${item}`).join('\n')}`;
+        }
+      }
 
-        *Detalhamento Técnico:*
-        ${result.detalhamento_tecnico.map((item) => `
-          *${item.zona}*
-            *Sinais:* ${item.sinal}
-            *Impacto:* ${item.impacto}
-            *Explicação:* ${item.explicacao_para_leigo}
-        `).join('\n')}
+      message += `\n\n*Análise Grafopsicológica:* `;
+      message += `${result.analise_grafopsicologica ? result.analise_grafopsicologica : 'Não há análise grafopsicológica'}`;
+      message += `\n\n_*${result.aviso}*_`;
 
-        *Hipóteses Emocionais:*
-        ${result.hipoteses_emocionais.map((item) => `
-          - ${item}
-        `).join('\n')}
+      const copied = await Clipboard.setStringAsync(message);
 
-        *Encaminhamentos Sugeridos:*
-        ${result.encaminhamentos_sugeridos.map((item) => `
-          - ${item}
-        `).join('\n')}
+      if (copied) {
+        openDisclaimer({
+          open: true,
+          title: '',
+          content: (
+            <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10 }}>
+              <Icon name='IconSolarCheckCircleLinear' size={50} color={themeConfig.colors.success.main} />
+              <Typography fontWeight='semibold' fontSize='h4' color='primary' align='center'>
+                Relatório copiado para a área de transferência
+              </Typography>
+            </View>
+          ),
+          closeText: 'Fechar',
+          onClose: () => closeDisclaimer(),
+          actions: [],
+          sx: {
+            zIndex: 9999,
+          }
+        });
+      } else {
+        openDisclaimer({
+          open: true,
+          title: '',
+          content: (
+            <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10 }}>
+              <Icon name='IconSolarDangerTriangleLinear' size={50} color={themeConfig.colors.error.main} />
+              <Typography fontWeight='semibold' fontSize='h4' color='primary' align='center'>
+                  Não foi possível copiar o relatório para a área de transferência. Por favor, tente novamente.
+              </Typography>
+            </View>
+          ),
+          closeText: 'Fechar',
+          onClose: () => closeDisclaimer(),
+          actions: [],
+        });
+      }
 
-        *Forças e Fragilidades Emocionais:*
-        *Forças:*
-        ${result.forcas_x_fragilidades_emocionais.forcas.map((item) => `
-          - ${item}
-        `).join('\n')}
-
-        *Fragilidades:*
-        ${result.forcas_x_fragilidades_emocionais.fragilidades.map((item) => `
-          - ${item}
-        `).join('\n')}
-
-        *Análise Grafopsicológica:* ${result.analise_grafopsicologica}
-
-        *Aviso Importante:* ${result.aviso}
-        `,
+      /* const response = await Share.share({
+        message: message,
+        title: 'Relatório IrisViva',
       })
 
       if (response.action === Share.sharedAction) {
-        
+        openDisclaimer({
+          open: true,
+          title: '',
+          content: (
+            <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10 }}>
+              <Icon name='IconSolarCheckCircleLinear' size={50} color={themeConfig.colors.success.main} />
+              <Typography fontWeight='semibold' fontSize='h4' color='primary' align='center'>
+                Relatório compartilhado com sucesso
+              </Typography>
+            </View>
+          ),
+          closeText: 'Fechar',
+          onClose: () => closeDisclaimer(),
+          actions: [],
+          sx: {
+            zIndex: 9999,
+          }
+        });
       } else if (response.action === Share.dismissedAction) {
-
-      }
-    } catch (error) {
+      } */
+    } catch (error: any) {
       openDisclaimer({
         open: true,
         title: '',
-        content: 'Não foi possível compartilhar o relatório. Por favor, tente novamente.',
+        content: (
+          <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 10 }}>
+            <Icon name='IconSolarDangerTriangleLinear' size={50} color={themeConfig.colors.error.main} />
+            <Typography fontWeight='semibold' fontSize='h4' color='primary' align='center'>
+                Não foi possível compartilhar o relatório. Por favor, tente novamente.
+            </Typography>
+          </View>
+        ),
         closeText: 'Fechar',
         onClose: () => closeDisclaimer(),
-        actions: []
-      })
+        actions: [],
+      });
     }
   }
 
   const onSave = async () => {
     const fileName = `IrisViva-${DateTime.now().toFormat('yyyy_MM_dd_HH_mm_ss')}.txt`;
 
-    const textToSave = `
-    *Olá ${result.dados_paciente.nome}! Aqui está o que seus olhos nos contam*
+    let textToSave = '';
 
-    ${result.resumo_analise}
+    textToSave += `_*${result.titulo}*_\n`;
+    textToSave += `*Olá ${result.dados_paciente.nome}! Aqui está o que seus olhos nos contam*`;
+    textToSave += `\n\n${result.resumo_analise}`;
+    textToSave += `\n\n*Detalhamento Técnico:*`;
+    textToSave += `\n${result.detalhamento_tecnico.map((item) => `\t*${item.zona}*\n\t\t*Sinais:* ${item.sinal}\n\t\t*Impacto:* ${item.impacto}\n\t\t*Explicação:* ${item.explicacao_para_leigo}`).join('\n')}`;
+    textToSave += `\n\n*Hipóteses Emocionais:*`;
+    textToSave += `\n${result.hipoteses_emocionais.map((item) => `\t- ${item}`).join('\n')}`;
+    textToSave += `\n\n*Encaminhamentos Sugeridos:*`;
+    textToSave += `\n${result.encaminhamentos_sugeridos.map((item) => `\t- ${item}`).join('\n')}`;
+    
+    if (result.forcas_x_fragilidades_emocionais.forcas.length > 0 && result.forcas_x_fragilidades_emocionais.fragilidades.length > 0) {
+      textToSave += `\n\n*Forças e Fragilidades Emocionais:*`;
+      if (result.forcas_x_fragilidades_emocionais.forcas.length > 0) {
+        textToSave += `\n*Forças:*`;
+        textToSave += `\n${result.forcas_x_fragilidades_emocionais.forcas.map((item) => `\t- ${item}`).join('\n')}`;
+      }
+      
+      if (result.forcas_x_fragilidades_emocionais.fragilidades.length > 0) {
+        textToSave += `\n\n*Fragilidades:*`;
+        textToSave += `\n${result.forcas_x_fragilidades_emocionais.fragilidades.map((item) => `\t- ${item}`).join('\n')}`;
+      }
+    }
 
-    *Detalhamento Técnico:*
-    ${result.detalhamento_tecnico.map((item) => `
-      *${item.zona}*
-        *Sinais:* ${item.sinal}
-        *Impacto:* ${item.impacto}
-        *Explicação:* ${item.explicacao_para_leigo}
-    `).join('\n')}
+    textToSave += `\n\n*Análise Grafopsicológica:* `;
+    textToSave += `${result.analise_grafopsicologica ? result.analise_grafopsicologica : 'Não há análise grafopsicológica'}`;
+    textToSave += `\n\n_*${result.aviso}*_`;
 
-    *Hipóteses Emocionais:*
-    ${result.hipoteses_emocionais.map((item) => `
-      - ${item}
-    `).join('\n')}
-
-    *Encaminhamentos Sugeridos:*
-    ${result.encaminhamentos_sugeridos.map((item) => `
-      - ${item}
-    `).join('\n')}
-
-    *Forças e Fragilidades Emocionais:*
-    *Forças:*
-    ${result.forcas_x_fragilidades_emocionais.forcas.map((item) => `
-      - ${item}
-    `).join('\n')}
-
-    *Fragilidades:*
-    ${result.forcas_x_fragilidades_emocionais.fragilidades.map((item) => `
-      - ${item}
-    `).join('\n')}
-
-    *Análise Grafopsicológica:* ${result.analise_grafopsicologica}
-
-    *Aviso Importante:* ${result.aviso}
-    `;
-
-    const fileUri = FileSystem.documentDirectory + fileName;
-    console.log(fileUri);
     try {
-      // Save the file first
-      await FileSystem.writeAsStringAsync(fileUri, textToSave, { encoding: FileSystem.EncodingType.UTF8 });
+      const fileUri = new FileSystem.File(FileSystem.Paths.document, fileName);
+
+      fileUri.create();
+      fileUri.write(textToSave);
       
       // Check if sharing is available on this platform
       const isAvailable = await Sharing.isAvailableAsync();
       if (isAvailable) {
         // Share the file so user can save it to their device
-        await Sharing.shareAsync(fileUri, {
+        await Sharing.shareAsync(fileUri.uri, {
           mimeType: 'text/plain',
           dialogTitle: 'Salvar Relatório IrisViva',
           UTI: 'public.plain-text',
@@ -457,18 +503,18 @@ export default function AnalysisScreen () {
               variant='contained'
               disabled={false}
               fullWidth
-              onPress={onShare}
+              onPress={onSave}
               sx={{ marginBottom: 10 }}
               titleProps={{ style: { marginLeft: 10 } }}
             />
 
             <Button
-              title='Salvar Relatório'
-              icon='IconSolarDisketteLinear'
+              title='Copiar Relatório'
+              icon='IconSolarCopyLinear'
               variant='contained'
               disabled={false}
               fullWidth
-              onPress={onSave}
+              onPress={onShare}
               sx={{ marginBottom: 10 }}
               titleProps={{ style: { marginLeft: 10 } }}
             />
