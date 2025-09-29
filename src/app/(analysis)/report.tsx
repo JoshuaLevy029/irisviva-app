@@ -9,13 +9,15 @@ import AnimatedScrollView from '@/components/animatedScrollView';
 import themeConfig from '@/config/theme.config';
 import formatUtil from '@/utils/format.util';
 import { useRoute } from '@react-navigation/native';
-import { useRouter } from 'expo-router';
+import { Redirect, useFocusEffect, useRouter } from 'expo-router';
 import React from 'react';
 import { Alert, ScrollView, View, Share, Animated } from 'react-native';
 import * as FileSystem from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import * as Clipboard from 'expo-clipboard';
 import { DateTime } from 'luxon';
+import { useSession } from '@/context/auth';
+import { User } from '@/entities/user.entity';
 
 interface Result {
   titulo: string
@@ -68,10 +70,28 @@ interface Result {
   },
   analise_grafopsicologica: string | null,
   historico_comparativo: string | null,
-  aviso: string
+  aviso: string,
+  plan_name: string,
+  plan_percentual: number,
+  generated_now: boolean,
 }
 
 export default function AnalysisScreen () {
+  const { getSession, isAuthenticated, isLoading, session } = useSession()
+  const [user, setUser] = React.useState<User | null>(null)
+
+  if (isLoading) {
+    return null
+  }
+
+  if (!isAuthenticated) {
+      return <Redirect href='/(signin)' />
+  }
+  
+  useFocusEffect(React.useCallback(() => { 
+      getSession().then((user) => setUser(user))
+  }, [isLoading, isAuthenticated]))
+
   const router = useRouter()
   const route = useRoute()
   const params = route.params as { result: string }
@@ -492,10 +512,20 @@ export default function AnalysisScreen () {
                 </Typography>
               </View>
 
-              <Typography fontWeight='regular' fontSize='h4' sx={{ textAlign: 'justify', color: themeConfig.colors.warning['A600'] }}>
+              <Typography fontWeight='regular' fontSize='h5' sx={{ textAlign: 'justify', color: themeConfig.colors.warning['A600'] }}>
                 Este relatório integra o Método ÍRIS VIVA e tem caráter educativo e preventivo, não substituindo avaliação médica, psicológica ou exames laboratoriais. As observações foram feitas a partir das fotos enviadas, que podem limitar a visualização de sinais finos. Em caso de sintomas ou dúvidas, procure profissionais de saúde. Prevenção sempre em primeiro lugar
               </Typography>
             </View>
+
+            {result.plan_name !== 'PREMIUM' && result.generated_now && (
+              <React.Fragment>
+                <View style={{ width: '100%', backgroundColor: formatUtil.hexToRgba(themeConfig.colors.main['A300'], 0.3), padding: 15, borderRadius: 10, marginBottom: 20 }}>
+                  <Typography fontWeight='regular' fontSize='h5' sx={{ textAlign: 'justify', color: themeConfig.colors.main['A600'] }}>
+                    Esse é um relatório reduzido que representa uma análise de {result.plan_percentual}% de acordo com o plano {result.plan_name}. Conheça nossos planos para ter acesso aos relatórios mais completos
+                  </Typography>
+                </View>
+              </React.Fragment>
+            )}
 
             <Button
               title='Compartilhar Relatório'

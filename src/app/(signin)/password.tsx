@@ -99,6 +99,10 @@ export default function Page () {
                 </TouchableOpacity>}
             />
             {error !== '' && <ErrorInput>{error}</ErrorInput>}
+
+            <View style={{ alignItems: 'flex-start' }}>
+                <Button title='Esqueci minha senha' variant='text' size='small' onPress={() => router.navigate('/(signin)/forgot-password')} />
+            </View>
         </View>
 
         <View style={{ width: '100%', paddingHorizontal: 32, position: 'absolute', bottom: 34 }}>

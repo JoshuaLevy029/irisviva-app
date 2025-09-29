@@ -312,31 +312,39 @@ export default function PhotosScreen () {
                                 <Image source={{ uri: photosUri.rightside }} style={{ width: '100%', height: 100, objectFit: 'cover', borderRadius: 16, marginBottom: 10 }} />
                             )}
 
-                            {user?.plan === 'Premium' && (
-                                <React.Fragment>
-                                    <Button
-                                        title='4. Foto da assinatura'
-                                        titleProps={{
-                                            style: {
-                                                fontSize: 14,
-                                            }
-                                        }}
-                                        sx={{
-                                            borderWidth: 1.5,
-                                            borderStyle: 'dashed',
-                                            borderColor: themeConfig.colors.gray['A200'],
-                                            borderRadius: 16,
-                                            padding: 16,
-                                            width: '100%',
-                                            marginBottom: 10
-                                        }}
-                                        onPress={() => onUploadImage('signature')}
-                                    />
+                            <View style={{ width: '100%', position: 'relative', marginBottom: 10 }}>
+                                <Button
+                                    title='4. Foto da assinatura'
+                                    {...(user?.plan !== 'Premium' && {
+                                        disabled: true,
+                                        icon: 'IconSolarLockKeyholeLinear',
+                                        iconColor: themeConfig.colors.gray['A600'],
+                                        color: themeConfig.colors.gray['A600'],
+                                    })}
+                                    titleProps={{
+                                        style: {
+                                            fontSize: 14,
+                                        }
+                                    }}
+                                    sx={{
+                                        borderWidth: 1.5,
+                                        borderStyle: 'dashed',
+                                        borderColor: themeConfig.colors.gray['A200'],
+                                        borderRadius: 16,
+                                        padding: 16,
+                                        width: '100%',
+                                        ...(user?.plan !== 'Premium' && {
+                                            opacity: 0.7,
+                                            gap: 10
+                                        }),
+                                    }}
+                                    disabled={user?.plan !== 'Premium'}
+                                    onPress={() => onUploadImage('signature')}
+                                />
+                            </View>
 
-                                    {photosUri.signature && (
-                                        <Image source={{ uri: photosUri.signature }} style={{ width: '100%', height: 100, objectFit: 'cover', borderRadius: 16, marginBottom: 10 }} />
-                                    )}
-                                </React.Fragment>
+                            {photosUri.signature && (
+                                <Image source={{ uri: photosUri.signature }} style={{ width: '100%', height: 100, objectFit: 'cover', borderRadius: 16, marginBottom: 10 }} />
                             )}
                         </View>
 

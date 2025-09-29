@@ -80,7 +80,7 @@ export default ({ open, onClose }: { open: boolean, onClose: () => void }) => {
 
                         <Header text="9. Contato" />
                         <Paragraph text="Para dúvidas, solicitações ou exclusão de dados, entre em contato pelo e-mail:" />
-                        <Paragraph text="👉 [inserir e-mail de suporte oficial]" />
+                        <Paragraph text="👉 contato@irisviva.com.br" />
 
                         <Header text="📌 Observação legal:" />
                         <Paragraph text="O aplicativo ÍRIS VIVA é uma ferramenta de avaliação preventiva, não substituindo consultas médicas, diagnósticos clínicos ou tratamentos de saúde profissional." />

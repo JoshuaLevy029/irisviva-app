@@ -36,7 +36,10 @@ export default function ProfileScreen () {
   }
 
   useFocusEffect(React.useCallback(() => { 
-    getSession().then((user) => setUser(user))
+    getSession().then((user) => {
+      setUser(user)
+      console.log(user)
+    })
   }, [isLoading, isAuthenticated]))
 
   const handleOpenPolicy = () => setOpenPolicy(true)
