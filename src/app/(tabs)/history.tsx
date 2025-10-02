@@ -22,8 +22,8 @@ import Icon from '@/components/Icon';
 export default function HistoryScreen () {
   const router = useRouter()
   const { session } = useSession()
-  const reports = useClass<Paginate<Report>>({ items: [], current: 1, last: 1, per_page: 10, total: 0 }, 'loading');
-  const [filters, setFilters] = React.useState<FilterProps<{  }>>({ page: 1, limit: 10, by: 'created_at', direction: 'DESC', search: '' });
+  const reports = useClass<Paginate<Report>>({ items: [], current: 1, last: 1, per_page: 5, total: 0 }, 'loading');
+  const [filters, setFilters] = React.useState<FilterProps<{  }>>({ page: 1, limit: 5, by: 'created_at', direction: 'DESC', search: '' });
 
   const { openDisclaimer, closeDisclaimer, ...disclaimerProps } = useDisclaimer();
 
@@ -32,10 +32,7 @@ export default function HistoryScreen () {
 
     reports.on('loading')
     axiosUtil.get({ url: '/analysis', data: { ...filters }, token: session, process: true })
-    .then(res => {
-      reports.set(res.data, 'ready')
-      console.log(res.data)
-    })
+    .then(res => reports.set(res.data, 'ready'))
     .catch(err => reports.set({ items: [], current: 1, last: 1, per_page: 10, total: 0 }, 'error'))
   }, 500), [session, filters])
 
@@ -82,12 +79,8 @@ export default function HistoryScreen () {
 
       <ScrollView 
         showsVerticalScrollIndicator={false}
-        refreshControl={
-          <RefreshControl
-            refreshing={reports.status === 'loading'}
-            onRefresh={get}
-          />
-        }
+        refreshControl={<RefreshControl refreshing={reports.status === 'loading'} onRefresh={get} />}
+        style={{ marginBottom: 80 }}
       >
         {reports.status === 'loading' && (
           <React.Fragment>

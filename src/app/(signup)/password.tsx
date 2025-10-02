@@ -61,6 +61,9 @@ export default function Page () {
                     occupation: params.occupation,
                     contact: params.contact,
                     role: params.role,
+                    social_media: JSON.parse(params.social_media ?? '[]') ?? [],
+                    website: params.website,
+                    bio: params.bio,
                     password,
                 })
 

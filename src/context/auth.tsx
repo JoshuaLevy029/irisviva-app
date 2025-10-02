@@ -12,6 +12,9 @@ export type SignUpData = {
   contact: string
   password: string
   role: 'user' | 'professional'
+  social_media: User['social_media']
+  website: string
+  bio: string
 }
 
 export type SignInData = {

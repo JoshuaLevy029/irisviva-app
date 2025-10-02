@@ -128,21 +128,27 @@ export default function AnalysisScreen () {
       message += `\n\n*Encaminhamentos Sugeridos:*`;
       message += `\n${result.encaminhamentos_sugeridos.map((item) => `\t- ${item}`).join('\n')}`;
       
-      if (result.forcas_x_fragilidades_emocionais.forcas.length > 0 && result.forcas_x_fragilidades_emocionais.fragilidades.length > 0) {
-        message += `\n\n*Forças e Fragilidades Emocionais:*`;
-        if (result.forcas_x_fragilidades_emocionais.forcas.length > 0) {
-          message += `\n*Forças:*`;
-          message += `\n${result.forcas_x_fragilidades_emocionais.forcas.map((item) => `\t- ${item}`).join('\n')}`;
-        }
-        
-        if (result.forcas_x_fragilidades_emocionais.fragilidades.length > 0) {
-          message += `\n\n*Fragilidades:*`;
-          message += `\n${result.forcas_x_fragilidades_emocionais.fragilidades.map((item) => `\t- ${item}`).join('\n')}`;
+      if (result.forcas_x_fragilidades_emocionais) {
+        if (result.forcas_x_fragilidades_emocionais.forcas.length > 0 && result.forcas_x_fragilidades_emocionais.fragilidades.length > 0) {
+          message += `\n\n*Forças e Fragilidades Emocionais:*`;
+          if (result.forcas_x_fragilidades_emocionais.forcas.length > 0) {
+            message += `\n*Forças:*`;
+            message += `\n${result.forcas_x_fragilidades_emocionais.forcas.map((item) => `\t- ${item}`).join('\n')}`;
+          }
+          
+          if (result.forcas_x_fragilidades_emocionais.fragilidades.length > 0) {
+            message += `\n\n*Fragilidades:*`;
+            message += `\n${result.forcas_x_fragilidades_emocionais.fragilidades.map((item) => `\t- ${item}`).join('\n')}`;
+          }
         }
       }
 
       message += `\n\n*Análise Grafopsicológica:* `;
-      message += `${result.analise_grafopsicologica ? result.analise_grafopsicologica : 'Não há análise grafopsicológica'}`;
+      if (result.analise_grafopsicologica) {
+        message += `${result.analise_grafopsicologica}`;
+      } else {
+        message += `Não há análise grafopsicológica`;
+      }
       message += `\n\n_*${result.aviso}*_`;
 
       const copied = await Clipboard.setStringAsync(message);
@@ -244,28 +250,34 @@ export default function AnalysisScreen () {
     textToSave += `\n\n*Encaminhamentos Sugeridos:*`;
     textToSave += `\n${result.encaminhamentos_sugeridos.map((item) => `\t- ${item}`).join('\n')}`;
     
-    if (result.forcas_x_fragilidades_emocionais.forcas.length > 0 && result.forcas_x_fragilidades_emocionais.fragilidades.length > 0) {
-      textToSave += `\n\n*Forças e Fragilidades Emocionais:*`;
-      if (result.forcas_x_fragilidades_emocionais.forcas.length > 0) {
-        textToSave += `\n*Forças:*`;
-        textToSave += `\n${result.forcas_x_fragilidades_emocionais.forcas.map((item) => `\t- ${item}`).join('\n')}`;
-      }
-      
-      if (result.forcas_x_fragilidades_emocionais.fragilidades.length > 0) {
-        textToSave += `\n\n*Fragilidades:*`;
-        textToSave += `\n${result.forcas_x_fragilidades_emocionais.fragilidades.map((item) => `\t- ${item}`).join('\n')}`;
+    if (result.forcas_x_fragilidades_emocionais) {
+      if (result.forcas_x_fragilidades_emocionais.forcas.length > 0 && result.forcas_x_fragilidades_emocionais.fragilidades.length > 0) {
+        textToSave += `\n\n*Forças e Fragilidades Emocionais:*`;
+        if (result.forcas_x_fragilidades_emocionais.forcas.length > 0) {
+          textToSave += `\n*Forças:*`;
+          textToSave += `\n${result.forcas_x_fragilidades_emocionais.forcas.map((item) => `\t- ${item}`).join('\n')}`;
+        }
+        
+        if (result.forcas_x_fragilidades_emocionais.fragilidades.length > 0) {
+          textToSave += `\n\n*Fragilidades:*`;
+          textToSave += `\n${result.forcas_x_fragilidades_emocionais.fragilidades.map((item) => `\t- ${item}`).join('\n')}`;
+        }
       }
     }
 
     textToSave += `\n\n*Análise Grafopsicológica:* `;
-    textToSave += `${result.analise_grafopsicologica ? result.analise_grafopsicologica : 'Não há análise grafopsicológica'}`;
+    if (result.analise_grafopsicologica) {
+      textToSave += `${result.analise_grafopsicologica}`;
+    } else {
+      textToSave += `Não há análise grafopsicológica`;
+    }
     textToSave += `\n\n_*${result.aviso}*_`;
 
     try {
       const fileUri = new FileSystem.File(FileSystem.Paths.document, fileName);
 
       fileUri.create();
-      fileUri.write(textToSave);
+      fileUri.write(textToSave, { encoding: 'utf8' });
       
       // Check if sharing is available on this platform
       const isAvailable = await Sharing.isAvailableAsync();

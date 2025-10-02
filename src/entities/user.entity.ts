@@ -8,6 +8,12 @@ export type User = {
     photo: string
     role: 'user' | 'admin' | 'professional'
     language: 'pt_BR' | 'en'
+    bio: string
+    website: string
+    social_media: {
+        type: 'instagram' | 'facebook' | 'twitter' | 'linkedin' | 'youtube' | 'tiktok' | 'x_twitter' | 'threads' | 'other'
+        data: string
+    }[]
     verified: boolean
     password: string
     status: boolean

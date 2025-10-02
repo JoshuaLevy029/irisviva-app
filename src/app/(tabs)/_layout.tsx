@@ -93,14 +93,14 @@ export default function TabLayout() {
           name='history' 
           options={{
               tabBarShowLabel: false,
-              tabBarIcon: ({ focused }) => <TabScreen label='' iconName='IconSolarChatLineLinear' theme={theme as any} focused={focused} />
+              tabBarIcon: ({ focused }) => <TabScreen label='' iconName={focused ? 'IconSolarChatLineBold' : 'IconSolarChatLineLinear'} theme={theme as any} focused={focused} />
           }}
       />
       <Tabs.Screen 
           name='index' 
           options={{
               tabBarShowLabel: false,
-              tabBarIcon: ({ focused }) => <TabScreen label='' iconName='IconSolarEyeScanLinear' theme={theme as any} focused={focused} center />
+              tabBarIcon: ({ focused }) => <TabScreen label='' iconName={focused ? 'IconSolarEyeScanBold' : 'IconSolarEyeScanLinear'} theme={theme as any} focused={focused} center />
               
           }}
       />
@@ -108,7 +108,7 @@ export default function TabLayout() {
           name='profile' 
           options={{
               tabBarShowLabel: false,
-              tabBarIcon: ({ focused }) => <TabScreen label='' iconName='IconSolarUserCircleLinear' theme={theme as any} focused={focused} />
+              tabBarIcon: ({ focused }) => <TabScreen label='' iconName={focused ? 'IconSolarUserCircleBold' : 'IconSolarUserCircleLinear'} theme={theme as any} focused={focused} />
           }}
       />
 

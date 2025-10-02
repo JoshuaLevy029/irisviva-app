@@ -69,7 +69,7 @@ export default function Page () {
         validation.validate(data, { abortEarly: false })
         .then(async (validate) => {
             router.push({
-                pathname: '/(signup)/password',
+                pathname: params.role === 'professional' ? '/(signup)/about' : '/(signup)/password',
                 params: {
                     ...route.params,
                     ...data,
