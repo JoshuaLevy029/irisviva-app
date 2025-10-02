@@ -37,7 +37,7 @@ const TabScreen = ({ label, iconName, theme, focused, center = false }: { label:
 
 export default function TabLayout () {
     const theme = useTheme()
-  const { isLoading, session, isAuthenticated, getSession, ...sessionData } = useSession()
+  const { isLoading, session, isAuthenticated, getSession, signOut, ...sessionData } = useSession()
   const [user, setUser] = React.useState<User | null>(null)
   const router = useRouter()
 
@@ -61,6 +61,7 @@ export default function TabLayout () {
   }
 
   if (!isAuthenticated) {
+    signOut()
     return <Redirect href='/(signin)' />
   }
 
