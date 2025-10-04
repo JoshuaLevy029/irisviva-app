@@ -46,7 +46,7 @@ export default function ProfileScreen () {
   const handleClosePolicy = () => setOpenPolicy(false)
 
   return (
-    <Container style={{ alignItems: 'center', justifyContent: 'flex-start', paddingHorizontal: 16, paddingTop: 77 }}>
+    <Container style={{ alignItems: 'center', justifyContent: 'flex-start', paddingHorizontal: 16, paddingTop: 67 }}>
       <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%', height: 32 }}>
           <Typography style={{ color: '#000', fontSize: 24, marginBottom: 0, lineHeight: 24 }}>
               Perfil
@@ -141,7 +141,16 @@ export default function ProfileScreen () {
 
               <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 4, marginTop: 10 }}>
                 <Typography fontWeight='bold' fontSize={12} color={themeConfig.colors.gray['A900']}>
-                  Limite de análises
+                  Análises realizadas (mensal)
+                </Typography>
+                <Typography fontWeight='semibold' fontSize={12} color={themeConfig.colors.gray['A800']}>
+                  {user?.reports ?? 0}
+                </Typography>
+              </View>
+
+              <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 4, marginTop: 5 }}>
+                <Typography fontWeight='bold' fontSize={12} color={themeConfig.colors.gray['A900']}>
+                  Limite de análises (mensal)
                 </Typography>
                 <Typography fontWeight='semibold' fontSize={12} color={themeConfig.colors.gray['A800']}>
                   {user?.max_reports ?? 0}
@@ -188,7 +197,7 @@ export default function ProfileScreen () {
         onPress={() => {
           router.push('/(plans)')
         }}
-        sx={{ marginTop: 10 }}
+        sx={{ marginTop: 20 }}
       />
 
       <PrivatePolicyAndTermsOfUse open={openPolicy} onClose={handleClosePolicy} />

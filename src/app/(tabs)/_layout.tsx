@@ -53,6 +53,8 @@ export default function TabLayout() {
           })
         }
       })
+    } else if (!isAuthenticated && !isLoading) {
+      signOut()
     }
   }, [isLoading, isAuthenticated, getSession, router]))
 
@@ -61,7 +63,6 @@ export default function TabLayout() {
   }
 
   if (!isAuthenticated) {
-    signOut()
     return <Redirect href='/(signin)' />
   }
 
