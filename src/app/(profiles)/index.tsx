@@ -13,14 +13,22 @@ import Circle from '@/svg/Circle';
 import { useFocusEffect } from '@react-navigation/native';
 import { Redirect, useRouter } from 'expo-router';
 import React from 'react';
-import { Image, ScrollView, TouchableOpacity, useWindowDimensions, View } from 'react-native';
+import { Image, ScrollView, TouchableOpacity, useWindowDimensions, View, Alert, ActivityIndicator } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
+import axiosUtil from '@/utils/axios.util';
+import Toast, { useToast } from '@/components/Toast';
+import Loading, { useLoading } from '@/components/Loading';
 
 
 export default function ProfileScreen () {
     const dimensions = useWindowDimensions()
     const router = useRouter()
-    const { signOut, isAuthenticated, isLoading, getSession } = useSession()
+    const { signOut, isAuthenticated, isLoading, getSession, session } = useSession()
     const [user, setUser] = React.useState<User | null>(null)
+    const [uploadingPhoto, setUploadingPhoto] = React.useState(false)
+
+    const { openToast, closeToast, ...toastProps } = useToast();
+    const { openLoading, closeLoading, ...loadingProps } = useLoading();
 
     if (isLoading) {
         return null;
@@ -34,6 +42,107 @@ export default function ProfileScreen () {
         getSession().then((user) => setUser(user))
     }, [isLoading, isAuthenticated]))
 
+    const pickImageFromGallery = async () => {
+        try {
+            // Request media library permissions
+            const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+            
+            if (status !== 'granted') {
+                Alert.alert(
+                    'Permissão necessária',
+                    'Precisamos de permissão para acessar sua galeria de fotos.'
+                );
+                return;
+            }
+
+            // Launch image picker
+            const result = await ImagePicker.launchImageLibraryAsync({
+                mediaTypes: ['images'],
+                allowsEditing: true,
+                aspect: [1, 1],
+                quality: 1,
+                base64: false,
+            });
+
+            if (!result.canceled && result.assets?.[0]?.uri) {
+                setUploadingPhoto(true);
+
+                if (!user?.id && !session) {
+                    return;
+                }
+        
+                openLoading({
+                    open: true,
+                    message: 'Atualizando...',
+                })
+
+                const formData = new FormData()
+                formData.append('photo', {
+                    uri: result.assets?.[0]?.uri,
+                    name: result.assets?.[0]?.fileName,
+                    type: result.assets?.[0]?.mimeType,
+                } as any)
+        
+                axiosUtil.post({ url: '/auth/photo', data: formData, token: session || '', process: true, headers: { 'Content-Type': 'multipart/form-data' } as any })
+                .then(res => {
+                    setUploadingPhoto(false)
+                    closeLoading()
+                    getSession().then((user) => setUser(user))
+                    openToast({
+                        open: true,
+                        message: res.data.message,
+                        color: themeConfig.colors.success.main,
+                        iconColor: 'white',
+                        icon: 'IconSolarChatRoundCheckLinear',
+                        textProps: {
+                            color: 'white',
+                        },
+                        opacity: .9,
+                        onClose: () => {
+                            closeToast()
+                        }
+                    })
+                })
+                .catch(err => {
+                    setUploadingPhoto(false)
+                    closeLoading()
+                    console.log(err.data)
+        
+                    if (err.data.message) {
+                        openToast({
+                            open: true,
+                            message: err.data.message,
+                            color: themeConfig.colors.error.main,
+                            iconColor: 'white',
+                            icon: 'IconSolarDangerTriangleLinear',
+                            textProps: {
+                                color: 'white',
+                            },
+                            opacity: .9,
+                            onClose: () => closeToast()
+                        })
+                    } else {
+                        openToast({
+                            open: true,
+                            message: 'Ocorreu um erro ao tentar atualizar. Por favor, tente novamente.',
+                            color: themeConfig.colors.error.main,
+                            iconColor: 'white',
+                            icon: 'IconSolarDangerTriangleLinear',
+                            textProps: {
+                                color: 'white',
+                            },
+                            opacity: .9,
+                            onClose: () => closeToast()
+                        })
+                    }
+                })
+            }
+        } catch (error) {
+            console.error('Error picking image:', error);
+            Alert.alert('Erro', 'Não foi possível selecionar a imagem. Tente novamente.');
+        }
+    };
+
     return (
         <Container style={{ alignItems: 'center', justifyContent: 'flex-start', paddingHorizontal: 16, paddingTop: 77 }}>
             
@@ -44,13 +153,21 @@ export default function ProfileScreen () {
                 </Typography>
             </View>
 
-            <TouchableOpacity style={{ width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', height: 80, marginTop: 24 }}>
+            <TouchableOpacity 
+                style={{ width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', height: 80, marginTop: 24 }}
+                onPress={pickImageFromGallery}
+                disabled={uploadingPhoto}
+            >
                 <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: 16 }}>
-                    {user && user.photo && (<Image source={{ uri: `data:image/png;base64,${user?.photo}` }} style={{ width: 90, height: 90, borderRadius: 100 }} />)}
-                    {user && !user.photo && (<Image source={require('@/assets/images/logo-1024.png')} style={{ width: 90, height: 90, borderRadius: 100 }} />)}
+                    <View style={{ position: 'relative' }}>
+                        {user && user.photo && (<Image source={{ uri: `data:image/png;base64,${user?.photo}` }} style={{ width: 90, height: 90, borderRadius: 100 }} />)}
+                        {user && !user.photo && (<Image source={require('@/assets/images/logo-1024.png')} style={{ width: 90, height: 90, borderRadius: 100 }} />)}
+                    </View>
 
                     <View style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center' }}>
-                        <Typography fontWeight='bold' fontSize={14} color={themeConfig.colors.main['A700']}>Alterar foto</Typography>
+                        <Typography fontWeight='bold' fontSize={14} color={themeConfig.colors.main['A700']}>
+                            {uploadingPhoto ? 'Atualizando...' : 'Alterar foto'}
+                        </Typography>
                     </View>
                 </View>
             </TouchableOpacity>
@@ -181,6 +298,9 @@ export default function ProfileScreen () {
                     </View>
                 </ScrollView>
             </View>
+
+            <Toast {...toastProps} />
+            <Loading {...loadingProps} />
         </Container>
     );
 }
