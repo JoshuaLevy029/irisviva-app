@@ -10,7 +10,7 @@ import { useSession } from '@/context/auth';
 import { User } from '@/entities/user.entity';
 import Circle from '@/svg/Circle';
 import { useFocusEffect } from '@react-navigation/native';
-import { Redirect } from 'expo-router';
+import { Redirect, useRouter } from 'expo-router';
 import React from 'react';
 import { Image, TouchableOpacity, View } from 'react-native';
 
@@ -19,6 +19,7 @@ export default function ProfileScreen () {
   const { signOut, isAuthenticated, isLoading, getSession } = useSession()
   const [user, setUser] = React.useState<User | null>(null)
   const [openPolicy, setOpenPolicy] = React.useState<boolean>(false)
+  const router = useRouter()
 
   if (isLoading) {
     return null;
@@ -42,15 +43,15 @@ export default function ProfileScreen () {
               Perfil
           </Typography>
 
-          <View style={{ position: 'relative' }}>
+          {/* <View style={{ position: 'relative' }}>
               <IconButton icon='IconSolarBellLinear' onPress={() => {}} color="#000" size={24} />
               <View style={{ position: 'absolute', height: 7, width: 7, right: 3, top: 3 }}>
                   <Circle width={7} height={7} fill='#AD0909' />
               </View>
-          </View>
+          </View> */}
       </View>
 
-      <TouchableOpacity style={{ width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', height: 80, marginTop: 24 }}>
+      <TouchableOpacity style={{ width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', height: 80, marginTop: 24 }} onPress={() => router.navigate('/(profiles)')} >
         <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: 16 }}>
           {user && user.photo && (<Image source={{ uri: `data:image/png;base64,${user?.photo}` }} style={{ width: 71, height: 71, borderRadius: 100 }} />)}
           {user && !user.photo && (<Image source={require('@/assets/images/logo-1024.png')} style={{ width: 71, height: 71, borderRadius: 100 }} />)}
@@ -82,7 +83,7 @@ export default function ProfileScreen () {
           <IconButton icon='IconSolarAltArrowRightLinear' onPress={() => {}} color={themeConfig.colors.gray['A600']} size={16} />
         </View>
 
-        <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginBottom: 10 }}>
+        {/* <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%', marginBottom: 10 }}>
           <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8 }} onPress={() => {}}>
             <Icon name='IconSolarSettingsLinear' size={16} color={themeConfig.colors.gray['A600']} />
             <Typography fontWeight='semibold' fontSize={14} sx={{ margin: 0, padding: 0 }}>
@@ -91,7 +92,7 @@ export default function ProfileScreen () {
           </TouchableOpacity>
 
           <IconButton icon='IconSolarAltArrowRightLinear' onPress={() => {}} color={themeConfig.colors.gray['A600']} size={16} />
-        </View>
+        </View> */}
 
         <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', width: '100%' }}>
           <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8 }} onPress={() => signOut()}>

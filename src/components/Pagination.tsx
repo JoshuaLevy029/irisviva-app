@@ -103,20 +103,13 @@ export default function Pagination (props: PaginationProps) {
             let startPage = Math.max(1, current - 2);
             let endPage = Math.min(last, current + 2);
 
-            // If on the first page, show first two neighbors (1,2,3)
-            if (current === 1) {
-              startPage = 1;
-              endPage = Math.min(last, 3);
-            }
-            // If on the last page, show last two neighbors (last-2, last-1, last)
-            else if (current === last) {
-              startPage = Math.max(1, last - 2);
-              endPage = last;
-            }
-            // If on the second page, show 1,2,3
-            else if (current > 1 && current < last) {
-              startPage = 1;
-              endPage = Math.min(last, 3);
+            // Adjust to always show 5 pages when possible
+            if (endPage - startPage < 4) {
+              if (startPage === 1) {
+                endPage = Math.min(last, 5);
+              } else if (endPage === last) {
+                startPage = Math.max(1, last - 4);
+              }
             }
 
             for (let i = startPage; i <= endPage; i++) {

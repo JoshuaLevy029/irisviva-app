@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import Button from '@/components/Button';
+import Button, { IconButton } from '@/components/Button';
 import Container from '@/components/Container';
 import Icon from '@/components/Icon';
 import Select from '@/components/Select';
@@ -8,7 +8,7 @@ import Typography from '@/components/Typography';
 import AnimatedScrollView from '@/components/animatedScrollView';
 import themeConfig from '@/config/theme.config';
 import { useRouter } from 'expo-router';
-import { Modal, RefreshControl, ScrollView, TouchableOpacity, useWindowDimensions, View } from 'react-native';
+import { Image, Linking, Modal, RefreshControl, ScrollView, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 import Input, { ErrorInput } from '@/components/Input';
 import useClass from '@/hooks/useClass';
 import LoadingItem from '@/views/users/LoadingItem';
@@ -24,6 +24,8 @@ import { User } from '@/entities/user.entity';
 import { Paginate } from '@/types/paginate';
 import { FilterProps } from '@/types/filter';
 import Pagination from '@/components/Pagination';
+import { Roles } from '@/enums/role.enum';
+import { SocialMediaIcon } from '@/enums/socialMedia.enum';
 
 type Store = {
   id: number
@@ -68,11 +70,12 @@ export default function UserScreen () {
   const dimensions = useWindowDimensions()
   const { session } = useSession()
   const users = useClass<Paginate<User>>({ items: [], current: 1, last: 1, per_page: 10, total: 0 }, 'loading');
-  const [filters, setFilters] = React.useState<FilterProps<{ role?: 'user' | 'professional' }>>({ page: 1, limit: 10, by: 'id', direction: 'ASC', search: '' });
+  const [filters, setFilters] = React.useState<FilterProps<{ role?: 'user' | 'professional' | 'admin' | 'all', verified?: boolean }>>({ page: 1, limit: 10, by: 'id', direction: 'ASC', search: '' });
   const [store, setStore] = React.useState<Store>(initialState);
   const [errors, setErrors] = React.useState<StoreErrors>(initialStateErrors);
-  const [open, setOpen] = React.useState<''|'store'>('');
+  const [open, setOpen] = React.useState<''|'store'|'record'>('');
   const [loading, setLoading] = React.useState<''|'store'|'delete'|'status'|'open'|'type'>('');
+  const [record, setRecord] = React.useState<Partial<User>>({});
 
   const { openDisclaimer, closeDisclaimer, ...disclaimerProps } = useDisclaimer();
 
@@ -391,6 +394,11 @@ export default function UserScreen () {
     })
   }, [session])
 
+  const onView = React.useCallback((user: User) => () => {
+    setOpen('record')
+    setRecord(user)
+  }, [])
+
   return (
     <Container style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', paddingTop: 60, paddingHorizontal: 16, paddingBottom: 100 }}>
       <View style={{ width: '100%', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 }}>
@@ -398,21 +406,41 @@ export default function UserScreen () {
           Usuários
         </Typography>
 
-        <Button 
+        {/* <Button 
           size='xsmall' 
           variant='contained'
           title='Novo Usuário'
           onPress={onStore(undefined)}
-        />
+        /> */}
       </View>
 
       <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center', marginBottom: 10 }}>
         <Input 
           placeholder='Buscar pelo nome, email ou contato'
           value={filters.search} 
-          onChangeText={v => setFilters((prev: FilterProps<{ role?: 'user' | 'professional' }>) => ({ ...prev, search: v }))} 
+          onChangeText={v => setFilters(prev => ({ ...prev, search: v }))} 
           containerStyle={{ height: 40 }} 
           endIcon={<Icon name='IconSolarMagniferLinear' size={20} color={themeConfig.colors.gray.A700} />}
+        />
+
+        <Select 
+          placeholder='Selecione um perfil'
+          value={filters.role ?? 'all'} 
+          inputProps={{
+            containerStyle: { height: 40 },
+          }}
+          containerStyle={{ marginVertical: 10 }}
+          options={[
+            { label: 'Todos os perfis', value: 'all' },
+            ...Object.keys(Roles).map(role => ({ label: Roles[role as keyof typeof Roles], value: role })),
+          ]} 
+          optionComponent={({ label, value }) => <Typography fontWeight='semibold' color='primary'>{label}</Typography>} 
+          render={selected => [
+            { label: 'Todos os perfis', value: 'all' },
+            ...Object.keys(Roles).map(role => ({ label: Roles[role as keyof typeof Roles], value: role })),
+          ].find(item => item.value === selected)?.label || ''} 
+          onChange={v => setFilters(prev => ({ ...prev, role: v.value as 'user' | 'professional' | 'admin' | 'all' }))} 
+          hasError={Boolean(errors.role)}
         />
       </View>
 
@@ -446,7 +474,7 @@ export default function UserScreen () {
         )}
 
         {users.status === 'ready' && users.items.length > 0 && users.items.map(user => (
-          <UserItem key={`user-item-${user.id}`} user={user} onEdit={onStore} onStatus={onStatus} onDelete={onDelete} onVerified={onVerified} onType={onType} />
+          <UserItem key={`user-item-${user.id}`} user={user} onEdit={onStore} onStatus={onStatus} onDelete={onDelete} onVerified={onVerified} onType={onType} onView={onView} />
         ))}
       </ScrollView>
 
@@ -524,6 +552,76 @@ export default function UserScreen () {
                 {loading === 'open' && 'Abrindo modal...'}
               </Typography>
             </View>
+          </View>
+        </View>
+      </Modal>
+
+      <Modal visible={open === 'record'} onDismiss={() => { setOpen(''); setRecord({}); }} transparent={true} statusBarTranslucent={true}>
+        <View style={{ flex: 1, backgroundColor: 'rgba(0, 0, 0, 0.5)', justifyContent: 'center', alignItems: 'center' }}>
+          <View style={{ padding: 16, borderRadius: 16, backgroundColor: themeConfig.colors.background, alignSelf: 'stretch', width: dimensions.width, height: dimensions.height }}>
+            <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', width: '100%', marginBottom: 10 }}>
+              <IconButton icon='IconSolarCloseCircleLinear' onPress={() => { setOpen(''); setRecord({}); }} size={30} color={themeConfig.colors.gray['A500']} />
+            </View>
+            <View style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16 }}>
+            {record.photo && (<Image source={{ uri: `data:image/png;base64,${record?.photo}` }} style={{ width: 100, height: 100, borderRadius: 100 }} />)}
+            {!record.photo && (<Image source={require('@/assets/images/logo-1024.png')} style={{ width: 100, height: 100, borderRadius: 100 }} />)}
+
+              <View style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                <Typography fontWeight='semibold' fontSize={22} color='primary'>
+                  {record.name}
+                </Typography>
+                <Typography fontWeight='regular' fontSize={16} color={themeConfig.colors.gray['A600']}>{record.role === 'user' ? 'Usuário' : record.role === 'professional' ? 'Profissional' : 'Administrador'}</Typography>
+              </View>
+            </View>
+
+            <ScrollView showsVerticalScrollIndicator={false} style={{ marginTop: 20 }}>
+              <View style={{ marginTop: 10, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff', paddingVertical: 10, paddingHorizontal: 10, borderRadius: 10 }}>
+                <Typography fontWeight='bold' fontSize={12} color='primary'>Email</Typography>
+                <Typography fontWeight='regular' fontSize={14} color={themeConfig.colors.gray['A600']}>{record.email}</Typography>
+              </View>
+
+              <View style={{ marginTop: 10, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff', paddingVertical: 10, paddingHorizontal: 10, borderRadius: 10 }}>
+                <Typography fontWeight='bold' fontSize={12} color='primary'>Contato</Typography>
+                <Typography fontWeight='regular' fontSize={14} color={themeConfig.colors.gray['A600']}>{record.contact}</Typography>
+              </View>
+
+              <View style={{ marginTop: 10, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff', paddingVertical: 10, paddingHorizontal: 10, borderRadius: 10 }}>
+                <Typography fontWeight='bold' fontSize={12} color='primary'>Idade</Typography>
+                <Typography fontWeight='regular' fontSize={14} color={themeConfig.colors.gray['A600']}>{record.age}</Typography>
+              </View>
+
+              <View style={{ marginTop: 10, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#fff', paddingVertical: 10, paddingHorizontal: 10, borderRadius: 10 }}>
+                <Typography fontWeight='bold' fontSize={12} color='primary'>Profissão/ocupação</Typography>
+                <Typography fontWeight='regular' fontSize={14} color={themeConfig.colors.gray['A600']}>Administrador</Typography>
+              </View>
+
+              {record.role === 'professional' && record.bio && (
+                <View style={{ marginTop: 10, display: 'flex', flexDirection: 'column', paddingHorizontal: 10, paddingVertical: 10, borderRadius: 10, backgroundColor: '#fff' }}>
+                  <Typography fontWeight='bold' fontSize={12} color='primary'>Bio</Typography>
+                  <Typography fontWeight='regular' fontSize={14} color={themeConfig.colors.gray['A600']}>{record.bio}</Typography>
+                </View>
+              )}
+
+              {record.role === 'professional' && record.website && (
+                <TouchableOpacity style={{ marginTop: 10, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 10, paddingVertical: 10, borderRadius: 10, backgroundColor: '#fff' }} onPress={() => Linking.openURL(record.website ?? '')}>
+                  <Typography fontWeight='bold' fontSize={12} color='primary'>Website</Typography>
+                  <Typography fontWeight='regular' fontSize={14} color={themeConfig.colors.gray['A600']}>{record.website}</Typography>
+                </TouchableOpacity>
+              )}
+
+              {record.role === 'professional' && record.social_media && record.social_media.length > 0 && (
+                <React.Fragment>
+                  {record.social_media.map((media, index) => (
+                    <View key={`${media.type}-${index}`} style={{ marginTop: 10, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 10, paddingVertical: 10, borderRadius: 10, backgroundColor: '#fff' }}>
+                      <Icon name={SocialMediaIcon[media.type as keyof typeof SocialMediaIcon]} size={20} color={themeConfig.colors.gray['A600']} />
+                      <Typography fontWeight='regular' fontSize={14} color={themeConfig.colors.gray['A600']}>{media.data}</Typography>
+                    </View>
+                  ))}
+                </React.Fragment>
+              )}
+
+              <View style={{ marginBottom: 80 }}></View>
+            </ScrollView>
           </View>
         </View>
       </Modal>

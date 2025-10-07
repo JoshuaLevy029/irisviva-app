@@ -51,8 +51,8 @@ export default ({ plan, onEdit, onStatus, onDelete }: PlanItemProps) => {
 
                     <View style={{ flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', gap: 5 }}>
                         <IconButton icon='IconSolarPenNewSquareLinear' onPress={onEdit(plan)} size={20} />
-                        <IconButton icon={plan.status ? 'IconSolarLockKeyholeMinimalisticLinear' : 'IconSolarLockKeyholeMinimalisticUnlockedLinear'} onPress={onStatus(plan)} size={20} />
-                        <IconButton icon='IconSolarTrashBinMinimalisticLinear' onPress={onDelete(plan)} size={20} />
+                        {/* <IconButton icon={plan.status ? 'IconSolarLockKeyholeMinimalisticLinear' : 'IconSolarLockKeyholeMinimalisticUnlockedLinear'} onPress={onStatus(plan)} size={20} /> */}
+                        {/* <IconButton icon='IconSolarTrashBinMinimalisticLinear' onPress={onDelete(plan)} size={20} /> */}
                     </View>
                 </View>
             </View>

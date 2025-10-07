@@ -14,7 +14,7 @@ export default ({ style, onPress, color = themeConfig.colors.main.main }: BackPr
 
   return (
     <TouchableOpacity
-      style={{ ...(style as {}) }}
+      style={{ cursor: 'pointer', ...(style as {}) }}
       onPress={!!onPress ? onPress : () => router.back()}
     >
       <Icon size={32} name='IconSolarAltArrowLeftLinear' color={color} />

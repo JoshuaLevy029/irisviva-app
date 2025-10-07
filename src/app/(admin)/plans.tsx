@@ -300,12 +300,12 @@ export default function PlanScreen () {
           Planos
         </Typography>
 
-        <Button 
+        {/* <Button 
           size='xsmall' 
           variant='contained'
           title='Novo Plano'
           onPress={onStore(undefined)}
-        />
+        /> */}
       </View>
 
       <View style={{ width: '100%', justifyContent: 'center', alignItems: 'center', marginBottom: 10 }}>

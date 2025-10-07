@@ -15,14 +15,14 @@ export default ({ size = 32, color = '#1f1f1f' }: IconProps) => (
 			<Defs>
 				<RadialGradient id="SVGWRUqebek" cx="0" cy="0" r="1" gradientTransform="matrix(0 -253.715 235.975 0 68 275.717)" gradientUnits="userSpaceOnUse">
 					<Stop stopColor="#fd5"/>
-					<Stop offset=".1" stopColor="#fd5"/>
-					<Stop offset=".5" stopColor="#ff543e"/>
-					<Stop offset="1" stopColor="#c837ab"/>
+					<Stop offset={0.1} stopColor="#fd5"/>
+					<Stop offset={0.5} stopColor="#ff543e"/>
+					<Stop offset={1} stopColor="#c837ab"/>
 				</RadialGradient>
 				<RadialGradient id="SVGfkNpldMH" cx="0" cy="0" r="1" gradientTransform="matrix(22.25952 111.2061 -458.39518 91.75449 -42.881 18.441)" gradientUnits="userSpaceOnUse">
 					<Stop stopColor="#3771c8"/>
-					<Stop offset=".128" stopColor="#3771c8"/>
-					<Stop offset="1" stopColor="#60f" stopOpacity="0"/>
+					<Stop offset={0.128} stopColor="#3771c8"/>
+					<Stop offset={1} stopColor="#60f" stopOpacity="0"/>
 				</RadialGradient>
 			</Defs>
 		</G>

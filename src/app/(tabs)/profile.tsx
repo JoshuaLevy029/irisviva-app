@@ -36,10 +36,7 @@ export default function ProfileScreen () {
   }
 
   useFocusEffect(React.useCallback(() => { 
-    getSession().then((user) => {
-      setUser(user)
-      console.log(user)
-    })
+    getSession().then((user) => setUser(user))
   }, [isLoading, isAuthenticated]))
 
   const handleOpenPolicy = () => setOpenPolicy(true)
@@ -60,7 +57,7 @@ export default function ProfileScreen () {
           </View>
       </View>
 
-      <TouchableOpacity style={{ width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', height: 80, marginTop: 24 }}>
+      <TouchableOpacity style={{ width: '100%', display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', height: 80, marginTop: 24 }} onPress={() => router.navigate('/(profiles)')} >
         <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', gap: 16 }}>
           {user && user.photo && (<Image source={{ uri: `data:image/png;base64,${user?.photo}` }} style={{ width: 71, height: 71, borderRadius: 100 }} />)}
           {user && !user.photo && (<Image source={require('@/assets/images/logo-1024.png')} style={{ width: 71, height: 71, borderRadius: 100 }} />)}

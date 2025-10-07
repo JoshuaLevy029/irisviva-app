@@ -17,9 +17,10 @@ interface UserItemProps {
     onDelete: (user: User) => () => void
     onVerified: (user: User) => () => void
     onType: (user: User, type: 'user' | 'professional' | 'admin') => () => void
+    onView: (user: User) => () => void
 }
 
-export default ({ user, onEdit, onStatus, onDelete, onVerified, onType }: UserItemProps) => {
+export default ({ user, onEdit, onStatus, onDelete, onVerified, onType, onView }: UserItemProps) => {
     const dimensions = useWindowDimensions();
     const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
 
@@ -66,6 +67,18 @@ export default ({ user, onEdit, onStatus, onDelete, onVerified, onType }: UserIt
                             anchor={<IconButton icon='IconSolarMenuDotsBold' onPress={() => setMenuOpen(!menuOpen)} size={20} />}
                             contentStyle={{ backgroundColor: 'white' }}
                         >
+                            <Menu.Item 
+                                style={{ height: 'fit-content', padding: 5 } as any}
+                                onPress={() => {
+                                    onClose()
+                                    _.delay(() => onView(user)(), 200)
+                                }} 
+                                title={(<View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center', gap: 5, }}>
+                                    <Icon name='IconSolarUserIdLinear' size={20} />
+                                    <Typography fontWeight='medium' color='black' sx={{ margin: 0, padding: 0 }}>Visualizar</Typography>
+                                </View>)}
+                            />
+
                             <Menu.Item 
                                 style={{ height: 'fit-content', padding: 5 } as any}
                                 onPress={() => {
