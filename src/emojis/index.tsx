@@ -1,6 +1,7 @@
 import IconDeviconTwitter from "./IconDeviconTwitter";
 import IconLogosFacebook from "./IconLogosFacebook";
 import IconLogosTikTok from "./IconLogosTikTok";
+import IconLogosWhatsapp from "./IconLogosWhatsapp";
 import IconLogosYoutube from "./IconLogosYoutube";
 import IconNotoV1Eye from "./IconNotoV1Eye";
 import IconNotoV1Girl from "./IconNotoV1Girl";
@@ -24,4 +25,5 @@ export default {
     IconSkillIconsLinkedIn,
     IconDeviconTwitter,
     IconSimpleIconsThreads,
+    IconLogosWhatsapp,
 }

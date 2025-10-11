@@ -11,13 +11,14 @@ import formatUtil from '@/utils/format.util';
 import { useRoute } from '@react-navigation/native';
 import { Redirect, useFocusEffect, useRouter } from 'expo-router';
 import React from 'react';
-import { Alert, ScrollView, View, Share, Animated } from 'react-native';
+import { Alert, ScrollView, View, Share, Animated, TouchableOpacity, Linking } from 'react-native';
 import * as FileSystem from 'expo-file-system';
 import * as Sharing from 'expo-sharing';
 import * as Clipboard from 'expo-clipboard';
 import { DateTime } from 'luxon';
 import { useSession } from '@/context/auth';
 import { User } from '@/entities/user.entity';
+import axiosUtil from '@/utils/axios.util';
 
 interface Result {
   titulo: string
@@ -96,6 +97,7 @@ export default function AnalysisScreen () {
   const route = useRoute()
   const params = route.params as { result: string }
   const result = JSON.parse(params.result) as Result
+  const [therapists, setTherapists] = React.useState<{ therapists: User[], total: number }>({ therapists: [], total: 0 })
 
   const { openDisclaimer, closeDisclaimer, ...disclaimerProps } = useDisclaimer()
 
@@ -108,6 +110,16 @@ export default function AnalysisScreen () {
     const offsetY = event.nativeEvent.contentOffset.y
     setShowScrollToTop(offsetY > 200) // Show button after scrolling 200px
   }
+
+  const getTherapists = async () => [
+    axiosUtil.get({ url: '/therapists/recommendations', token: session || undefined, process: true, data: { limit: 10 } })
+    .then(res => {
+      setTherapists(res.data)
+    })
+    .catch(err => {
+      setTherapists({ therapists: [], total: 0 })
+    })
+  ]
 
   // Scroll to top function
   const scrollToTop = () => {
@@ -354,6 +366,12 @@ export default function AnalysisScreen () {
     }
   }
 
+  React.useEffect(() => {
+    if (session) {
+      getTherapists()
+    }
+  }, [session])
+
   return (
     <React.Fragment>
       <ScrollView 
@@ -528,6 +546,55 @@ export default function AnalysisScreen () {
                 Este relatório integra o Método ÍRIS VIVA e tem caráter educativo e preventivo, não substituindo avaliação médica, psicológica ou exames laboratoriais. As observações foram feitas a partir das fotos enviadas, que podem limitar a visualização de sinais finos. Em caso de sintomas ou dúvidas, procure profissionais de saúde. Prevenção sempre em primeiro lugar
               </Typography>
             </View>
+
+            {therapists.total > 0 && (
+              <View style={{ width: '100%', backgroundColor: formatUtil.hexToRgba(themeConfig.colors.info['A300'], 0.3), padding: 10, borderRadius: 10, marginBottom: 20 }}>
+                <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 10, paddingHorizontal: 5 }}>
+                  <Icon name='IconSolarUsersGroupTwoRoundedLinear' size={25} color={themeConfig.colors.info['A600']} />
+                  <Typography fontWeight='bold' fontSize='h4' sx={{ color: themeConfig.colors.info['A600'], flex: 1 }}>
+                    Terapeutas Recomendados
+                  </Typography>
+                </View>
+
+                {therapists.therapists.map((item, index) => (
+                  <TouchableOpacity key={`therapists-${index}`} onPress={() => {
+                    Linking.openURL(`https://wa.me/${item.contact}?text=Olá, ${item.name}! Vi seu perfil no IrisViva e gostaria de agendar uma consulta.`)
+                  }}>
+                    <View 
+                      style={{ 
+                        width: '100%', 
+                        backgroundColor: formatUtil.hexToRgba(themeConfig.colors.info['A300'], 0.4),
+                        padding: 10,
+                        borderRadius: 10,
+                        marginBottom: 5, 
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        gap: 10,
+                      }}
+                    >
+                      <View>
+                        <Typography fontWeight='bold' fontSize={14} sx={{ textAlign: 'justify', color: themeConfig.colors.gray['A600'] }}>
+                          {item.name}
+                        </Typography>
+                        <Typography fontWeight='semibold' fontSize={12} sx={{ textAlign: 'justify', color: themeConfig.colors.gray['A600'] }}>
+                          {item.occupation}
+                        </Typography>
+                        <Typography fontWeight='semibold' fontSize={12} sx={{ textAlign: 'justify', color: themeConfig.colors.gray['A600'] }}>
+                          {item.contact}
+                        </Typography>
+                      </View>
+                      
+                      <Icon name='IconLogosWhatsapp' size={20} />
+                    </View>
+                  </TouchableOpacity>
+                ))}
+
+                {therapists.total > 10 && (
+                  <Button size='small' variant='contained' title='Ver mais terapeutas' onPress={() => router.push('/(analysis)/therapists')} sx={{ marginTop: 10 }} />
+                )}
+              </View>
+            )}
 
             {result.plan_name !== 'PREMIUM' && result.generated_now && (
               <React.Fragment>
