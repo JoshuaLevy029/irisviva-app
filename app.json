@@ -8,20 +8,9 @@
     "scheme": "irisviva",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-    "splash": {
-      "backgroundColor": "#ffffff",
-      "resizeMode": "cover"
-    },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.joshlevy029.iris-viva",
-      "splash": {
-        "backgroundColor": "#ffffff",
-        "resizeMode": "cover"
-      },
-      "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
-      }
+      "bundleIdentifier": "com.joshlevy029.iris-viva"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -39,11 +28,7 @@
         "android.permission.RECORD_AUDIO"
       ],
       "package": "com.joshlevy029.iris_viva",
-      "versionCode": 2,
-      "splash": {
-        "backgroundColor": "#ffffff",
-        "resizeMode": "cover"
-      }
+      "versionCode": 2
     },
     "web": {
       "bundler": "metro",
@@ -82,6 +67,19 @@
         {
           "merchantIdentifier": "merchant.com.joshlevy029.iris-viva",
           "enableGooglePay": true
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#ffffff",
+          "image": "./src/assets/images/icon.png",
+          "dark": {
+            "image": "./src/assets/images/icon.png",
+            "backgroundColor": "#ffffff"
+          },
+          "imageWidth": 100,
+          "resizeMode": "contain"
         }
       ],
       [
