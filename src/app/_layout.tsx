@@ -1,28 +1,28 @@
-import { Poppins_100Thin, Poppins_100Thin_Italic, Poppins_200ExtraLight, Poppins_200ExtraLight_Italic, Poppins_300Light, Poppins_300Light_Italic, Poppins_400Regular, Poppins_400Regular_Italic, Poppins_500Medium, Poppins_500Medium_Italic, Poppins_600SemiBold, Poppins_600SemiBold_Italic, Poppins_700Bold, Poppins_700Bold_Italic, Poppins_800ExtraBold, Poppins_800ExtraBold_Italic, Poppins_900Black, Poppins_900Black_Italic } from '@expo-google-fonts/poppins'
-import { Quicksand_300Light, Quicksand_400Regular, Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_700Bold } from '@expo-google-fonts/quicksand'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { Poppins_100Thin, Poppins_100Thin_Italic, Poppins_200ExtraLight, Poppins_200ExtraLight_Italic, Poppins_300Light, Poppins_300Light_Italic, Poppins_400Regular, Poppins_400Regular_Italic, Poppins_500Medium, Poppins_500Medium_Italic, Poppins_600SemiBold, Poppins_600SemiBold_Italic, Poppins_700Bold, Poppins_700Bold_Italic, Poppins_800ExtraBold, Poppins_800ExtraBold_Italic, Poppins_900Black, Poppins_900Black_Italic } from '@expo-google-fonts/poppins';
+import { Quicksand_300Light, Quicksand_400Regular, Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_700Bold } from '@expo-google-fonts/quicksand';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { ThemeProvider } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import { Stack, useRouter } from 'expo-router';
+import { SplashScreen, Stack, useRouter } from 'expo-router';
 /* import * as SplashScreen from 'expo-splash-screen' */
 import { useEffect, useState } from 'react';
 import { PaperProvider, Portal } from 'react-native-paper';
 import 'react-native-reanimated';
 
+import AnimationLoading from '@/components/AnimationLoading';
 import themeConfig from '@/config/theme.config';
 import SessionProvider from '@/context/auth';
 import { TranslatorProvider } from '@/context/translator';
 import * as NavigationBar from 'expo-navigation-bar';
 import { Platform } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import AnimationLoading from '@/components/AnimationLoading';
 import { useStateType } from '../../global';
 
 export {
   // Catch any errors thrown by the Layout component.
   ErrorBoundary
-} from 'expo-router'
+} from 'expo-router';
 
 export const unstable_settings = {
   // Ensure that reloading on `/modal` keeps a back button present.
@@ -31,6 +31,7 @@ export const unstable_settings = {
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 /* SplashScreen.preventAutoHideAsync() */
+SplashScreen.hideAsync()
 
 if (Platform.OS === 'android') {
   NavigationBar.setVisibilityAsync('hidden')
