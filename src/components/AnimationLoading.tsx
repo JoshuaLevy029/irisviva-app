@@ -17,7 +17,7 @@ const AnimationLoading = ({ onFinish }: { onFinish: () => void }) => {
     useEventListener(player, 'playingChange', ({ isPlaying }) => {
         console.log('isPlaying', isPlaying);
         if (!isPlaying) {
-            //onFinish();
+            onFinish();
         }
     });
 
