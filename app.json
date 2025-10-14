@@ -28,7 +28,7 @@
         "android.permission.RECORD_AUDIO"
       ],
       "package": "com.joshlevy029.iris_viva",
-      "versionCode": 2
+      "versionCode": 3
     },
     "web": {
       "bundler": "metro",
