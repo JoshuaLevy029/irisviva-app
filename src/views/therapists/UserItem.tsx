@@ -35,7 +35,7 @@ export default ({ user }: UserItemProps) => {
             >
                 <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', gap: 10 }}>
                     <View style={{ position: 'relative', width: 40, height: 40, borderRadius: 20, backgroundColor: themeConfig.colors.primary, justifyContent: 'center', alignItems: 'center' }}>
-                        <Image source={{ uri: user.photo }} style={{ width: 40, height: 40, borderRadius: 20 }} />
+                        <Image source={{ uri: user.photo || 'https://ui-avatars.com/api/?name=' + user.name }} style={{ width: 40, height: 40, borderRadius: 20 }} />
                     </View>
                     <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                         <View style={{ flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>

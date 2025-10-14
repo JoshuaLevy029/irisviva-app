@@ -8,9 +8,17 @@
     "scheme": "irisviva",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#ffffff",
+      "resizeMode": "cover"
+    },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.joshlevy029.iris-viva"
+      "bundleIdentifier": "com.joshlevy029.iris-viva",
+      "splash": {
+        "backgroundColor": "#ffffff",
+        "resizeMode": "cover"
+      }
     },
     "assetBundlePatterns": [
       "**/*"
@@ -26,7 +34,11 @@
         "android.permission.ACCESS_FINE_LOCATION"
       ],
       "package": "com.joshlevy029.iris_viva",
-      "versionCode": 2
+      "versionCode": 2,
+      "splash": {
+        "backgroundColor": "#ffffff",
+        "resizeMode": "cover"
+      }
     },
     "web": {
       "bundler": "metro",
@@ -67,17 +79,12 @@
           "enableGooglePay": true
         }
       ],
+      
       [
-        "expo-splash-screen",
+        "expo-video",
         {
-          "backgroundColor": "#ffffff",
-          "image": "./src/assets/images/icon.png",
-          "dark": {
-            "image": "./src/assets/images/icon.png",
-            "backgroundColor": "#ffffff"
-          },
-          "imageWidth": 100,
-          "resizeMode": "contain"
+          "supportsBackgroundPlayback": true,
+          "supportsPictureInPicture": true
         }
       ]
     ],

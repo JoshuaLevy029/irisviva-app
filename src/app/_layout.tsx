@@ -2,20 +2,22 @@ import { Poppins_100Thin, Poppins_100Thin_Italic, Poppins_200ExtraLight, Poppins
 import { Quicksand_300Light, Quicksand_400Regular, Quicksand_500Medium, Quicksand_600SemiBold, Quicksand_700Bold } from '@expo-google-fonts/quicksand'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
-import { ThemeProvider } from '@react-navigation/native'
-import { useFonts } from 'expo-font'
-import { Stack, useRouter } from 'expo-router'
-import * as SplashScreen from 'expo-splash-screen'
-import { useEffect } from 'react'
-import { PaperProvider, Portal } from 'react-native-paper'
-import 'react-native-reanimated'
+import { ThemeProvider } from '@react-navigation/native';
+import { useFonts } from 'expo-font';
+import { Stack, useRouter } from 'expo-router';
+/* import * as SplashScreen from 'expo-splash-screen' */
+import { useEffect, useState } from 'react';
+import { PaperProvider, Portal } from 'react-native-paper';
+import 'react-native-reanimated';
 
-import themeConfig from '@/config/theme.config'
-import SessionProvider from '@/context/auth'
-import { TranslatorProvider } from '@/context/translator'
-import * as NavigationBar from 'expo-navigation-bar'
-import { KeyboardAvoidingView, Platform } from 'react-native'
-import { GestureHandlerRootView } from 'react-native-gesture-handler'
+import themeConfig from '@/config/theme.config';
+import SessionProvider from '@/context/auth';
+import { TranslatorProvider } from '@/context/translator';
+import * as NavigationBar from 'expo-navigation-bar';
+import { Platform } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import AnimationLoading from '@/components/AnimationLoading';
+import { useStateType } from '../../global';
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -28,7 +30,7 @@ export const unstable_settings = {
 }
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
-SplashScreen.preventAutoHideAsync()
+/* SplashScreen.preventAutoHideAsync() */
 
 if (Platform.OS === 'android') {
   NavigationBar.setVisibilityAsync('hidden')
@@ -61,6 +63,7 @@ export default function RootLayout() {
     'Quicksand_600SemiBold': Quicksand_600SemiBold,
     'Quicksand_700Bold': Quicksand_700Bold
   })
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     if (error) throw error
@@ -68,18 +71,20 @@ export default function RootLayout() {
 
   useEffect(() => {
     if (loaded) {
-      SplashScreen.hideAsync()
+      /* SplashScreen.hideAsync() */
     }
   }, [loaded])
 
-  if (!loaded) {
-    return null
-  }
+  useEffect(() => {
+    if (Platform.OS === 'android') {
+      NavigationBar.setVisibilityAsync('hidden')
+    }
+  }, [])
 
-  return <RootLayoutNav />
+  return <RootLayoutNav isLoading={isLoading} setIsLoading={setIsLoading} />
 }
 
-function RootLayoutNav() {
+function RootLayoutNav({ isLoading, setIsLoading }: { isLoading: boolean, setIsLoading: useStateType<boolean> }) {
   const queryClient = new QueryClient()
   return (
     <QueryClientProvider client={queryClient}>
@@ -153,37 +158,41 @@ function RootLayoutNav() {
                   "onBackgroundContainer": "rgb(211, 228, 255)"
                 } as any
               }}>
-                <Portal.Host>
-                  <Stack
-                    screenOptions={{ headerShown: false }}
-                    initialRouteName='(tabs)'
-                  >
-                    <Stack.Screen
-                      name='(tabs)'
-                      options={{ headerShown: false }}
-                    />
-                    <Stack.Screen
-                      name='(plans)'
-                      options={{ headerShown: false }}
-                    />
-                    <Stack.Screen
-                      name='(admin)'
-                      options={{ headerShown: false }}
-                    />
-                    <Stack.Screen
-                      name='(analysis)'
-                      options={{ headerShown: false }}
-                    />
-                    <Stack.Screen
-                      name='(signin)'
-                      options={{ headerShown: false }}
-                    />
-                    <Stack.Screen
-                      name='(signup)'
-                      options={{ headerShown: false }}
-                    />
-                  </Stack>
-                </Portal.Host>
+                {isLoading ? (
+                  <AnimationLoading onFinish={() => setIsLoading(false)} />
+                ) : (
+                  <Portal.Host>
+                    <Stack
+                      screenOptions={{ headerShown: false }}
+                      initialRouteName='(tabs)'
+                    >
+                      <Stack.Screen
+                        name='(tabs)'
+                        options={{ headerShown: false }}
+                      />
+                      <Stack.Screen
+                        name='(plans)'
+                        options={{ headerShown: false }}
+                      />
+                      <Stack.Screen
+                        name='(admin)'
+                        options={{ headerShown: false }}
+                      />
+                      <Stack.Screen
+                        name='(analysis)'
+                        options={{ headerShown: false }}
+                      />
+                      <Stack.Screen
+                        name='(signin)'
+                        options={{ headerShown: false }}
+                      />
+                      <Stack.Screen
+                        name='(signup)'
+                        options={{ headerShown: false }}
+                      />
+                    </Stack>
+                  </Portal.Host>
+                )}
               </PaperProvider>
             </ThemeProvider>
           </TranslatorProvider>

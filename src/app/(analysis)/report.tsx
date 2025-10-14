@@ -112,7 +112,7 @@ export default function AnalysisScreen () {
   }
 
   const getTherapists = async () => [
-    axiosUtil.get({ url: '/therapists/recommendations', token: session || undefined, process: true, data: { limit: 10 } })
+    axiosUtil.get({ url: '/therapists/recommendations', token: session || undefined, process: true, data: { limit: 5 } })
     .then(res => {
       setTherapists(res.data)
     })
@@ -590,7 +590,7 @@ export default function AnalysisScreen () {
                   </TouchableOpacity>
                 ))}
 
-                {therapists.total > 10 && (
+                {therapists.total > 5 && (
                   <Button size='small' variant='contained' title='Ver mais terapeutas' onPress={() => router.push('/(analysis)/therapists')} sx={{ marginTop: 10 }} />
                 )}
               </View>

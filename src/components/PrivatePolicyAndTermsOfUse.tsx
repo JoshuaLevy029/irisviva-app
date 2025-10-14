@@ -26,7 +26,7 @@ export default ({ open, onClose }: { open: boolean, onClose: () => void }) => {
     return (
         <Modal visible={open} onDismiss={onClose} transparent={true} statusBarTranslucent={true}>
             <View style={{ flex: 1, backgroundColor: 'rgba(0, 0, 0, 0.5)', justifyContent: 'center', alignItems: 'center' }}>
-                <View style={{ padding: 20, marginHorizontal: 10, height: dimensions.height - 10, borderRadius: 16, backgroundColor: themeConfig.colors.background, alignSelf: 'stretch' }}>
+                <View style={{ padding: 20, paddingBottom: 50, marginHorizontal: 10, height: dimensions.height - 10, borderRadius: 16, backgroundColor: themeConfig.colors.background, alignSelf: 'stretch' }}>
                     <ScrollView showsVerticalScrollIndicator={false}>
                         <Typography fontWeight="bold" fontSize='h3' color='primary' sx={{ textAlign: 'center', marginBottom: 0 }}>
                             Política de Privacidade

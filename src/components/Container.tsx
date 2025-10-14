@@ -13,7 +13,7 @@ const Container = ({ tabScreen = false, children, style = {}, ...props }: Contai
             flex: 1,
             paddingVertical: 0,
             paddingHorizontal: 0,
-            paddingBottom: 0,
+            paddingBottom: 30,
             backgroundColor: theme.colors.background,
             minHeight: Math.round(height),
             ...style as ViewStyle,
