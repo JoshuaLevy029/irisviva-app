@@ -28,7 +28,7 @@
         "android.permission.RECORD_AUDIO"
       ],
       "package": "com.joshlevy029.iris_viva",
-      "versionCode": 5
+      "versionCode": 6
     },
     "web": {
       "bundler": "metro",
@@ -74,7 +74,7 @@
         {
           "backgroundColor": "#ffffff",
           "image": "./src/assets/images/icon-2.png",
-          "imageWidth": 1080,
+          "imageWidth": 200,
           "resizeMode": "cover"
         }
       ],
