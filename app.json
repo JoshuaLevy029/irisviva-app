@@ -28,7 +28,7 @@
         "android.permission.RECORD_AUDIO"
       ],
       "package": "com.joshlevy029.iris_viva",
-      "versionCode": 3
+      "versionCode": 4
     },
     "web": {
       "bundler": "metro",
@@ -73,13 +73,13 @@
         "expo-splash-screen",
         {
           "backgroundColor": "#ffffff",
-          "image": "./src/assets/images/icon.png",
+          "image": "./src/assets/images/icon-2.png",
           "dark": {
-            "image": "./src/assets/images/icon.png",
+            "image": "./src/assets/images/icon-2.png",
             "backgroundColor": "#ffffff"
           },
           "imageWidth": 100,
-          "resizeMode": "contain"
+          "resizeMode": "cover"
         }
       ],
       [
