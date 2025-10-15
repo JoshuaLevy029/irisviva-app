@@ -1,10 +1,9 @@
-import React from 'react';
-import { useWindowDimensions, View } from 'react-native';
-import Typography from '@/components/Typography';
 import { IconButton } from '@/components/Button';
+import Typography from '@/components/Typography';
 import { Report } from '@/entities/report.entity';
 import { DateTime } from 'luxon';
-import themeConfig from '@/config/theme.config';
+import React from 'react';
+import { useWindowDimensions, View } from 'react-native';
 
 interface ReportItemProps {
     report: Report
@@ -41,7 +40,7 @@ export default ({ report, onOpen }: ReportItemProps) => {
                             Plano: {report.plan}
                         </Typography>
                         <Typography fontWeight='medium' color='gray' fontSize={12}>
-                            Realizado em: {DateTime.fromISO(report.created_at).toFormat('dd/MM/yyyy HH:mm')}
+                            Realizado em: {DateTime.fromISO(report.created_at).setLocale('pt-BR').setZone('America/Sao_Paulo').toFormat('dd/MM/yyyy HH:mm')}
                         </Typography>
                     </View>
 

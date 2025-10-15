@@ -2,22 +2,18 @@
 import Back from '@/components/Back';
 import { IconButton } from '@/components/Button';
 import Container from '@/components/Container';
-import Icon from '@/components/Icon';
-import PrivatePolicyAndTermsOfUse from '@/components/PrivatePolicyAndTermsOfUse';
+import Loading, { useLoading } from '@/components/Loading';
+import Toast, { useToast } from '@/components/Toast';
 import Typography from '@/components/Typography';
-import AnimatedScrollView from '@/components/animatedScrollView';
 import themeConfig from '@/config/theme.config';
 import { useSession } from '@/context/auth';
 import { User } from '@/entities/user.entity';
-import Circle from '@/svg/Circle';
+import axiosUtil from '@/utils/axios.util';
 import { useFocusEffect } from '@react-navigation/native';
+import * as ImagePicker from 'expo-image-picker';
 import { Redirect, useRouter } from 'expo-router';
 import React from 'react';
-import { Image, ScrollView, TouchableOpacity, useWindowDimensions, View, Alert, ActivityIndicator } from 'react-native';
-import * as ImagePicker from 'expo-image-picker';
-import axiosUtil from '@/utils/axios.util';
-import Toast, { useToast } from '@/components/Toast';
-import Loading, { useLoading } from '@/components/Loading';
+import { Alert, Image, ScrollView, TouchableOpacity, useWindowDimensions, View } from 'react-native';
 
 
 export default function ProfileScreen () {
@@ -264,7 +260,7 @@ export default function ProfileScreen () {
                                             Bio
                                         </Typography>
                                         <Typography fontWeight='semibold' fontSize={14} sx={{ margin: 0, padding: 0, color: 'black' }}>
-                                            {user?.bio.substring(0, 25) ?? ''} {user?.bio && user?.bio.length > 50 && '...'}
+                                            {user?.bio ? user?.bio.substring(0, 25) : ''} {user?.bio && user?.bio.length > 50 && '...'}
                                         </Typography>
                                     </TouchableOpacity>
 
