@@ -3,22 +3,20 @@ import Button, { IconButton } from '@/components/Button';
 import Container from '@/components/Container';
 import Disclaimer, { useDisclaimer } from '@/components/Disclaimer';
 import Icon from '@/components/Icon';
-import Input, { ErrorInput } from '@/components/Input';
 import Typography from '@/components/Typography';
-import AnimatedScrollView from '@/components/animatedScrollView';
 import themeConfig from '@/config/theme.config';
-import formatUtil from '@/utils/format.util';
-import { useRoute } from '@react-navigation/native';
-import { Redirect, useFocusEffect, useRouter } from 'expo-router';
-import React from 'react';
-import { Alert, ScrollView, View, Share, Animated, TouchableOpacity, Linking } from 'react-native';
-import * as FileSystem from 'expo-file-system';
-import * as Sharing from 'expo-sharing';
-import * as Clipboard from 'expo-clipboard';
-import { DateTime } from 'luxon';
 import { useSession } from '@/context/auth';
 import { User } from '@/entities/user.entity';
 import axiosUtil from '@/utils/axios.util';
+import formatUtil from '@/utils/format.util';
+import { useRoute } from '@react-navigation/native';
+import * as Clipboard from 'expo-clipboard';
+import * as FileSystem from 'expo-file-system';
+import { Redirect, useFocusEffect, useRouter } from 'expo-router';
+import * as Sharing from 'expo-sharing';
+import { DateTime } from 'luxon';
+import React from 'react';
+import { Linking, ScrollView, TouchableOpacity, View } from 'react-native';
 
 interface Result {
   titulo: string
@@ -248,7 +246,7 @@ export default function AnalysisScreen () {
   }
 
   const onSave = async () => {
-    const fileName = `IrisViva-${DateTime.now().toFormat('yyyy_MM_dd_HH_mm_ss')}.txt`;
+    const fileName = `IrisViva-${DateTime.now().setLocale('pt-BR').setZone('America/Sao_Paulo').toFormat('yyyy_MM_dd_HH_mm_ss')}.txt`;
 
     let textToSave = '';
 
