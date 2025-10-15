@@ -6,7 +6,7 @@ import { Icons } from '@/enums/icons.enum'
 import { Theme, useTheme } from '@react-navigation/native'
 import { Redirect, Tabs, useFocusEffect, useRouter } from 'expo-router'
 import React from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 
 
 const TabScreen = ({ label, iconName, theme, focused, center = false }: { label: string, iconName: keyof typeof Icons, theme: Theme, focused: boolean, center?: boolean }) => {

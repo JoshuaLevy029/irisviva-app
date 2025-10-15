@@ -7,7 +7,6 @@ import LoadingAction from "@/components/LoadingAction";
 import Typography from "@/components/Typography";
 import themeConfig from "@/config/theme.config";
 import { useSession } from "@/context/auth";
-import axiosUtil from "@/utils/axios.util";
 import WaveSign from "@/views/WaveSign";
 import { useRoute, useTheme } from "@react-navigation/native";
 import { useRouter } from "expo-router";
@@ -38,38 +37,34 @@ export default function Page () {
         setError('')
     }
 
-    const onContinue = () => {
+    const onContinue = async () => {
         setIsLoading(true)
 
-        signIn({ email: params.email, password })
-        .then(async (res) => {
-            setIsLoading(false)
-            
-            if (res.success) {
-                const user = await getSession(res.accessToken)
+        const response = await signIn({ email: params.email, password })
 
-                if (user && user.role === 'admin') {
-                    router.navigate({
-                        pathname: '/(admin)',
-                        params: {}
-                    })
-                    return
-                }
-                
-                router.navigate({
-                    pathname: '/(tabs)',
-                    params: {}
-                })
-                return
-            }
-
-            setError(res.message ?? 'E-mail ou senha incorretos')
-        })
-        .catch(err => {
-            console.log(err)
+        if (!response.success) {
+            setError(response.message ?? 'E-mail ou senha incorretos')
             setIsLoading(false)
-            setError(err.message ?? 'E-mail ou senha incorretos')
+            return
+        }
+
+        const user = await getSession(response.accessToken)
+
+        setIsLoading(false)
+        
+        if (user && user.role === 'admin') {
+            router.navigate({
+                pathname: '/(admin)',
+                params: {}
+            })
+            return
+        }
+
+        router.navigate({
+            pathname: '/(tabs)',
+            params: {}
         })
+        return
     }
 
     return <Container style={{ justifyContent: 'flex-start', alignItems: 'center' }}>

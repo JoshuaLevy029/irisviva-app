@@ -1,5 +1,4 @@
 import { useEvent, useEventListener } from 'expo';
-import { StatusBar } from "expo-status-bar";
 import { useVideoPlayer, VideoView } from 'expo-video';
 import { Dimensions, StyleSheet, View } from "react-native";
 
@@ -15,14 +14,13 @@ const AnimationLoading = ({ onFinish }: { onFinish: () => void }) => {
     const { isPlaying } = useEvent(player, 'playingChange', { isPlaying: player.playing });
 
     useEventListener(player, 'playingChange', ({ isPlaying }) => {
-        console.log('isPlaying', isPlaying);
         if (!isPlaying) {
             onFinish();
         }
     });
 
     return <View style={{ width: dimensions.width, height: dimensions.height, backgroundColor: '#FFFFFF' }}>
-        <StatusBar style="light" hidden={true} translucent />
+        {/* <StatusBar style="light" hidden={true} translucent /> */}
         <VideoView 
             style={StyleSheet.absoluteFill}
             contentFit="cover"
