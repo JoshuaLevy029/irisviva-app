@@ -28,7 +28,7 @@
         "android.permission.RECORD_AUDIO"
       ],
       "package": "com.irisviva.iris_viva",
-      "versionCode": 8
+      "versionCode": 9
     },
     "web": {
       "bundler": "metro",

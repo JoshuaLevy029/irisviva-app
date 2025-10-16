@@ -39,6 +39,7 @@ export default function TabLayout() {
   const theme = useTheme()
   const { isLoading, session, isAuthenticated, getSession, signOut, ...sessionData } = useSession()
   const [user, setUser] = React.useState<User | null>(null)
+  const [loading, setLoading] = React.useState<boolean>(true)
   const router = useRouter()
 
   useFocusEffect(React.useCallback(() => { 
@@ -46,6 +47,8 @@ export default function TabLayout() {
       getSession().then((user) => {
         setUser(user)
 
+        setLoading(false)
+        
         if (user && !['user', 'professional'].includes(user.role)) {
           router.navigate({
             pathname: '/(admin)',
@@ -54,11 +57,12 @@ export default function TabLayout() {
         }
       })
     } else if (!isAuthenticated && !isLoading) {
+      setLoading(false)
       signOut()
     }
   }, [isLoading, isAuthenticated, getSession, router]))
 
-  if (isLoading) {
+  if (isLoading || loading) {
     return null
   }
 
