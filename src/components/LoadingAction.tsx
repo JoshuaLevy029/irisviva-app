@@ -1,13 +1,13 @@
 import formatUtil from '@/utils/format.util'
 import { useTheme } from "@react-navigation/native"
 import { memo } from "react"
-import { Text, useWindowDimensions, View } from "react-native"
+import { Dimensions, Text, View } from "react-native"
 import { ActivityIndicator } from "react-native-paper"
 
 export default memo(({ message }: { message: string }) => {
     const theme = useTheme()
-    const height = useWindowDimensions().height
-    const width = useWindowDimensions().width
+    const height = Dimensions.get('screen').height
+    const width = Dimensions.get('screen').width
 
     return <View style={{ 
         flex: 1, 

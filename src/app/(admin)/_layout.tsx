@@ -1,4 +1,5 @@
 import Icon from '@/components/Icon'
+import LoadingAction from '@/components/LoadingAction'
 import themeConfig from '@/config/theme.config'
 import { useSession } from '@/context/auth'
 import { User } from '@/entities/user.entity'
@@ -65,7 +66,7 @@ export default function TabLayout () {
   }, [isLoading, isAuthenticated, getSession, router]))
 
   if (isLoading || loading) {
-    return null
+    return <LoadingAction message='Carregando conta...' />
   }
 
   if (!isAuthenticated) {
