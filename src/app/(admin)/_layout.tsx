@@ -46,15 +46,17 @@ export default function TabLayout () {
     if (isAuthenticated && !isLoading) {
       getSession().then((user) => {
         setUser(user)
-
-        setLoading(false)
-
+        
         if (user && user.role !== 'admin') {
+          setLoading(false)
+          
           router.navigate({
             pathname: '/(tabs)',
             params: {}
           })
         }
+
+        setLoading(false)
       })
     } else if (!isAuthenticated && !isLoading) {
       setLoading(false)
