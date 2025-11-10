@@ -14,7 +14,7 @@
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false
       },
-      "buildNumber": "2"
+      "buildNumber": "0"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -32,7 +32,7 @@
         "android.permission.RECORD_AUDIO"
       ],
       "package": "com.irisviva.iris_viva",
-      "versionCode": 10
+      "versionCode": 0
     },
     "web": {
       "bundler": "metro",
