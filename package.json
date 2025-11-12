@@ -98,6 +98,7 @@
     "@types/lodash": "^4.17.20",
     "@types/luxon": "^3.7.1",
     "@types/react": "~19.1.0",
+    "babel-plugin-module-resolver": "^5.0.2",
     "eslint": "^9.37.0",
     "eslint-config-expo": "~10.0.0",
     "typescript": "~5.9.3"
